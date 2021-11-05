@@ -1,0 +1,27 @@
+		this.getNewTravelDelayCar = function( meta, truckPercentage, generalTerrain, table, savings ) {
+			// Set savings to false by default
+			savings = savings || false;
+			
+			if( savings === true ) {
+				var incidentDuration = meta.avgIncidentDurationWithSavings;
+			} else {
+				var incidentDuration = meta.avgIncidentDuration;
+			}
+
+			var FFS = meta.effectiveSpeed * 1.60934,
+					VOLUME = meta.trafficVolume / meta.numberOfLanes,
+					VOLUME2 = VOLUME * VOLUME,
+					VOLUME3 = VOLUME2 * VOLUME,
+					NUMBER_OF_LANES = meta.numberOfLanes,
+					NUMBER_OF_BLOCKAGES = meta.blockageNum,
+					NUMBER_OF_LANE_INDEX = (( NUMBER_OF_LANES - NUMBER_OF_BLOCKAGES ) / NUMBER_OF_LANES ) * 100;
+					DURATION_HOUR = incidentDuration.value / 60,
+					COMP = truckPercentage * 100,
+					SQR_COMP = Math.sqrt( COMP ),
+					GRADIENT = _this.getGeneralTerrainImpact( generalTerrain );
+
+			var lnTD_car = -1.59 - (0.13 * NUMBER_OF_LANE_INDEX) + (0.55 * DURATION_HOUR) - (0.04 * (DURATION_HOUR * DURATION_HOUR)) + (0.01 * FFS ) + (0.02 * COMP) + (11.73 * VOLUME)- (5.04 * VOLUME2) + (0.71 * VOLUME3) + (0.15 * GRADIENT);
+
+			return Math.pow(Math.E, lnTD_car);
+
+		};

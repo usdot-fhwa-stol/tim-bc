@@ -1,0 +1,71 @@
+<div id="calculate-table">
+
+	<a href="#" class="calculate-closer" title="Close Calculate Program Cost">
+		<span class="glyphicon glyphicon-remove"></span>
+	</a>
+
+	<h1>
+		Calculate Program Cost
+    <a class="secondary-icon-links" id="calculationsOpenTrigger1" href="#" data-toggle="modal" data-target="#calculationsModal">
+      <span class="glyphicon glyphicon-question-sign"></span>
+      <span class="sr-only">Calculation Notes</span>
+    </a>
+	</h1>
+
+	<p class="total-of-all-rows"><strong>Annual Total:</strong> <span>$ 0</span></p>
+	
+	<div class="form-horizontal margin-top-40 annual-cost-container">
+		<div class="form-group" style="">
+			<label for="annual_fixed_cost" class="control-label col-sm-5">Annual Fixed Cost:</label>
+			<div class="col-sm-7">
+				<input type="text" name="annual_fixed_cost" id="annual_fixed_cost" class="form-control" value="0">
+			</div>
+		</div>
+	</div>
+
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th>Patrol Vehicle Type</th>
+				<th>Number of Vehicles</th>
+				<th>Driver's Hourly Rate ($/hr)</th>
+				<th>Working Hours per Day</th>
+				<th>Working Days per Month</th>
+				<th>Fuel (gal/month)</th>
+				<th>Provided Gas ($/month)</th>
+				<th>Vehicle Maintenance ($/month)</th>
+				<th>Other ($/month)</th>
+				<th>Monthly Total</th>
+			</tr>
+		</thead>
+		<tbody>
+<!-- 			<tr class="table-row row-1" data-row="1">
+				<td><input type="text" class="patrol-vehicle-type" value="" placeholder="Vehicle Type"></td>
+				<td><input type="text" class="number-of-vehicles" value="0"></td>
+				<td><input type="text" class="driver-salary" value="0"></td>
+				<td><input type="text" class="hours-per-day" value="0"></td>
+				<td><input type="text" class="days-per-month" value="0"></td>
+				<td><input type="text" class="fuel" value="0"></td>
+				<td><input type="text" class="provided-gas" value="0"></td>
+				<td><input type="text" class="vehicle-maintenance" value="0"></td>
+				<td><input type="text" class="other" value="0"></td>
+				<td><input type="text" class="row-total" value="$ 0" readonly="readonly"></td>
+			</tr> -->
+		</tbody>
+	</table>
+	
+	<a href="#" id="calculate-submit" class="btn btn-primary" title="Submit Calculations">
+		<span class="glyphicon glyphicon-ok-sign"></span>
+		Submit
+	</a>
+
+	<a href="#" id="addRow" class="btn btn-info" title="Add a new table row">
+		<span class="glyphicon glyphicon-plus-sign"></span>
+		Add Row
+	</a>
+
+	<div id="undoAlert" class="alert alert-info" role="alert" title="Remove last row added">
+	  <span>You've added a new table row.</span> <a href="#" class="undo">Undo?</a>
+	</div>
+
+</div>
