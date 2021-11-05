@@ -1,0 +1,167 @@
+<div class="container clearfix">
+	
+	<h1 class=" text-align-center">{{ projectName }}</h1>
+
+	<!-- LEFT COLUMN -->
+  <div class="col-md-5 col-md-offset-1 col-xs-12 col-xs-offset-0">
+
+		<h3>Segments:</h3>
+	
+		<div class="form-group">
+			<button id="select_all" class="btn btn-primary">Select All</button>
+			<button id="deselect_all" class="btn btn-info">Select None</button>
+		</div>
+
+		<!-- ERROR MESSAGES -->
+		<p class="invalid-segment-message text-danger hidden">
+			<span class="glyphicon glyphicon-remove-sign"></span>
+			1 or more Segment is invalid. Please click the pencil next to each red segment name to edit original inputs.
+		</p>
+
+		<p class="invalid-managed-incident-total text-danger hidden">
+			<span class="glyphicon glyphicon-remove-sign"></span>
+			The total number of Managed Incidents is not equal to Number of Annual Incidents on Program Roadway.
+		</p>
+
+		<p class="invalid-weather-type text-danger hidden">
+			<span class="glyphicon glyphicon-remove-sign"></span>
+			You have a weather slot that has no weather type selected. Please correct your error.
+		</p>
+		<!-- // -->
+
+		<div id="segment_list"></div>
+
+		<div class="spacing hidden-xs"></div>
+
+	 	<button type="button" class="produce-report">PRODUCE REPORT</button>
+
+	</div>
+	<!-- // LEFT COLUMN -->
+	<!-- RIGHT COLUMN -->
+	<div class="col-xs-12 col-md-6">
+
+		<div id="savings" class="panel panel-info margin-top-20">
+
+			<div class="panel-heading">
+			  <h3 class="panel-title">Savings</h3>
+			</div>
+
+			<div class="panel-body">
+				<p><em>Study period duration: {{ studyPeriodDuration }} months</em></p>
+				<!-- STUDY PERIOD DURATION -->
+				<div class="row">
+					<label for="study_period_duration" class="col-lg-6">
+						DELAY SAVINGS (HOURS):
+					</label>
+					<div class="form-group col-lg-5">
+						<input type="text" id="delay_savings" class="form-control" name="Delay Savings in Hours" readonly="readonly">
+					</div>
+					<div class="col-lg-1">
+						<input type="checkbox" id="delay_savings_checkbox" class="savings-checkbox" data-input="study_period_duration" checked="true">
+					</div>
+				</div>
+				<!-- // -->
+				<!-- FUEL (GALLONS) -->
+				<div class="row">
+					<label for="fuel" class="col-lg-6">
+						FUEL (GALLONS):
+					</label>
+					<div class="form-group col-lg-5">
+						<input type="text" id="fuel" class="form-control" name="Fuel Savings" readonly="readonly">
+					</div>
+					<div class="col-lg-1">
+						<input type="checkbox" id="fuel_checkbox" class="savings-checkbox" data-input="fuel" checked="true">
+					</div>
+				</div>
+				<!-- // -->
+				<!-- SECONDARY ACCIDENTS -->
+				<div class="row">
+					<label for="secondary_accidents" class="col-lg-6">
+						SECONDARY ACCIDENTS:
+					</label>
+					<div class="form-group col-lg-5">
+						<input type="text" id="secondary_accidents" class="form-control" name="Secondary Accidents" readonly="readonly">
+					</div>
+					<div class="col-lg-1">
+						<input type="checkbox" id="secondary_accidents_checkbox" class="savings-checkbox" data-input="secondary_accidents" checked="true">
+					</div>
+				</div>
+				<!-- // -->
+				<!-- HYDROCARBON (HC, MT) -->
+				<div class="row">
+					<label for="hydrocarbon" class="col-lg-6">
+						HYDROCARBON (HC, MT):
+					</label>
+					<div class="form-group col-lg-5">
+						<input type="text" id="hydrocarbon" class="form-control" name="HYDROCARBON" readonly="readonly">
+					</div>
+					<div class="col-lg-1"></div>
+				</div>
+				<!-- // -->
+				<!-- CARBON MONOXIDE (CO, MT) -->
+				<div class="row">
+					<label for="cabon_monoxide" class="col-lg-6">
+						CARBON MONOXIDE (CO, MT):
+					</label>
+					<div class="form-group col-lg-5">
+						<input type="text" id="cabon_monoxide" class="form-control" name="CARBON MONOXIDE" readonly="readonly">
+					</div>
+					<div class="col-lg-1"></div>
+				</div>
+				<!-- // -->
+				<!-- NITROGEN OXIDE (NOx, MT) -->
+				<div class="row">
+					<label for="nitrogen_oxide" class="col-lg-6">
+						NITROGEN OXIDE (NOx, MT):
+					</label>
+					<div class="form-group col-lg-5">
+						<input type="text" id="nitrogen_oxide" class="form-control" name="NITROGEN OXIDE" readonly="readonly">
+					</div>
+					<div class="col-lg-1"></div>
+				</div>
+				<!-- // -->
+				<!-- CARBON DIOXIDE (CO2, MT) -->
+				<div class="row">
+					<label for="carbon_dioxide" class="col-lg-6">
+						CARBON DIOXIDE (CO2, MT):
+					</label>
+					<div class="form-group col-lg-5">
+						<input type="text" id="carbon_dioxide" class="form-control" name="CARBON DIOXIDE" readonly="readonly">
+					</div>
+					<div class="col-lg-1"></div>
+				</div>
+				<!-- // -->
+				<!-- SULFUR OXIDE (SOx, Grams) -->
+				<div class="row">
+					<label for="sulfur_oxide" class="col-lg-6">
+						SULFUR OXIDE (SOx, Grams):
+					</label>
+					<div class="form-group col-lg-5">
+						<input type="text" id="sulfur_oxide" class="form-control" name="SULFUR OXIDE" readonly="readonly">
+					</div>
+					<div class="col-lg-1"></div>
+				</div>
+				<!-- // -->
+				<div class="spacing hidden-xs"></div>
+				<!-- BENEFIT-COST RATIO OF CHOSEN FACTORS -->
+				<div class="row benefit-cost-ratio">
+					<label for="benefit_cost_ratio" class="col-xs-12">
+						BENEFIT-COST RATIO OF CHOSEN FACTORS:
+					</label>
+					<div class="form-group col-xs-6">
+						<input type="text" id="benefit_cost_ratio" class="form-control" name="BENEFIT-COST RATIO OF CHOSEN FACTORS" readonly="readonly">
+					</div>
+				</div>
+				<!-- // -->
+
+			</div>
+			<!-- panel-body -->
+			</div>
+			<!-- panel -->
+		</div>
+		<!-- // RIGHT COLUMN -->
+		
+		<div class="spacing hidden-xs"></div>
+	
+	</div>
+	<!-- // END -->

@@ -1,0 +1,99 @@
+@icon-font-path: "bootstrap/dist/fonts/";
+
+@import "fonts.less";
+
+@import 'bootstrap/less/bootstrap.less';
+
+@import '_material-effect.less';
+
+@import "index.less";
+
+@import "sidebar.less";
+
+@import "calculate.less";
+
+@import "light-theme.less";
+
+@import "segment-info.less";
+
+@import "ssp-output.less";
+
+.browsehappy {
+    margin: 0.2em 0;
+    background: #5379a8;
+    color: white;
+    padding: 0.2em 0;
+}
+
+/* Space out content a bit */
+body {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.text-align-center {
+	text-align: center;
+}
+
+.dashboard {
+	.row {
+	}
+
+	h1 {
+		margin-bottom: 40px;
+	}
+}
+
+.dashboard-box {
+	@color1: #ecf0f1;
+	@color2: rgb(83,121,168);
+
+	text-align: center;
+	transition: .3s;
+	margin-bottom: 20px;
+
+	h2 {
+		color: @color1;
+	}
+
+	.wrapper {
+		background: #5379a8;
+		color: @color1; 
+		border-radius: 10px; 
+		padding: 15px;
+	}
+
+	.link-button {
+		display: block;
+		margin: 20px auto;
+		padding: 15px 30px;
+		border-radius: 50px;
+		background: transparent;
+		color: @color1;
+		text-shadow: none !important;
+		border: solid 1px @color1;
+		font-weight: 100;
+		transition: .3s;
+		width: 75%;
+
+		&:hover, &:focus, &.active {
+			background: rgba(255, 255, 255, .1);
+			//color: @color2;
+			text-decoration: none;
+		}
+
+	}
+}
+
+.footer {
+	position: fixed;
+	padding: 15px;
+	background: #5379a8;
+	color: #ecf0f1;
+	width: 100%;
+	bottom: 0;
+}
+
+.btn {
+	border-radius: 500px;
+}

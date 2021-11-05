@@ -1,0 +1,184 @@
+
+
+// Variables
+@primary-color: #5379a8;
+@green-color: #16a085;
+@info-color: rgb(151, 173, 193);
+
+body {
+	background: @primary-color !important;
+	padding: 0 !important;
+}
+
+// Top navigation
+.navbar-inverse {
+	background: rgb(236, 240, 241) !important;
+	padding: 10px;
+	border: none !important;
+	margin: 0 !important;
+
+	.navbar-toggle {
+	  background-color: #5379a8 !important;
+	  border-color: transparent !important;
+	}
+
+	.navbar-collapse {
+		border-top: none;
+	}
+}
+
+.navbar-brand a {
+	color: @green-color !important;
+	font-family: LaneNarrow;
+	font-size: 1.3em;
+	text-transform: uppercase;
+
+	&:hover, &:focus {
+		background: transparent !important;
+		text-decoration: underline !important;
+	}
+
+}
+
+.navbar-brand {
+	&:hover {
+		background: none !important;
+		border: none;
+	}
+}
+
+.navbar-inverse .navbar-nav > li {
+	margin: 0;
+	margin-left: 5px;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+	border-radius: 999px !important;
+	padding: 15px 25px;
+	color: @primary-color;
+	transition: .5s;
+	border: 1px solid transparent;
+
+	&:hover, &:focus {
+		background: none !important;
+		box-shadow: none;
+		border-color: @primary-color;
+		color: @primary-color;
+	}
+
+}
+
+// Buttons
+.btn {
+	transition: .5s;
+}
+
+.btn-primary {
+	background-color: @primary-color !important;
+	background-image: linear-gradient( rgba( 255, 255, 255, .2 ), transparent ) !important;
+	border: none !important;
+	box-shadow: none !important;
+	text-shadow: 0 -1px 0 rgba( 0, 0, 0, .1 ) !important;
+	padding: 8px 20px !important;
+
+	&:hover, &:focus, &.active {
+		background-color: darken( @primary-color, 5% ) !important;		
+		background-image: linear-gradient( rgba( 0, 0, 0, .1 ), transparent ) !important;
+	}
+}
+
+.btn-info {
+	background-color: @info-color !important;
+	background-image: linear-gradient( rgba( 255, 255, 255, .2 ), transparent ) !important;
+	border: none !important;
+	box-shadow: none !important;
+	text-shadow: 0 -1px 0 rgba( 0, 0, 0, .1 ) !important;
+	padding: 8px 20px !important;
+
+	&:hover, &:focus {
+		background-color: darken( @info-color, 5% ) !important;		
+		background-image: linear-gradient( rgba( 0, 0, 0, .1 ), transparent ) !important;
+	}
+
+}
+
+.btn-warning, .btn-danger {
+	&:hover, &:focus, &.active {				
+		background-image: linear-gradient( rgba( 0, 0, 0, .1 ), transparent ) !important;
+	}
+}
+
+// Learn More
+.wat {
+	display: inline-block;
+	margin-top: 40px;
+	color: @info-color;
+	border-bottom: 1px dotted;
+
+	&:hover, &:focus {
+		color: @primary-color;
+		text-decoration: none;
+	}
+
+}
+
+@-webkit-keyframes rollout {
+  0% { 
+		transform: translateZ(0px) rotateX(0deg);
+	}
+  50% {
+		transform: translateZ(-25px) rotateX(90deg);
+	}
+  100% {
+		transform: translateZ(0px) rotateX(0deg);
+	}
+}
+
+.glyphicon glyphicon-play-circle {
+	margin-top: 50px;
+}
+
+//Secondary Icons: Sidebar & About
+.secondary-icon-links {
+	color: @primary-color !important;
+}
+
+//FHWA logo and container
+.fhwa-logo-wrapper {
+	background-color: @primary-color !important;
+	box-shadow: none !important;
+}
+
+
+//New Project Overrides
+
+.jumbo-input {
+	font-family: LaneNarrow;
+}
+
+
+//Project Details Overrides
+
+.info-calculate {
+	left: 117px;
+}
+
+
+// Panels
+
+.panel-success {
+	border-color: #26A65B !important;
+
+	.panel-heading {
+		color: #fff;
+		background: lighten(#26A65B, 5%) !important;
+	}
+}
+.panel-danger {
+	border-color: #96281B;
+
+	.panel-heading {
+		color: #fff;
+		background: lighten(#96281B, 5%);
+	}
+}

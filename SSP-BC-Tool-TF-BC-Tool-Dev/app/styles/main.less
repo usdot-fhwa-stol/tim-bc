@@ -1,0 +1,63 @@
+@icon-font-path: "bootstrap/dist/fonts/";
+
+@import "fonts.less";
+
+@import 'bootstrap/less/bootstrap.less';
+
+@import "index.less";
+
+@import "sidebar.less";
+
+@import "calculate.less";
+
+@import "light-theme.less";
+
+@import "segment-info.less";
+
+@import "ssp-output.less";
+
+.browsehappy {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+/* Space out content a bit */
+body {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.hover-line-parent {
+	border: 0;
+	text-decoration: none;
+	max-width: 220px;
+}
+
+
+.hover-line {
+	display: inline-block;
+	border: 0;
+	outline: 0;
+	text-decoration: none !important;
+	overflow: hidden !important;
+
+	&:hover {
+		border: 0 !important;
+
+		&:after {
+			margin: 0;
+		}
+	}
+
+	&:after {
+	  content: '';
+	  display: block;
+	  border: 1px solid;
+	  margin-left: 100%;
+	  width: auto;
+	  transition: .3s;
+	}
+}
+
