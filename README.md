@@ -1,8 +1,9 @@
 # Traffic Incident Management Benefit-Cost (TIM-BC) Tool
-brought to you by 
-Saxton Transportation Operations Laboratory (STOL), Office of Operations Research and Development, Federal Highway Administration (FHWA) 
+
 ![Capture](https://user-images.githubusercontent.com/93544805/140957629-b0c3901c-a2f2-4870-982a-66a5d4c70757.PNG)
 
+brought to you by 
+Saxton Transportation Operations Laboratory (STOL), Office of Operations Research and Development, Federal Highway Administration (FHWA) 
 
 ## Background
 The TIM-BC tool is a web-based software with standardized BC methodologies that can be universally employed in BC analysis of different TIM strategies. 
