@@ -31,9 +31,9 @@ The TIM-BC tool can be used to assess proposed expansion of existing TIM program
 
 ## Resources for End-Users
 
-If you are a TIM program manager, a transportation engineer, a policy maker, or anyone who is interested in using the TIM-BC tool to estiamte TIM benefits and costs, you can [download the TIM-BC Tool here](https://www.fhwa.dot.gov/software/research/operations/timbc/).  
+If you are a TIM program manager, a transportation engineer, a policy maker, or anyone who is interested in using the TIM-BC tool to estiamte TIM benefits and costs, you can [download the TIM-BC Tool here](https://www.fhwa.dot.gov/software/research/operations/timbc/). 
 Follow the installation instructions and the end-user guide to start using the tool.
-To learn more about the data and methodologies implemented in the tool, please visit the Benefit and Cost Estimation 
+To learn more about the data and methodologies implemented in the tool, please visit the Benefit and Cost Estimation Methodology section on our Confluence space.
 We intive you to provide your feedback on the tool by leaving a comment on our Confluence space, or sending an email to saxton dot lab at dot dot gov. 
 
 ## Resrouces for Researchers and Developers
