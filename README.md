@@ -2,13 +2,13 @@
 
 ![Capture](https://user-images.githubusercontent.com/93544805/140957629-b0c3901c-a2f2-4870-982a-66a5d4c70757.PNG)
 Brought to you by the
-[Saxton Transportation Operations Laboratory (STOL)](https://highways.dot.gov/research/laboratories/saxton-transportation-operations-laboratory/saxton-transportation-operations-laboratory-overview), Office of Operations Research and Development, and Federal Highway Administration (FHWA). 
+[Saxton Transportation Operations Laboratory (STOL)](https://highways.dot.gov/research/laboratories/saxton-transportation-operations-laboratory/saxton-transportation-operations-laboratory-overview), Office of Operations Research and Development, Federal Highway Administration (FHWA). 
 
 ## Background
 
 This open-source project is part of the [CARMA Transportation Systems Management and Operations (TSMO)](https://usdot-carma.atlassian.net/wiki/spaces/CRMTSMO/overview) effort.
 The goal is to raise awareness of the [existing TIM-BC tool](https://www.fhwa.dot.gov/software/research/operations/timbc/) and engage with stakeholders to improve the tool.
-For more information about the project and the tool, please visit the STOL TIM-BC Confluence space.
+For more information about the project and the tool, please visit the STOL TIM-BC Confluence space (url upcoming).
 
 ## About the TIM-BC Tool
 
@@ -31,10 +31,10 @@ The TIM-BC tool can be used to assess proposed expansion of existing TIM program
 ## Resources for End-Users
 
 If you are a TIM program manager, a transportation engineer, a policy maker, or anyone who is interested in using the TIM-BC tool to estiamte TIM benefits and costs, you can [download the TIM-BC Tool here](https://www.fhwa.dot.gov/software/research/operations/timbc/). 
-Follow the installation instructions and the end-user guide to start using the tool.
-To learn more about the data and methodologies implemented in the tool, please visit the Benefit and Cost Estimation Methodology section on our Confluence space.
-We invite you to provide your feedback on the tool by leaving a comment on our Confluence space, or sending an email to [Saxtonlab.FHWA@dot.gov](mailto:Saxtonlab.FHWA@dot.gov). 
+Follow the installation instructions and the end-user guide to start using the tool (urls upcoming).
+To learn more about the data and methodologies implemented in the tool, please visit the Benefit and Cost Estimation Methodology section (url upcoming) on our Confluence space (url upcoming).
+We invite you to provide your feedback on the tool by leaving a comment on our Confluence space (url upcoming), or sending an email to [Saxtonlab.FHWA@dot.gov](mailto:Saxtonlab.FHWA@dot.gov). 
 
 ## Resources for Researchers and Developers
 
-If you are a researcher or a developer who is interested in learning more about the data and methodologies implemented in the tool or ways to contribute to this tool, please visit the Benefit and Cost Estimation Methodology and Developer Resources sections on our Confluence space.
+If you are a researcher or a developer who is interested in learning more about the data and methodologies implemented in the tool or ways to contribute to this tool, please visit the Benefit and Cost Estimation Methodology and Developer Resources sections on our Confluence space (urls upcoming).
