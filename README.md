@@ -1,3 +1,8 @@
+# tim-bc tool
+## Developer Resources
+[Environment Setup](https://usdot-carma.atlassian.net/wiki/spaces/TSMOTIMBCDRAFT/pages/2121859093/Environment+setup)
+
+=======
 # Traffic Incident Management Benefit-Cost (TIM-BC) Tool
 
 ![Capture](https://user-images.githubusercontent.com/93544805/140957629-b0c3901c-a2f2-4870-982a-66a5d4c70757.PNG)
