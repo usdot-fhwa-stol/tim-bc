@@ -1,0 +1,150 @@
+/*
+
+@author rothrob
+@desc   Styles for the Segment Information Page
+@date   09/18/2014
+
+*/
+
+// Variables
+@panel-text-color: #555;
+@color1: #5379a8;
+@color2: #16a085;
+@color3: rgb(151, 173, 193);
+
+//--
+
+// General Styles
+
+.main-header {
+	text-align: center;
+}
+
+.panel-info {
+	border-color: @color1
+}
+
+.panel-info > .panel-heading {
+	background: @color1;
+	color: #fff;
+	border-color: @color1
+}
+
+.segment-info-helper {
+	//font-size: 18px;
+	margin-top: 6px;
+	color: #555;
+
+	&:hover {
+		color: #555;
+	}
+}
+
+input[type="text"] {
+	text-align: right;
+}
+
+.information-correct, .information-wrong {
+	font-size: 20px;
+}
+
+.panel-correct {
+	border: solid 1px rgb(26, 188, 156) !important;
+	.panel-heading {
+		background-color: rgb(26, 188, 156);
+		color: #fff;
+	}
+}
+
+.text-align-left {
+	text-align: left !important;
+}
+
+//--
+
+// Container
+#segment_container {
+	padding-bottom: 20px;
+}
+
+//--
+
+// Panels
+.panel {
+	color: @panel-text-color !important;
+
+	.panel-heading {
+		h3 {
+			font-size: 1.5em;
+		}
+	}
+
+	// Labels
+	label {
+
+		&.control-label {
+			padding: 0 !important;
+		}
+
+	}
+
+}
+
+//--
+
+// Left Panel
+#segmentTitle {
+	display: inline;
+}
+.operation-time {
+	button {
+		width: 33.3%;
+		&.active {
+			background-color: rgb(83, 121, 168) !important;
+			&:focus, &:hover {
+				background-color: rgb(83, 121, 168) !important;
+			background-image: none !important;
+			}
+		}
+		&:focus, &:hover  {
+			background-color: #5379a8 !important;
+			background-image: linear-gradient(rgba(255, 255, 255, 0.3), transparent) !important;
+		}
+	}
+}
+
+//--
+
+// Middle Panel
+
+.table-centered * {
+	text-align: center;
+}
+
+.weather {
+	min-width: 150px;
+}
+
+.percentage-wrapper {
+	max-width: 80px;
+}
+
+//--
+
+// Right Panel
+
+#incident_information {
+	.am-peak-incident {
+		padding-bottom: 0;
+	}
+	.pm-peak-incident {
+		padding-bottom: 0;
+	}
+	.off-peak-incident {
+		padding-bottom: 0;
+	}
+}
+
+.text-error {
+	color: #a94442;
+}

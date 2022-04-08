@@ -1,0 +1,71 @@
+
+  <div class="container-fluid text-align-center clearfix" style="padding-bottom: 20px;">
+
+    <div class="col-xs-12 col-md-6 col-md-offset-3 module-block">
+
+      <h1 id="project_name">{{ projectName }}</h1>
+
+      <form class="" action="" role="form" style="margin-top: 40px;">
+
+        <div class="row">
+          <p class="col-xs-12 col-md-4 project-detail-label">State:</p>
+          <div class="form-group col-xs-12 col-md-8">
+            <select name="State" id="project_state" class="form-control" title="Select the State where the SSP Program is located."></select>
+          </div>
+        </div>
+
+        <div class="row">
+          <p class="col-xs-12 col-md-4 project-detail-label">Total Program Cost:</p>
+          <div class="form-group col-xs-12 col-md-5">
+            <input type="text" class="form-control" name="total_program_cost" id="total_program_cost" value="{{ totalProgramCost }}" title="Insert the total program cost in present value dollars.">
+          </div>
+          <button class="btn btn-primary calculate-trigger col-xs-10 col-xs-offset-1 col-md-offset-0 col-md-2" style="">Calculate</button>
+          <div class="col-xs-1 hidden-xs">
+            <span class="glyphicon glyphicon-info-sign information-helper" data-toggle="tooltip" data-placement="top"
+              title="Get help calculating your SSP program cost."></span>
+          </div>
+        </div>
+
+        <div class="row">
+          <p class="col-xs-12 col-md-4 project-detail-label">Study period duration in months:</p>
+          <div class="form-group col-xs-12 col-md-7">
+            <input type="text" class="form-control" id="study_period_duration">
+          </div>
+          <div class="col-xs-1 hidden-xs">
+            <span class="glyphicon glyphicon-info-sign information-helper" data-toggle="tooltip" data-placement="top" title="Tooltip"></span>
+          </div>
+        </div>
+
+        <div class="row">
+          <p class="col-xs-12 col-md-4 project-detail-label">Number of Incidents on Program Roadway:</p>
+          <div class="form-group col-xs-12 col-md-7">
+            <input type="text" class="form-control" id="number_of_incidents_on_program_roadway">
+          </div>
+          <div class="col-xs-1 hidden-xs">
+            <span class="glyphicon glyphicon-info-sign information-helper" data-toggle="tooltip" data-placement="top" title="Insert the total estimated number of incidents (all severities) on the program roadways."></span>
+          </div>
+        </div>
+
+        <div class="row">
+          <p class="col-xs-12 col-md-4 project-detail-label">Number of Segments:</p>
+          <div class="form-group col-xs-12 col-md-4">
+            <input type="text" class="form-control" id="number_of_segments" title="Insert the number of segments with distinct characteristics within the SSP Program.">
+          </div>
+        </div>
+
+        <!-- BACK to Project Name page BUTTON -->
+        <a href="#/project/rename" class="btn btn-info margin-top-20" title="Back to Project Name">
+          <span class="glyphicon glyphicon-chevron-left"></span>
+           Project Name
+        </a>
+        <!-- PROCEED to Segments Information PAGE -->
+        <a href="#/project/segment/1" id="segment_detail_trigger" class="btn btn-primary margin-top-20"
+           title="Proceed to Segment Detail page.">
+          Segment Input <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+
+      </form>
+
+    </div>
+
+  </div>

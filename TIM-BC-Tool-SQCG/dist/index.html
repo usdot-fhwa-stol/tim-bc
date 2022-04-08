@@ -1,0 +1,154 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>SQCG-BC Tool</title>
+        <meta name="author" content="robert.m.roth@leidos.com">
+        <meta name="description" content="SQCG-BC Tool - Safety Service Patrol benefit/cost analysis
+        tool to be created and distributed prior to the more expanded TIM-BC Tool.
+        Research and development sponsored by USDOT Federal Highway Administration (FHWA).">
+        <meta name="viewport" content="width=device-width">
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <link href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAADUElEQVQ4jW2TW0ybdRjGf//v0BOlDAYMVygnmRtMzNhQUGJkk4h4sWmMQy9mZoi7I9nM4oUX88bMq0UTE5cZNdGLJaJuS6YxIyMSKBTcBkttkQzCoVAoh1Ip0Pb72u/zArcs6JO8N2+e3837Po/gf2Sa5mGgPqVnioUgaVHkMcArhFjc6VV2gqvx5IVvbo23/vrHjLqwliTXaaO8KJtjz+xdSGrpK1ZVviSEWH/IiMfg9qVY4vIN32yOKpm4XQY/9U/x49ASkmpBlSSOVOVz8fQRb7Un96QQYh5A/hd+eSAY+aHzsi/r5vAsfcEl3IV5XOxowGkV9AZXsKoy00txfrs752l7rqKuvvbJrp+vXddl0zQd05H41TNfeIsfhNcRCPSMgffPeV6qyed4035ujywQjm5ityisrmtMLsTLni7Q1rq6ugYl4JXveiYOTUU2UBUJIUCRJbRUglB4GYB9xTlkDBOAbJtCvz+EtaCq42D1PqeU1NLN/YFFZOnhQQRrsXUqc9PUVuze3ojtAUASJJJJoltm1Ruvn6hRonHNsxxLIgmBYRhsxtd4sVTmw/ZGyj1uAPJdNjaTaexWFcMwkTIaeS67bD94yK2YmEbGMDEBfStGZ0sR59qbcOYWPnrvu81ldPv+wj+9gmTqnDpagY6NPu+AUHKd1olsh0po6W/aql18dLqFBHZu+GaQhKC59gk8Rbu4fqGF/tEp3AUuJqIyff65zPTEWEhxWJXu+qeKzg8F5mhrqCGesfHepV7uTi6TMUyqS3bx/qsHeKF6D88eqqF7NMLH3/voaLCMd42MBpQPznb2vvbWmf6rPc4mu8PJtYEZvGMRbBYJRZIIzsY495WPwhw7phBMLcRoLLexOu69Eo6sbMqDvuGMqsf8b7e/eXJwbNmmqip9wQh2y3bKZUkghGAjlWZlbYO9WTon9qdu/979y/mZ2ZAuA4zc94erdjNSV//80SyHNfveeJjopoYkSRiGSUrTSKcS1LpVjh/Qe77+/JNT9+77o4+iDDA0fGcyNhe42VhbmfVOa11ZKqXZzUySPLtBzR6VY5VMOld8n3775WdnQ+HF6H/K9LjaWltKPSUlhy0OV2kisaXPz049CAYCd6ZD4dWd3n8AOH1sNzQ3TOoAAAAASUVORK5CYII=" rel="icon" type="image/x-icon">
+        <!-- build:css(.tmp) styles/main.css -->
+        <link rel="stylesheet" href="styles/main.css">
+        <!-- endbuild -->
+        <!-- build:js bower_components/modernizr/modernizr.js -->
+        <script src="bower_components/modernizr/modernizr.js"></script>
+        <!-- endbuild -->
+    </head>
+    <body class="">
+      <!--[if lt IE 10]>
+          <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+      <![endif]-->
+      <div class="stage">
+
+        <nav class="navbar navbar-inverse navbar-boxed" role="navigation">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <span class="navbar-brand">
+                <a href="../../index.html" class="pull-left" title="Go to Main Page" style="margin-right: 25px;
+                    margin-left: 22px;
+                    position: relative;
+                    display: block;
+                    font-size: 1.1em">
+                  <span class="glyphicon glyphicon-home"></span>
+                </a>
+                <a href="#" class="hover-line-parent" title="Home"><span class="hover-line">SQCG-BC Tool</span></a></span>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav pull-right">
+                <li><a href="#" id="saveProject" class="hidden">Save Project Data</a></li>
+                <li><a href="#/project/new">Start New Analysis Project</a></li>
+                <li><a href="#" class="upload-file-trigger">Open Existing Analysis Project</a></li>
+              </ul>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+
+        <!-- SIDEBAR & MASK -->
+        <div class="sidebar-container col-xs-12 col-md-4 shut"></div>
+
+        <div class="calculate-container shut" id="calculate"></div>
+
+        <div class="overlay-mask hidden"></div>
+
+        <div class="top-wrapper" style="min-height: 460px">
+
+          <nav class="navbar secondary-navbar" role="navigation">
+            <div class="container-fluid">
+            <!-- Collect the nav links, forms, and other content for toggling -->
+              <ul class="nav pull-left">
+                <li>
+                  <a class="secondary-icon-links" id="sidebarTrigger" href="#" title="Open Sidebar">
+                    <span class="glyphicon glyphicon-align-justify"></span>
+                    <span class="sr-only">Sidebar</span>
+                  </a>
+                </li>
+              </ul>
+              <ul class="nav pull-right">
+                <li>
+                  <a class="secondary-icon-links" id="aboutOpenTrigger1" href="#" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-question-sign"></span></a>
+                </li>
+              </ul>
+            </div><!-- /.container-fluid -->
+          </nav>
+
+          <!--MAIN CONTAINER -->
+          <div id="container"></div>
+
+          <!-- Hidden File Reader for loading project files -->
+          <input type="file" class="hidden" id="fileReader">
+
+        </div>
+
+      </div>
+
+      <!-- Modal -->
+      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="About this tool" aria-hidden="true">
+        <div class="modal-dialog" style="width: 800px; margin-top: 14%">
+          <div class="modal-content">
+            <div class="modal-header">
+              <!-- <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button> -->
+              <h4 class="modal-title" id="myModalLabel"><strong>ABOUT SQCG-BC-TOOL</strong></h4>
+            </div>
+            <div class="modal-body">
+              <p style="width: 720px; margin: auto">This tool was developed by contractors and researchers using funding from the Federal Highway Administration (FHWA), part of the United States Department of Transportation (USDOT).</p>
+
+              <p style="width: 720px; margin: auto; margin-top: 40px">Please report any questions, feedback, or issues to Taylor Lochrane (FHWA) at <a href="mailto:taylor.lochrane@dot.gov" style="text-decoration: underline">taylor.lochrane@dot.gov</a>.</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-dismiss="modal">
+                <span class="glyphicon glyphicon-remove"></span>
+                Close Window
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+      <!-- Alert Modal -->
+      <div class="modal fade" id="alertModal" tabindex="-1" role="dialog" aria-labelledby="Alert Popup" aria-hidden="true">
+        <div class="modal-dialog" style="width: 800px; margin-top: 14%">
+          <div class="modal-content">
+            <div class="modal-header">
+              <!-- <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button> -->
+              <h4 class="modal-title" id="alertModalLabel"><strong><!-- DYNAMIC CONTENT --></strong></h4>
+            </div>
+            <div class="modal-body"><!-- DYNAMIC CONTENT --></div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-dismiss="modal">
+                <span class="glyphicon glyphicon-remove"></span>
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <!-- build:js bower_components/pdfmake/build/pdfmake.js -->
+    <script src="bower_components/pdfmake/build/pdfmake.js"></script>
+    <!-- endbuild -->
+    <!-- build:js bower_components/pdfmake/build/vfs_fonts.js -->
+    <script src="bower_components/pdfmake/build/vfs_fonts.js"></script>
+    <!-- endbuild -->
+    <!-- build:js scripts/main.js -->
+    <script data-main="scripts/main" src="bower_components/requirejs/require.js"></script>
+    <!-- endbuild -->
+  </body>
+</html>

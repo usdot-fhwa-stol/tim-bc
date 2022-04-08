@@ -1,0 +1,112 @@
+
+  <div class="container-fluid text-align-center clearfix" style="padding-bottom: 20px;">
+
+    <div class="col-xs-12 col-md-4 col-md-offset-4 module-block">
+      <!-- HEADER1: PROJECT NAME -->
+      <h1 id="project_name">{{ projectName }}</h1>
+      <!--// -->
+      <!-- FORM: PROJECT DETAILS -->
+      <form class="" action="" role="form" style="margin-top: 40px;">
+        <!-- ROW 1: STATE -->
+        <div class="row">
+          <div class="form-group col-xs-12">
+            <label for="project_state" class="pull-left">
+              State:&nbsp;
+              <a href="#" data-toggle="modal" data-target="#ARLNumSeg"><span class="glyphicon glyphicon-question-sign"></span></a>
+              <!--<a href="#" class="info" data-toggle="tooltip" data-placement="top" title="Select the state where the ARL program operates."><span class="glyphicon glyphicon-info-sign"></span></a>-->
+            </label>
+            <select name="State" id="project_state" class="form-control" title="Select the State where the ARL Program is located." value="{{ projectState }}"></select>
+          </div>
+        </div>
+        <!--// ROW-->
+        <!-- ROW 2: NUMBER OF SEGMENTS -->
+        <div class="row">
+          <div class="form-group col-xs-12">
+            <label for="number_of_segments" class="pull-left">
+              Number of Segments:&nbsp;
+              <a href="#" class="info" data-toggle="tooltip" data-placement="top" title="Enter the number of segments (up to 20 miles each of homogeneous roadway) on which the ARL vehicles operate."><span class="glyphicon glyphicon-info-sign"></span></a>
+            </label>
+            <input type="text" class="form-control text-align-left details-input" id="number_of_segments" title="Insert the number of segments with distinct characteristics within the ARL Program."
+              value="{{ numOfSegments }}">
+          </div>
+        </div>
+        <!--// ROW-->
+        <!-- ROW 3: STUDY PERIOD -->
+        <div class="row">
+          <!-- STUDY PERIOD DURATION -->
+          <div class="form-group col-xs-12">
+            <label for="study_period_duration" class="pull-left" style="text-align: left">
+              Study period duration in months:&nbsp; 
+              <a href="#" class="info" data-toggle="tooltip" data-placement="top" title="Enter the study period duration in months. All details on the next page should align with this time period."><span class="glyphicon glyphicon-info-sign"></span></a>
+            </label>
+            <input type="text" class="form-control text-align-left details-input" id="study_period_duration" value="{{ studyPeriodDuration }}">
+          </div>
+        </div>
+        <!--//ROW -->
+        <!-- ROW 4: NUMBER OF INCIDENTS -->
+        <!-- REMOVED NUMBER OF INCIDENTS ON PROGRAM ROADWAYS -->
+<!--         <div class="row">
+          <div class="form-group col-xs-12">
+            <label for="number_of_incidents_on_program_roadway" class="pull-left" style="text-align: left">
+              Number of Annual Incidents on Program Roadway:&nbsp; 
+              <a href="#" class="info" data-toggle="tooltip" data-placement="top" title="Enter the annual number of incidents on the program roadway (including those that aren’t managed by the ARL Program)."><span class="glyphicon glyphicon-info-sign"></span></a>
+            </label>
+            <input type="text" class="form-control text-align-left details-input" id="number_of_incidents_on_program_roadway" value="{{ numOfIncidentsOnProgramRoadway }}">
+          </div>
+        </div> -->
+        <!--//ROW -->
+        <!-- ROW 5: TOTAL PROGRAM COST -->
+        <div class="row">
+          <div class="form-group col-xs-12">
+            <label for="total_program_cost" class="text-align-left" style="width: 100%">
+              Annual Total Program Cost:&nbsp; 
+              <a href="#" class="info" data-toggle="tooltip" data-placement="top" title="Enter the total Annual Program Cost in dollars."><span class="glyphicon glyphicon-info-sign"></span></a>
+            </label>
+            <div class="col-xs-12" style="padding: 0;">
+              <input type="text" class="form-control text-align-left details-input" id="total_program_cost" value="{{ totalProgramCost }}"
+                title="Insert the total program cost in present value dollars">
+            </div>
+<!--             <div class="row col-xs-4" style="padding: 0;">
+              <button class="btn btn-block btn-primary calculate-trigger" type="button">Calculate</button>
+            </div> -->
+          </div>
+        </div>
+        <!--//ROW -->
+
+        <!-- BACK to Project Name page BUTTON -->
+        <a href="#/project/rename" class="btn btn-info" title="Back to Project Name">
+          <span class="glyphicon glyphicon-chevron-left"></span>
+           Project Name
+        </a>
+        
+        <!-- PROCEED to Segments Information PAGE -->
+        <a href="#/project/segment/1" id="segment_detail_trigger" class="btn btn-primary"
+           title="Proceed to Segment Detail page.">
+          Segment Input <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+
+      </form>
+
+    </div>
+
+  </div>
+<!-- Number of Segments Modal -->
+<div class="modal fade" data-backdrop="false" id="ARLNumSeg" tabindex="-1" role="dialog" aria-labelledby="Number of Segments" aria-hidden="true">
+  <div class="modal-dialog" style="margin-top: 14%;">
+    <div class="modal-content">
+      <div class="modal-header">
+        <!-- <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button> -->
+        <h4 class="modal-title" id="ARLNumSegTitle"><strong>Number of Segments</strong></h4>
+      </div>
+      <div class="modal-body">
+        <p>Enter the number of roadway segments on which Authority Removal Laws operate. The segments should be homogeneous and should be less than 20 miles each.  For more information on homogeneous segment considerations, please visit <a href="#">xxxx</a>.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">
+          <span class="glyphicon glyphicon-remove"></span>
+          Close Window
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

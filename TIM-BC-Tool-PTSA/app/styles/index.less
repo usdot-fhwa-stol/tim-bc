@@ -1,0 +1,199 @@
+@brand-primary: #023779;
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background: #023779 !important;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: LaneNarrow !important;
+}
+
+h1.jumbo-header:before, h1.jumbo-header:after {
+  //content: '"';
+}
+
+.top-wrapper {
+  background-color: #ecf0f1;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.navbar-boxed {
+  border-radius: 0;
+}
+
+.secondary-navbar {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-bottom: 0;
+  z-index: 1000;
+}
+
+.secondary-navbar .secondary-icon-links {
+  font-size: 24px !important;
+
+  &:hover, &:focus {
+    background: none !important;
+  }
+
+  .glyphicon {
+    line-height: inherit;
+  }
+}
+
+.btn-block-custom {
+  /* width: 184px;*/
+  margin: 5px auto;
+}
+
+h1.jumbo-header {
+  font-size: 4em;
+}
+
+.main-layout-container {
+  min-height: 420px;
+}
+
+.margin-top-20 {
+  margin-top: 20px;
+}
+
+.margin-top-40 {
+  margin-top: 40px;
+}
+
+.padding-bottom-80 {
+  padding-bottom: 80px;
+}
+
+.border-bottom-line {
+  border-bottom: solid 1px rgba(0, 0, 0, .1);
+}
+
+.center-text {
+  h1, p {
+    text-align: center;
+  }
+}
+
+.module-block {
+  min-height: 400px !important;
+}
+
+.text-align-center {
+  text-align: center;
+}
+
+.fhwa-logo-wrapper {
+  background: @brand-primary;
+  display: block;
+  padding: 1px;
+  box-shadow: inset 0px 0px 1px #BBB, inset 0 5px 15px rgba(0, 0, 0, .2);
+
+  .fhwa-logo-container {
+    max-width: 400px;
+    margin: 40px auto;
+  }
+
+}
+
+.jumbo-input-group {
+
+  padding: 5px;
+  margin: auto;
+  max-width: 400px;
+
+  .jumbo-input {
+
+    width: 90%;
+    background-color: rgba(0, 0, 0, 0);
+    color: @brand-primary;
+    outline: none;
+    border: none;
+    border-bottom: 1px @brand-primary solid;
+    font-size: 32px;
+    padding: 10px 10px;
+    text-align: center !important;
+
+    &:focus {
+
+
+
+    }
+
+  }
+
+  .clear-jumbo-input {
+    float: right;
+    font-size: 26px;
+    margin-top: 15px;
+    color: rgba(0, 0, 0, .3);
+
+    &:hover {
+      color: rgba(0, 0, 0, .6);
+    }
+
+  }
+
+}
+
+/* add a gradient effect */
+.gradientify {
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.075) 0%, rgba(0, 0, 0, 0.075) 100%) !important;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, .3);
+}
+
+.about-element {
+  position: absolute;
+  background: rgba(255, 255, 255, 1);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  padding: 40px;
+  text-align: center;
+  z-index: 1050;
+  opacity: 1;
+  transition: .5s;
+
+  &.vanish {
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  .close-about {
+    float: right;
+    font-size: 24px;
+    color: rgba(0, 0, 0, .6);
+    cursor: pointer;
+
+    &:hover {
+      color: rgba(0, 0, 0, .9);
+    }
+
+  }
+
+}
+
+.margin-bot-0 {
+  margin-bottom: 0 !important;
+}
+
+.information-helper {
+  margin-top: 5px;
+  font-size: 18px;
+}
+
+.tooltip {
+  width: 125px;
+}
+
+.project-detail-label {
+  text-align: left;
+}

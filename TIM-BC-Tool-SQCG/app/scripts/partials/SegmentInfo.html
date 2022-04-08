@@ -1,0 +1,697 @@
+<!-- SEGMENT INFORMATION PAGE -->
+<div id="segment_container" class="clearfix container-fluid">
+	<!-- PROJECT NAME -->
+	<div class="col-xs-12">
+		<h1 id="project_name" class="main-header"></h1>
+	</div>
+	<!--// PROJECT NAME -->
+	<!-- LEFT PANEL -->
+	<div class="col-lg-4" role="form">
+		<!-- SEGMENT & REGION -->
+		<div class="row">
+			<div class="col-lg-12">
+				<h3 id="SQCGSeg">Segment: </h3><a href="#" class="segment-info-helper" data-toggle="tooltip" data-placement="top" display="inline"
+				title="Use the sidebar to duplicate selected segments.">
+					  <span class=" glyphicon glyphicon-info-sign">
+			</span>
+				  </a>
+				<div class="form-group">
+					<select name="Segments" id="select_segments" class="form-control" name="segment"></select>
+				</div>
+				<div class="form-group">
+					<input type="text" name="Segment Name" id="segment_name" class="form-control text-align-left" value="{{ name }}" placeholder="Enter Segment Name">
+				</div>
+				<div class="form-group margin-bot-0 text-align-left">
+					<select name="Regions" id="regions_by_state" class="form-control">
+						<option value="">Select Region</option>
+					</select>
+				</div>
+			</div>
+		</div>
+		<!--// SEGMENT & REGION -->
+		<!-- // ROADWAY GEOMETRY PANEL -->
+		<div id="roadway_geometry" class="main-panel panel panel-info margin-top-20">
+			<!-- PANEL HEADING -->
+		  <div class="panel-heading">
+		    <span class="glyphicon glyphicon-ok-sign pull-right information-correct hidden"></span>
+		    <span class="glyphicon glyphicon-remove-sign pull-right information-wrong hidden"></span>
+		    <h3 class="panel-title">Roadway Geometry</h3>
+		  </div>
+			<!--// PANEL HEADING -->
+			<!-- PANEL BODY -->
+	  	<div class="panel-body">
+				<!-- SEGMENT LENGTH IN MILES -->
+				<div class="form-group clearfix">
+					<!--<a href="#" class="segment-info-helper pull-right" data-toggle="tooltip" data-placement="top"
+              title="Enter the total segment length in miles.">
+						<span class="glyphicon glyphicon-info-sign"></span>
+          </a>-->
+					<label for="segment_length" class="control-label col-lg-6">SEGMENT LENGTH IN MILES:</label>
+					<div class="col-lg-5 col-xs-11">
+						<input type="text" name="Segment Length in Miles" id="segment_length" class="form-control" value="{{ segmentLength }}"></input>
+					</div>
+				</div>
+				<!--// SEGMENT LENGTH IN MILES -->
+				<!-- NUMBER OF RAMPS -->
+				<div class="form-group clearfix margin-top-20">
+					<!--<a href="#" class="segment-info-helper pull-right" data-toggle="tooltip" data-placement="top"
+              title="Enter the number of on- and off-ramps on the segment in a single direction.">
+						<span class="glyphicon glyphicon-info-sign"></span>
+          </a>-->
+					<label for="number_of_ramps" class="control-label col-lg-6">NUMBER OF RAMPS PER DIRECTION:</label>
+					<div class="col-lg-5 col-xs-11">
+						<input type="text" name="Number of Ramps" id="number_of_ramps" class="form-control" value="{{ numberOfRamps }}"></input>
+					</div>
+				</div>
+				<!--// NUMBER OF RAMPS -->
+				<!-- NUMBER OF TRAFFIC LANES BY DIRECTION -->
+				<div class="form-group clearfix margin-top-20">
+					<!--<a href="#" class="segment-info-helper pull-right" data-toggle="tooltip" data-placement="top"
+              title="Enter the number of traffic lanes on the segment in a single direction.">
+						<span class="glyphicon glyphicon-info-sign"></span>
+          </a>-->
+					<label for="num_of_traffic_lanes" class="control-label col-lg-6">NUMBER OF TRAFFIC LANES BY DIRECTION:</label>
+					<div class="col-lg-5 col-xs-11">
+						<input type="text" name="Number of Traffic Lanes by Direction" id="num_of_traffic_lanes" class="form-control" value="{{ numberOfTrafficLanesByDirection }}"></input>
+					</div>
+				</div>
+				<!--// NUMBER OF TRAFFIC LANES BY DIRECTION -->
+				<!-- GENERAL TERRAIN -->
+				<div class="form-group clearfix margin-top-20">
+				<!--Modified by Fang Zhou for updating speed reduction for General Terrain 09/22/2015-->
+				<!--	<a href="#" class="segment-info-helper pull-right" data-toggle="tooltip" data-placement="top"
+              title="Choose the option that best describes the terrain of the segment.">
+						<span class="glyphicon glyphicon-info-sign"></span>
+          </a>
+					<label for="general_terrain" class="control-label col-lg-5">GENERAL TERRAIN:</label>
+					<div class="col-lg-6 col-xs-11">
+						<select name="General Terrain" id="general_terrain" class="form-control">
+							<option value="Flat">Flat - 0%</option>
+							<option value="Level">Level - 2%</option>
+							<option value="Rolling Hills">Rolling Hills - 5%</option>
+							<option value="Mountainous">Mountainous - 10%</option>
+						</select>
+					</div>-->
+					<a href="#" class="segment-info-helper pull-right" data-toggle="tooltip" data-placement="top"
+              title="Reduction of free-flow speed is applied by terrian type as follows: 
+              Flat - 0 mph;
+              Level - 2 mph;
+              Rolling Hills - 5 mph;
+              Mountainous - 10 mph.">
+						<span class="glyphicon glyphicon-info-sign"></span>
+          </a>
+					<label for="general_terrain" class="control-label col-lg-5">GENERAL TERRAIN:<br>(use tooltip to choose the appropriate type)</label>
+					<div class="col-lg-6 col-xs-11">
+						<select name="General Terrain" id="general_terrain" class="form-control">
+							<option value="Flat">Flat</option>
+							<option value="Level">Level</option>
+							<option value="Rolling Hills">Rolling Hills</option>
+							<option value="Mountainous">Mountainous</option>
+						</select>
+					</div>
+					<!--Modified end for updating speed reduction for General Terrain 09/22/2015-->
+				</div>
+				<!--// GENERAL TERRAIN -->
+				<!-- HORIZONTAL CURVATURE -->
+				<div class="form-group clearfix margin-top-20">
+				<!--Modified by Fang Zhou for updating speed reduction for Horizontal Curvature 09/22/2015-->
+				<!--	<a href="#" class="segment-info-helper pull-right" data-toggle="tooltip" data-placement="top"
+              title="Choose the option that best describes the horizontal curvature of the segment.">-->
+              		<a href="#" class="segment-info-helper pull-right" data-toggle="tooltip" data-placement="top"
+              title="Reduction of free-flow speed is applied by horizontal curvature as follows: 
+              Straight - 0 mph;
+              Mild Curves - 5 mph;
+              Sharp Curves - 10 mph.">
+              	<!--Modified end for updating speed reduction for Horizontal Curvature 09/22/2015-->
+						<span class="glyphicon glyphicon-info-sign"></span>
+          </a>
+					<label for="horizontal_curvature" class="control-label col-lg-5">HORIZONTAL CURVATURE:<br>(use tooltip to choose the appropriate type)</label>
+					<div class="col-lg-6 col-xs-11">
+						<select name="horizontal_curvature" id="horizontal_curvature" class="form-control">
+							<option value="Straight" value="0">Straight</option>
+							<option value="Mild Curves" value="5">Mild Curves</option>
+							<option value="Sharp Curves" value="10">Sharp Curves</option>
+						</select>
+					</div>
+				</div>
+				<!--// HORIZONTAL CURVATURE -->
+	  	</div>
+			<!--// PANEL BODY -->
+	  </div>
+	  <!-- // ROADWAY GEOMETRY -->
+		<!-- CALCULATE RATIO BUTTON CONTAINER -->
+		<div class="col-lg-12 margin-top-40" style="text-align:center">
+			<a href="#/project/output" class="btn btn-primary calculate-ratio">
+				<span class="glyphicon glyphicon-ok-sign"></span>
+				Calculate Ratio
+			</a>
+			<button type="button" class="btn btn-info reset-segment-info">
+				<span class="glyphicon glyphicon-refresh"></span>
+				Reset Information
+			</button>
+		</div>
+		<!--// CALCULATE RATIO BUTTON CONTAINER -->
+	</div>
+	<!-- // LEFT PANEL -->
+	<!-- // -->
+	<!-- MIDDLE PANEL -->
+	<div class="col-lg-4" role="form">
+		<!-- SQCG PROGRAM INFORMATION PANEL -->
+		<div id="program_information" class="main-panel panel panel-info margin-top-20">
+			<!-- PANEL HEADING -->
+		  <div class="panel-heading clearfix">
+		    <h3 class="panel-title pull-left">SQCG Program Information</h3>
+		    <span class="glyphicon glyphicon-ok-sign pull-right information-correct hidden"></span>
+		  </div>
+			<!--// PANEL HEADING -->
+			<!-- PANEL BODY -->
+		  <div class="panel-body">
+		  	<!-- OPERATION TIME HEADING -->
+				<p>
+					<strong>OPERATION TIME:</strong>
+					<!--<a href="#" class="segment-info-helper" data-toggle="tooltip" data-placement="top"
+	              title="Select the time periods during which the SQCG program operates.">
+						<span class=" glyphicon glyphicon-info-sign">
+	          </span>
+					</a>-->
+				</p>
+		  	<!--// OPERATION TIME HEADING -->
+				<!-- OPERATION TIME BODY -->
+				<div class="form-group clearfix operation-panel">
+					<!-- <div class="btn-group col-xs-12 operation-time">
+						<button type="button" id="am_peak" class="btn btn-primary active" data-wrapper="am_peak" data-panel="am-peak">AM Peak</button>
+						<button type="button" id="pm_peak" class="btn btn-primary" data-wrapper="pm_peak" data-panel="pm-peak">PM Peak</button>
+						<button type="button" id="off_peak" class="btn btn-primary" data-wrapper="weekday" data-panel="off-peak">Weekday OFF Peak</button>
+						<button type="button" id="off_peak" class="btn btn-primary" data-wrapper="weekend" data-panel="off-peak">Weekend</button>
+					</div> -->
+					<div class="checkbox">
+					  <label>
+					    <input type="checkbox" class="operation-time" data-model="amPeak" data-wrapper="am_peak" data-panel="am-peak" {{ amPeakChecked }}>
+					    AM Peak
+					  </label>
+					</div>
+					<div class="checkbox">
+					  <label>
+					    <input type="checkbox" class="operation-time" data-model="pmPeak" data-wrapper="pm_peak" data-panel="pm-peak" {{ pmPeakChecked }}>
+					    PM Peak
+					  </label>
+					</div>
+					<div class="checkbox">
+					  <label>
+					    <input type="checkbox" class="operation-time" data-model="weekdayOffPeak" data-wrapper="off_peak" data-panel="off-peak" {{ weekdayOffPeakChecked }}>
+					    Weekday Off Peak
+					  </label>
+					</div>
+					<div class="checkbox">
+					  <label>
+					    <input type="checkbox" class="operation-time" data-model="weekend" data-wrapper="weekend_peak" data-panel="weekend" {{ weekendChecked }}>
+					    Weekend
+					  </label>
+					</div>
+				</div>
+				<!--// OPERATION TIME BODY -->
+				<p><strong>PROJECT SAVINGS:</strong></p>
+
+				<div class="form-group clearfix margin-top-20">
+					<div class="col-lg-6">
+						<label for="proportion">
+							PROPORTION:
+							<a href="#" class="segment-info-helper" data-toggle="tooltip" data-placement="top"
+	              title="Enter the proportion of incidents of all lane blockages that could be improved by adopting shared quick-clearance goals, default: 100%.">
+	              <span class=" glyphicon glyphicon-info-sign"></span>
+							</a>
+						</label>
+						<input type="text" class="form-control" id="proportion" value="{{ proportion }}">
+					</div>
+					<div class="col-lg-6">
+						<label for="compliance_before">
+							IMPLEMENTATION:
+							<a href="#" class="segment-info-helper" data-toggle="tooltip" data-placement="top"
+	              title="Enter the proportion of applicable cases in which clearance times are improved, default: 100%">
+	              <span class=" glyphicon glyphicon-info-sign"></span>
+							</a>
+						</label>
+						<input type="text" class="form-control" id="implementation" value="{{ implementation }}">
+					</div>
+				</div>
+
+				<div class="form-group clearfix margin-top-20">
+					<div class="col-lg-6">
+						<label for="shortened_duration">
+							AVERAGE DURATION SAVING:
+							<a href="#" class="segment-info-helper" data-toggle="tooltip" data-placement="top"
+	              title="Enter the average improvement in clearance times in minutes, default: 10.">
+	              <span class=" glyphicon glyphicon-info-sign"></span>
+							</a>
+						</label>
+						<input type="text" class="form-control" id="averageImprovement" value="{{ averageImprovement }}">
+					</div>
+				</div>
+		  </div>
+		  <!-- // Panel Body -->
+		</div>
+		<!--// SQCG PROGRAM INFORMATION -->
+		<!-- TRAFFICE INFORMATION PANEL -->
+		<div id="traffic_information" class="main-panel panel panel-info margin-top-20">
+
+		  <div class="panel-heading">
+		    <span class="glyphicon glyphicon-ok-sign pull-right information-correct hidden"></span>
+		    <span class="glyphicon glyphicon-remove-sign pull-right information-wrong hidden"></span>
+		    <h3 class="panel-title">Traffic Information</h3>
+		  </div>
+
+	  	<div class="panel-body">
+
+				<div class="form-group clearfix">
+					<label for="mainlane_speed_limit" class="control-label col-lg-6">POSTED MAINLANE SPEED LIMIT (MPH):</label>
+					<div class="col-lg-6">
+						<input type="text" name="mainlane_speed_limit" id="mainlane_speed_limit" class="form-control" value="{{ mainLaneSpeedLimit }}"></input>
+					</div>
+				</div>
+
+				<div class="form-group clearfix margin-top-20">
+					<table class="table table-centered blockage-severity">
+						<thead>
+							<tr>
+								<th>Time</th>
+								<th>
+									Traffic Volume (VEH/H/Lane)
+									<a href="#" class="segment-info-helper" data-toggle="tooltip" data-placement="top"
+				              title="Traffic Volume should range between 500 - 2200 veh/h/lane.">
+										<span class="glyphicon glyphicon-info-sign"></span>
+				          </a>
+								</th>
+								<th>Truck Percentage (0-25)</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr class="am-peak {{ amPeakVisibility }}">
+								<td>AM PEAK</td>
+								<td><input type="text" class="form-control traffic-volume" data-peak="amPeak" value="{{ amPeakTrafficVolume }}"></td>
+								<td><input type="text" class="form-control truck-percentage" data-peak="amPeak" value="{{ amPeakTruckPercentage }}"></td>
+							</tr>
+							<tr class="pm-peak {{ pmPeakVisibility }}">
+								<td>PM PEAK</td>
+								<td><input type="text" class="form-control traffic-volume" data-peak="pmPeak" value="{{ pmPeakTrafficVolume }}"></td>
+								<td><input type="text" class="form-control truck-percentage" data-peak="pmPeak" value="{{ pmPeakTruckPercentage }}"></td>
+							</tr>
+							<tr class="off-peak {{ weekdayOffPeakVisibility }}">
+								<td>WEEKDAY OFF PEAK</td>
+								<td><input type="text" class="form-control traffic-volume" data-peak="weekdayOffPeak" value="{{ weekdayOffPeakTrafficVolume }}"></td>
+								<td><input type="text" class="form-control truck-percentage" data-peak="weekdayOffPeak" value="{{ weekdayOffPeakTruckPercentage }}"></td>
+							</tr>
+							<tr class="weekend {{ weekendVisibility }}">
+								<td>WEEKEND</td>
+								<td><input type="text" class="form-control traffic-volume" data-peak="weekend" value="{{ weekendTrafficVolume }}"></td>
+								<td><input type="text" class="form-control truck-percentage" data-peak="weekend" value="{{ weekendTruckPercentage }}"></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<div class="panel panel-default">
+				  <div class="panel-heading"><strong>Weather Information</strong> (ensure selections add up to 100%)</div>
+				  <div class="panel-body">
+				  	<p class="error-weather text-danger hidden">Note: The total of all Weather Percentage must be equal to 100.</p>
+				    <table class="table table-centered weather-information">
+				    	<thead>
+				    		<tr>
+				    			<th>WEATHER
+				    			<!--Added by Fang Zhou for adding speed reduction for weather 09/22/2015-->
+				    				<a href="#" class="segment-info-helper" data-toggle="tooltip" data-placement="top"
+								              title="Reduction of free-flow speed is applied by weather type as follows:
+								              Clear - 0%;
+								              Light Rain - 5%;
+								              Wind - 5%; 
+								              Heavy Rain - 10%;
+								              Light Snow - 10%;
+								              Low Visibility - 10%;
+								              Fog - 15%;
+								              Heavy Snow - 35%;
+								              Icy Conditions - 40%.">
+										<span class="glyphicon glyphicon-info-sign"></span>
+									</a>
+								<!--Added end for adding speed reduction for weather 09/22/2015-->
+				    			</th>
+				    			<th>PERCENTAGE (0-100)</th>
+				    		</tr>
+				    	</thead>
+				    	<tbody id="weatherInformation">
+				    	<!-- FIRST WEATHER -->
+						    <tr id="firstWeather" class="{{ firstWeatherState }}">
+						      <td class="weather-wrapper">
+						        <select name="Weather Information" class="form-control weather" value="{{ firstWeather }}">
+						          <option value="Select Type">Select Type</option>
+						          <option value="Clear">Clear</option>
+						          <option value="Light Rain">Light Rain</option>
+						          <option value="Heavy Rain">Heavy Rain</option>
+          						<option value="Light Snow">Light Snow</option>
+						          <option value="Heavy Snow">Heavy Snow</option>
+						          <option value="Fog">Fog</option>
+						          <option value="Icy Conditions">Icy Conditions</option>
+						          <option value="Low Visibility">Low Visibility</option>
+						          <option value="Wind">Wind</option>
+						        </select>
+						      </td>
+						      <td class="weather-wrapper">
+						        <input type="text" class="form-control percentage" value="{{ firstWeatherPrcnt }}" readonly>
+						      </td>
+						    </tr>
+						  <!-- // -->
+				    	<!-- SECOND WEATHER -->
+						    <tr id="secondWeather" class="{{ secondWeatherState }}">
+						      <td class="weather-wrapper">
+						        <select name="Weather Information" class="form-control weather" value="{{ secondWeather }}">
+						          <option value="Select Type">Select Type</option>
+						          <option value="Clear">Clear</option>
+						          <option value="Light Rain">Light Rain</option>
+						          <option value="Heavy Rain">Heavy Rain</option>
+          						<option value="Light Snow">Light Snow</option>
+						          <option value="Heavy Snow">Heavy Snow</option>
+						          <option value="Fog">Fog</option>
+						          <option value="Icy Conditions">Icy Conditions</option>
+						          <option value="Low Visibility">Low Visibility</option>
+						          <option value="Wind">Wind</option>
+						        </select>
+						      </td>
+						      <td class="weather-wrapper">
+						        <input type="text" class="form-control percentage" value="{{ secondWeatherPrcnt }}" readonly>
+						      </td>
+						    </tr>
+						  <!-- // -->
+				    	<!-- THIRD WEATHER -->
+						    <tr id="thirdWeather" class="{{ thirdWeatherState }}">
+						      <td class="weather-wrapper">
+						        <select name="Weather Information" class="form-control weather" value="{{ thirdWeather }}">
+						          <option value="Select Type">Select Type</option>
+						          <option value="Clear">Clear</option>
+						          <option value="Light Rain">Light Rain</option>
+						          <option value="Heavy Rain">Heavy Rain</option>
+          						<option value="Light Snow">Light Snow</option>
+						          <option value="Heavy Snow">Heavy Snow</option>
+						          <option value="Fog">Fog</option>
+						          <option value="Icy Conditions">Icy Conditions</option>
+						          <option value="Low Visibility">Low Visibility</option>
+						          <option value="Wind">Wind</option>
+						        </select>
+						      </td>
+						      <td class="weather-wrapper">
+						        <input type="text" class="form-control percentage" value="{{ thirdWeatherPrcnt }}" readonly>
+						      </td>
+						    </tr>
+						  <!-- //-->
+				    	<!-- FOURTH WEATHER -->
+						    <tr id="fourthWeather" class="{{ fourthWeatherState }}">
+						      <td class="weather-wrapper">
+						        <select name="Weather Information" class="form-control weather" value="{{ fourthWeather }}">
+						          <option value="Select Type">Select Type</option>
+						          <option value="Clear">Clear</option>
+						          <option value="Light Rain">Light Rain</option>
+						          <option value="Heavy Rain">Heavy Rain</option>
+          						<option value="Light Snow">Light Snow</option>
+						          <option value="Heavy Snow">Heavy Snow</option>
+						          <option value="Fog">Fog</option>
+						          <option value="Icy Conditions">Icy Conditions</option>
+						          <option value="Low Visibility">Low Visibility</option>
+						          <option value="Wind">Wind</option>
+						        </select>
+						      </td>
+						      <td class="weather-wrapper">
+						        <input type="text" class="form-control percentage" value="{{ fourthWeatherPrcnt }}" readonly>
+						      </td>
+						    </tr>
+						  <!-- //-->
+				    	<!-- FIFTH WEATHER -->
+						    <tr id="fifthWeather" class="{{ fifthWeatherState }}">
+						      <td class="weather-wrapper">
+						        <select name="Weather Information" class="form-control weather" value="{{ fifthWeather }}">
+						          <option value="Select Type">Select Type</option>
+						          <option value="Clear">Clear</option>
+						          <option value="Light Rain">Light Rain</option>
+						          <option value="Heavy Rain">Heavy Rain</option>
+          						<option value="Light Snow">Light Snow</option>
+						          <option value="Heavy Snow">Heavy Snow</option>
+						          <option value="Fog">Fog</option>
+						          <option value="Icy Conditions">Icy Conditions</option>
+						          <option value="Low Visibility">Low Visibility</option>
+						          <option value="Wind">Wind</option>
+						        </select>
+						      </td>
+						      <td class="weather-wrapper">
+						        <input type="text" class="form-control percentage" value="{{ fifthWeatherPrcnt }}" readonly>
+						      </td>
+						    </tr>
+						  <!-- //-->
+				    	<!-- SIXTH WEATHER -->
+						    <tr id="sixthWeather" class="{{ sixthWeatherState }}">
+						      <td class="weather-wrapper">
+						        <select name="Weather Information" class="form-control weather" value="{{ sixthWeather }}">
+						          <option value="Select Type">Select Type</option>
+						          <option value="Clear">Clear</option>
+						          <option value="Light Rain">Light Rain</option>
+						          <option value="Heavy Rain">Heavy Rain</option>
+          						<option value="Light Snow">Light Snow</option>
+						          <option value="Heavy Snow">Heavy Snow</option>
+						          <option value="Fog">Fog</option>
+						          <option value="Icy Conditions">Icy Conditions</option>
+						          <option value="Low Visibility">Low Visibility</option>
+						          <option value="Wind">Wind</option>
+						        </select>
+						      </td>
+						      <td class="weather-wrapper">
+						        <input type="text" class="form-control percentage" value="{{ sixthWeatherPrcnt }}" readonly>
+						      </td>
+						    </tr>
+						  <!-- //-->
+				    	<!-- SEVENTH WEATHER -->
+						    <tr id="seventhWeather" class="{{ seventhWeatherState }}">
+						      <td class="weather-wrapper">
+						        <select name="Weather Information" class="form-control weather" value="{{ seventhWeather }}">
+						          <option value="Select Type">Select Type</option>
+						          <option value="Clear">Clear</option>
+						          <option value="Light Rain">Light Rain</option>
+						          <option value="Heavy Rain">Heavy Rain</option>
+          						<option value="Light Snow">Light Snow</option>
+						          <option value="Heavy Snow">Heavy Snow</option>
+						          <option value="Fog">Fog</option>
+						          <option value="Icy Conditions">Icy Conditions</option>
+						          <option value="Low Visibility">Low Visibility</option>
+						          <option value="Wind">Wind</option>
+						        </select>
+						      </td>
+						      <td class="weather-wrapper">
+						        <input type="text" class="form-control percentage" value="{{ seventhWeatherPrcnt }}" readonly>
+						      </td>
+						    </tr>
+						  <!-- //-->
+				    	</tbody>
+				    </table>
+
+						<button class="btn btn-primary add-weather-info">
+							<span class="glyphicon glyphicon-plus-sign"></span>
+							Add Weather
+						</button>
+
+						<button class="btn btn-info undo-row hidden">
+							<span class="glyphicon glyphicon-remove-sign"></span>
+							Remove Weather
+						</button>
+
+				  </div>
+
+				</div>
+
+			</div>
+			<!-- .panel-body -->
+
+  	</div>
+  	<!-- // TRAFFIC INFORMATION -->
+
+	</div>
+	<!-- // MIDDLE PANEL END -->
+	<!-- // -->
+	<!-- LEFT PANEL -->
+	<div class="col-lg-4">
+		<!-- // INCIDENT INFORMATION PANEL -->
+		<div id="incident_information" class="main-panel panel panel-info margin-top-20">
+
+		  <div class="panel-heading">
+		    <span class="glyphicon glyphicon-ok-sign pull-right information-correct hidden"></span>
+		    <span class="glyphicon glyphicon-remove-sign pull-right information-wrong hidden"></span>
+		    <h3 class="panel-title">Estimated Statistics of Incidents Managed by SQCG</h3>
+		  </div>
+
+		  <div class="panel-body">
+		  	<p class="text-error managed-incidents-insufficient hidden">Note: Total Number of Managed Incident should be equal to the Number of Annual Incidents on Program Roadway.</p>
+		  	
+				<!-- AM PEAK INCIDENT -->
+				<div id="am_peak_wrapper" class="">
+			  	<div class="am-peak-incident peak-incident {{ amPeakVisibility }}">
+							<div class="panel panel-default">
+							  <div class="panel-heading"><strong>AM Peak</strong></div>
+							  <div class="panel-body">
+							  	<table class="table table-centered">
+							  		<thead>
+							  			<tr>
+							  				<th>Incident Blockage Severity</th>
+							  				<th>Estimated Number of Incidents Managed</th>
+											<th>
+												Estimated Average Duration of Incidents Managed
+												<a href="#" class="segment-info-helper" data-toggle="tooltip" data-placement="top"
+										title="Average incident duration should not exceed 240 minutes.">
+													<span class="glyphicon glyphicon-info-sign"></span>
+												</a>
+										</th>  
+							  			</tr>
+							  		</thead>
+							  		<tbody>
+							  			<tr class="peak-row shoulder">
+							  				<td>Shoulder Blockage</td>
+							  				<td><input type="text" class="form-control num-of-managed-incidents" data-peak="amPeak"	data-lane="Shoulder"	value="{{ amPeakShoulderBlockageManIndt }}"></td>
+											<td><input type="text" class="form-control avg-incident-duration"  data-peak="amPeak"	data-lane="Shoulder"	value="{{ amPeakShoulderBlockageAVGID }}"></td>
+
+							  			</tr>
+							  			<tr class="peak-row first-lane">
+							  				<td>One Lane Blockage</td>
+							  				<td><input type="text" class="form-control num-of-managed-incidents" data-peak="amPeak"	data-lane="OneLane"	value="{{ amPeakOneLaneBlockageManIndt }}"></td>
+											<td><input type="text" class="form-control avg-incident-duration"  data-peak="amPeak"	data-lane="OneLane"	value="{{ amPeakOneLaneBlockageAVGID }}"></td>
+
+							  			</tr>
+							  		</tbody>
+							  	</table>
+							  </div>
+							</div>
+			  	</div>
+		  	</div>
+				<!-- PM PEAK INCIDENT -->
+				<div id="pm_peak_wrapper" class="">
+					<div class="pm-peak-incident peak-incident {{ pmPeakVisibility }}">
+						<div class="panel panel-default">
+						  <div class="panel-heading"><strong>PM Peak</strong></div>
+						  <div class="panel-body">
+						  	<table class="table table-centered">
+						  		<thead>
+						  			<tr>
+						  				<th>Incident Blockage Severity</th>
+						  				<th>Estimated Number of Incidents Managed</th>
+										<th>
+											Estimated Average Duration of Incidents Managed
+											<a href="#" class="segment-info-helper" data-toggle="tooltip" data-placement="top"
+									title="Average incident duration should not exceed 240 minutes.">
+												<span class="glyphicon glyphicon-info-sign"></span>
+										</a>
+									</th>
+						  			</tr>
+						  		</thead>
+						  		<tbody>
+						  			<tr class="peak-row">
+						  				<td>Shoulder Blockage</td>
+						  				<td><input type="text" class="form-control" data-peak="pmPeak"	data-lane="Shoulder"	value="{{ pmPeakShoulderBlockageManIndt }}"></td>
+										  <td><input type="text" class="form-control" data-peak="pmPeak"	data-lane="Shoulder"	value="{{ pmPeakShoulderBlockageAVGID }}"></td>
+
+						  			</tr>
+						  			<tr class="peak-row">
+						  				<td>One Lane Blockage</td>
+										  <td><input type="text" class="form-control" data-peak="pmPeak"	data-lane="OneLane"	value="{{ pmPeakOneLaneBlockageManIndt }}"></td>
+										  <td><input type="text" class="form-control" data-peak="pmPeak"	data-lane="OneLane"	value="{{ pmPeakOneLaneBlockageAVGID }}"></td>
+						  			</tr>
+						  		</tbody>
+						  	</table>
+						  </div>
+						</div>
+		  	</div>
+	  	</div>
+			<!-- OFF PEAK INCIDENT -->
+			<div id="off_peak_wrapper" class="">
+			  	<div class="off-peak-incident peak-incident {{ weekdayOffPeakVisibility }}">
+						<div class="panel panel-default">
+						  <div class="panel-heading"><strong>Weekday Off Peak</strong></div>
+						  <div class="panel-body">
+						  	<table class="table table-centered">
+						  		<thead>
+						  			<tr>
+						  				<th>Incident Blockage Severity</th>
+						  				<th>Estimated Number of Incidents Managed</th>
+										  <th>
+											Estimated Average Duration of Incidents Managed
+											  <a href="#" class="segment-info-helper" data-toggle="tooltip" data-placement="top"
+										title="Average incident duration should not exceed 240 minutes.">
+												  <span class="glyphicon glyphicon-info-sign"></span>
+									</a>
+								</th>
+						  			</tr>
+						  		</thead>
+						  		<tbody>
+						  			<tr class="peak-row">
+						  				<td>Shoulder Blockage</td>
+										  <td><input type="text" class="form-control" data-peak="weekdayOffPeak"	data-lane="Shoulder" value="{{ weekdayOffPeakShoulderBlockageManIndt }}"></td>
+						  				<td><input type="text" class="form-control" data-peak="weekdayOffPeak"	data-lane="Shoulder" value="{{ weekdayOffPeakShoulderBlockageAVGID }}"></td>
+						  			</tr>
+						  			<tr class="peak-row">
+						  				<td>One Lane Blockage</td>
+						  				<td><input type="text" class="form-control" data-peak="weekdayOffPeak"	data-lane="OneLane" value="{{ weekdayOffPeakOneLaneBlockageManIndt }}"></td>
+										<td><input type="text" class="form-control" data-peak="weekdayOffPeak"	data-lane="OneLane" value="{{ weekdayOffPeakOneLaneBlockageAVGID }}"></td>
+
+						  			</tr>
+						  		</tbody>
+						  	</table>
+						  </div>
+						</div>
+		  	</div>
+			</div>
+			<!-- // -->
+			<!-- WEEKEND INCIDENT -->
+			<div id="weekend_wrapper" class="">
+		  	<div class="weekend-incident peak-incident {{ weekendVisibility }}">
+					<div class="panel panel-default">
+					  <div class="panel-heading"><strong>Weekend Peak</strong></div>
+					  <div class="panel-body">
+					  	<table class="table table-centered">
+					  		<thead>
+					  			<tr>
+					  				<th>Incident Blockage Severity</th>
+					  				<th>Estimated Number of Incidents Managed</th>
+									  <th>
+										Estimated Average Duration of Incidents Managed
+										  <a href="#" class="segment-info-helper" data-toggle="tooltip" data-placement="top"
+									title="Average incident duration should not exceed 240 minutes.">
+											  <span class="glyphicon glyphicon-info-sign"></span>
+								</a>
+							</th>
+					  			</tr>
+					  		</thead>
+					  		<tbody>
+					  			<tr class="peak-row">
+					  				<td>Shoulder Blockage</td>
+					  				<td><input type="text" class="form-control" data-peak="weekend"	data-lane="Shoulder" value="{{ weekendShoulderBlockageManIndt }}"></td>
+									  <td><input type="text" class="form-control" data-peak="weekend"	data-lane="Shoulder" value="{{ weekendShoulderBlockageAVGID }}"></td>
+
+					  			</tr>
+					  			<tr class="peak-row">
+					  				<td>One Lane Blockage</td>
+					  				<td><input type="text" class="form-control" data-peak="weekend"	data-lane="OneLane" value="{{ weekendOneLaneBlockageManIndt }}"></td>
+									  <td><input type="text" class="form-control" data-peak="weekend"	data-lane="OneLane" value="{{ weekendOneLaneBlockageAVGID }}"></td>
+
+					  			</tr>
+					  		</tbody>
+					  	</table>
+					  </div>
+					</div>
+		  	</div>
+			</div>
+			<!-- // -->
+			<div class="form-group clearfix">
+				<div class="col-xs-7">
+					ESTIMATED PERCENTAGE OF SECONDARY INCIDENTS (enter as 0-100)
+				</div>
+				<div class="col-xs-5">
+					<input type="text" class="form-control" id="secondary_incidents_percentage" value="{{ secondaryIncidentsPercentage }}">
+				</div>
+			</div>
+
+		</div>
+	  <!-- // INCIDENT INFORMATION PANEL END -->
+	</div>
+	<!-- // RIGHT PANEL -->
+</div>
+<!--// SEGMENT INFORMATION PAGE
