@@ -53,6 +53,21 @@ define(['underscore'], function() {
 							text: 'Results for Segment ' + ( index + 1 ),
 							style: 'sspHeader'
 						},
+						{
+							table: {
+								widths: ['auto', 'auto'],
+								headerRows: 1,
+								body: [
+									[{ text: 'Segment Information', colSpan: 2, style: 'tableHeader' }, {}],
+									['Segment length (miles) ', { text: segment.get('segmentLength').toString() + ' miles', alignment: 'right' }],
+									['Number of ramps', { text: segment.get('numberOfRamps'), alignment: 'right' }],
+									['Number of traffic lanes by direction', { text: segment.get('numberOfTrafficLanesByDirection'), alignment: 'right' }],
+									['General terrain', { text: segment.get('generalTerrain'), alignment: 'right' }],									
+									['Horizontal curvature', { text: segment.get('horizontalCurvature'), alignment: 'right' }]
+								]
+							},
+							margin: [30, 20]
+						},
 		   			{
 		   				table: {
 		   					widths: [100, 100],
@@ -358,6 +373,19 @@ define(['underscore'], function() {
 						fontSize: 13,
 						bold: true,
 						margin: [0, 15, 0, 10]
+					},
+					bold_text: {
+						fontSize: 13,
+						bold: true
+					},
+					bold_text_gray_bg: {
+						fillColor: '#808080',
+						color: 'white',
+						fontSize: 13,
+						bold: true
+					},
+					hide: {
+						display: 'none'
 					},
 					tableHeader: {
 						fontSize: 14,

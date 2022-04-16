@@ -337,6 +337,7 @@ define([
       var totalFuelSavingsGallons = benefitCostCTRL.calculateFuelSavingsGallons( segments );
 
       $('#fuel').val( Number(totalFuelSavingsGallons).round(2) );
+      $('#fuel_money').val( Number(totalFuelSavingsMoney).round(2) );
 
       var benefits = 0;
       var totalSavings = benefitCostCTRL.calculateProjectSavings( segments );
