@@ -129,7 +129,7 @@ function ProjectTemplates() {
         '</select>',
       '</td>',
       '<td class="percentage-wrapper">',
-        '<input type="text" class="form-control percentage" value="{{ percentage }}">',
+        '<input type="text" class="form-control percentage" tabindex="1" value="{{ percentage }}">',
       '</td>',
     '</tr>'
   ].join('\n');

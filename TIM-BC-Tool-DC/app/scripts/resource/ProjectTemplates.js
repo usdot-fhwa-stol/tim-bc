@@ -28,32 +28,32 @@ function ProjectTemplates() {
   this.DefaultLaneBlockage = [
     '<tr class="peak-row shoulder">',
       '<td>Shoulder Blockage</td>',
-      '<td><input type="text" class="form-control tabindex="1"  avg-incident-duration" data-peak="{{ peakName }}" data-lane="Shoulder" value="{{ shoulderBlockageAVGID }}"></td>',
-      '<td><input type="text" class="form-control  tabindex="1" num-of-managed-incidents" data-peak="{{ peakName }}"  data-lane="Shoulder" value="{{ shoulderBlockageManIndt }}"></td>',
+      '<td><input type="text" class="form-control  avg-incident-duration" tabindex="1" data-peak="{{ peakName }}" data-lane="Shoulder" value="{{ shoulderBlockageAVGID }}"></td>',
+      '<td><input type="text" class="form-control  num-of-managed-incidents" tabindex="1"  data-peak="{{ peakName }}"  data-lane="Shoulder" value="{{ shoulderBlockageManIndt }}"></td>',
     '</tr>',
     '<tr class="peak-row first-lane">',
       '<td>One Lane Blockage</td>',
-      '<td><input type="text" class="form-control tabindex="1"  avg-incident-duration" data-peak="{{ peakName }}" data-lane="OneLane" value="{{ firstBlockageAVGID }}"></td>',
-      '<td><input type="text" class="form-control tabindex="1"  num-of-managed-incidents" data-peak="{{ peakName }}"  data-lane="OneLane" value="{{ firstBlockageManIndt }}"></td>',
+      '<td><input type="text" class="form-control avg-incident-duration" tabindex="1" data-peak="{{ peakName }}" data-lane="OneLane" value="{{ firstBlockageAVGID }}"></td>',
+      '<td><input type="text" class="form-control num-of-managed-incidents" tabindex="1"  data-peak="{{ peakName }}"  data-lane="OneLane" value="{{ firstBlockageManIndt }}"></td>',
     '</tr>'
   ].join('\n');
 
   this.TwoLaneBlockage = '<tr class="peak-row second-lane">' +
     '<td>Two Lane Blockage</td>' +
-    '<td><input type="text" class="form-control tabindex="1"  avg-incident-duration" data-peak="{{ peakName }}" data-lane="TwoLane" value="{{ secondBlockageAVGID }}"></td>' +
-    '<td><input type="text" class="form-control tabindex="1"  num-of-managed-incidents" data-peak="{{ peakName }}"  data-lane="TwoLane" value="{{ secondBlockageManIndt }}"></td>' +
+    '<td><input type="text" class="form-control  avg-incident-duration" tabindex="1" data-peak="{{ peakName }}" data-lane="TwoLane" value="{{ secondBlockageAVGID }}"></td>' +
+    '<td><input type="text" class="form-control num-of-managed-incidents" tabindex="1"   data-peak="{{ peakName }}"  data-lane="TwoLane" value="{{ secondBlockageManIndt }}"></td>' +
   '</tr>';
 
   this.ThreeLaneBlockage = '<tr class="peak-row third-lane">' +
     '<td>Three Lane Blockage</td>' +
-    '<td><input type="text" class="form-control tabindex="1"  avg-incident-duration" data-peak="{{ peakName }}" data-lane="ThreeLane" value="{{ thirdBlockageAVGID }}"></td>' +
-    '<td><input type="text" class="form-control tabindex="1"  num-of-managed-incidents" data-peak="{{ peakName }}"  data-lane="ThreeLane" value="{{ thirdBlockageManIndt }}"></td>' +
+    '<td><input type="text" class="form-control avg-incident-duration"  tabindex="1" data-peak="{{ peakName }}" data-lane="ThreeLane" value="{{ thirdBlockageAVGID }}"></td>' +
+    '<td><input type="text" class="form-control num-of-managed-incidents" tabindex="1"  data-peak="{{ peakName }}"  data-lane="ThreeLane" value="{{ thirdBlockageManIndt }}"></td>' +
   '</tr>';
 
   this.FourLaneBlockage = '<tr class="peak-row fourth-lane">' +
     '<td>Four Lane Blockage</td>' +
-    '<td><input type="text" class="form-control tabindex="1"  avg-incident-duration" data-peak="{{ peakName }}" data-lane="FourLane" value="{{ fourthBlockageAVGID }}"></td>' +
-    '<td><input type="text" class="form-control tabindex="1"  num-of-managed-incidents" data-peak="{{ peakName }}"  data-lane="FourLane" value="{{ fourthBlockageManIndt }}"></td>' +
+    '<td><input type="text" class="form-control avg-incident-duration"  tabindex="1" data-peak="{{ peakName }}" data-lane="FourLane" value="{{ fourthBlockageAVGID }}"></td>' +
+    '<td><input type="text" class="form-control num-of-managed-incidents"  tabindex="1" data-peak="{{ peakName }}"  data-lane="FourLane" value="{{ fourthBlockageManIndt }}"></td>' +
   '</tr>';
 
   /* INCIDENT DURATION */
@@ -109,7 +109,7 @@ function ProjectTemplates() {
         '<a href="#/project/segment/{{ index + 1 }}" tabindex="1"  class="edit-icon" title="Edit"><span class="glyphicon glyphicon-pencil"></span></a>',
         '<a href="#" class="delete-icon delete-segment" tabindex="1"  data-segment="{{ index }}" title="Delete"><span class="glyphicon glyphicon-trash"></span></a>',
       '</div>',
-      '<label><input type="checkbox" data-index="{{ index }}" class="segment-checkbox" {{ segmentChecked }}> <span class="segment-name">{{ segmentName }}</span> </label>',
+      '<label><input type="checkbox" data-index="{{ index }}" tabindex="1" class="segment-checkbox" {{ segmentChecked }}> <span class="segment-name">{{ segmentName }}</span> </label>',
     '</div>'
   ].join('\n');
 
