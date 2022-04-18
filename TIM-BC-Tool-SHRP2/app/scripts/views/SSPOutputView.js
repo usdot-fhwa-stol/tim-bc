@@ -408,6 +408,7 @@ define([
       var totalFuelSavingsGallons = benefitCostCTRL.calculateFuelSavingsGallons( segments );
 
       $('#fuel').val( Number(totalFuelSavingsGallons).round(2) );
+      $('#fuel_money').val( Number(totalFuelSavingsMoney).round(2) );
 
       var benefits = 0;
       var totalSavings = benefitCostCTRL.calculateProjectSavings( segments );
@@ -437,7 +438,10 @@ define([
       var benefitCost = ( benefits / annualStudyPD) / annualCost;
       // this checks if benefit cost ration is not a number and converts it to zero
       if( ! isFinite(benefitCost) ) benefitCost = 0;
-        $('#delay_savings').val( Number( (totalSavings) ).round(2) );
+      $('#delay_savings').val( Number( (totalSavings) ).round(2) );
+      $('#delay_savings_money').val( Number( benefitCostCTRL.calculateBenefits( segments ) ).round(2) );
+      $('#total_benefits_money').val( Number( benefits ).round(2) );
+      $('#total_cost_money').val( Number( annualCost ).round(2) );
       $('#benefit_cost_ratio').val( Number( benefitCost ).round(2) );
 
       _this.model.set('benefitCostRatio', benefitCost);

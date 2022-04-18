@@ -8,7 +8,7 @@ function ProjectTemplates() {
     '<div class="container center-text">',
       '<h1>Ooops! No Project found..</h1>',
       '<p>Avoid refreshing the page while working on a project or you\'ll lose all data.<br>Start a new Project or Upload Project Data.</p>',
-      '<a href="#/project/new" class="btn btn-primary" style="display: block; margin: 40px auto; width: 180px;">',
+      '<a href="#/project/new" class="btn btn-primary" tabindex="1"  style="display: block; margin: 40px auto; width: 180px;">',
       '<span class="glyphicon glyphicon-chevron-left"></span> Create Project</a>',
     '</div>'
   ].join('\n');
@@ -17,7 +17,7 @@ function ProjectTemplates() {
     '<div class="container center-text">',
       '<h1>Ooops! No Segments Entered..</h1>',
       '<p>Go back to Project Details and enter the number of segments you are reporting.</p>',
-      '<a href="#/project/details" class="btn btn-primary" style="display: block; margin: 40px auto; width: 180px;">',
+      '<a href="#/project/details" class="btn btn-primary" tabindex="1"  style="display: block; margin: 40px auto; width: 180px;">',
       '<span class="glyphicon glyphicon-chevron-left"></span> Project Details</a>',
     '</div>'
   ].join('\n');
@@ -106,8 +106,8 @@ function ProjectTemplates() {
   this.ListTemplate = [
     '<div class="checkbox" id="segment_{{ index }}">',
       '<div class="pull-right">',
-        '<a href="#/project/segment/{{ index + 1 }}" class="edit-icon" title="Edit"><span class="glyphicon glyphicon-pencil"></span></a>',
-        '<a href="#" class="delete-icon delete-segment" data-segment="{{ index }}" title="Delete"><span class="glyphicon glyphicon-trash"></span></a>',
+        '<a href="#/project/segment/{{ index + 1 }}" class="edit-icon" title="Edit"><span class="glyphicon glyphicon-pencil" tabindex="1" ></span></a>',
+        '<a href="#" class="delete-icon delete-segment" data-segment="{{ index }}" title="Delete"><span class="glyphicon glyphicon-trash" tabindex="1" ></span></a>',
       '</div>',
       '<label><input type="checkbox" data-index="{{ index }}" class="segment-checkbox" {{ segmentChecked }}   tabindex="1" > <span class="segment-name">{{ segmentName }}</span> </label>',
     '</div>'
@@ -116,7 +116,7 @@ function ProjectTemplates() {
   this.WeatherTemplate = [ 
     '<tr data-index="{{ id }}">',
       '<td>',
-        '<select name="Weather Information" id="weather_{{ id }}" class="form-control weather" value="{{ type }}">',
+        '<select name="Weather Information" id="weather_{{ id }}" class="form-control weather" tabindex="1"  value="{{ type }}">',
           '<option value="Clear">Clear</option>',
           '<option value="Light Rain">Light Rain</option>',
           '<option value="Heavy Rain">Heavy Rain</option>',
@@ -129,7 +129,7 @@ function ProjectTemplates() {
         '</select>',
       '</td>',
       '<td class="percentage-wrapper">',
-        '<input type="text" class="form-control percentage" value="{{ percentage }}">',
+        '<input type="text" class="form-control percentage" value="{{ percentage }}" tabindex="1" >',
       '</td>',
     '</tr>'
   ].join('\n');

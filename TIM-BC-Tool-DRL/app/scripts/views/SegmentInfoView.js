@@ -183,8 +183,14 @@ define([
           // check for errors
           if( hasErrors.length > 0 ) {
             this.currentSegment.set('valid', false);
+            if (!$("#calculate-ratio-seg").hasClass("disabled")){
+              $("#calculate-ratio-seg").addClass("disabled");
+            }
           } else {
             this.currentSegment.set('valid', true);
+            if ($("#calculate-ratio-seg").hasClass("disabled")){
+              $("#calculate-ratio-seg").removeClass("disabled");
+            }
           }
         }
 
@@ -1111,29 +1117,32 @@ define([
             // Render err message for no segments
             _this.$el.html( ProjectTemplates.NoSegment );
           } else {
-            // render template/partial:
-            _this.$el.html( _this.template( _this.currentSegment.toJSON() ) ).trigger('change');
-            // --
-            // Load regions by state
-            var regionsByState = JSON.parse( Regions );
-            var regions = regionsByState[ _this.model.get('projectState') ];
+            if(_this.currentSegment !== undefined)
+            {
+              // render template/partial:
+              _this.$el.html( _this.template( _this.currentSegment.toJSON() ) ).trigger('change');
+              // --
+              // Load regions by state
+              var regionsByState = JSON.parse( Regions );
+              var regions = regionsByState[ _this.model.get('projectState') ];
 
-            // This will load the regions by state
-            var options = '<option value="Select Region">Select Region</option>';
-            _.each(regions, function( region ) {
-              options += '<option value="' + region + '">' + region + '</option>';
-            });
+              // This will load the regions by state
+              var options = '<option value="Select Region">Select Region</option>';
+              _.each(regions, function( region ) {
+                options += '<option value="' + region + '">' + region + '</option>';
+              });
 
-            $('#regions_by_state').html( options );
-            //--
-            // Populate Model values:
-            _this.weatherInfoRows = _this.currentSegment.get('weatherRows');
-            _this.loadModelValues( id );
-            _this.validateCTRL.validateCurrentSegment( _this.currentSegment );
-            //_this.validateCTRL.validateIncidentInformation( _this.model );
-            //--
-            // Add project name:
-            $('#project_name').text(_this.model.get('projectName'));
+              $('#regions_by_state').html( options );
+              //--
+              // Populate Model values:
+              _this.weatherInfoRows = _this.currentSegment.get('weatherRows');
+              _this.loadModelValues( id );
+              _this.validateCTRL.validateCurrentSegment( _this.currentSegment );
+              //_this.validateCTRL.validateIncidentInformation( _this.model );
+              //--
+              // Add project name:
+              $('#project_name').text(_this.model.get('projectName'));
+            }
           }
           // --
         } else {

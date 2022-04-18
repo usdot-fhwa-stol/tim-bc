@@ -50,7 +50,7 @@
 				<p><em>Study period duration: {{ studyPeriodDuration }} months</em></p>
 				<!-- STUDY PERIOD DURATION -->
 				<div class="row">
-					<label for="study_period_duration" class="col-lg-6">
+					<label for="delay_savings" class="col-lg-6">
 						DELAY SAVINGS (HOURS):
 					</label>
 					<div class="form-group col-lg-5">
@@ -58,6 +58,12 @@
 					</div>
 					<div class="col-lg-1">
 						<input type="checkbox" id="delay_savings_checkbox" class="savings-checkbox" data-input="study_period_duration" checked="true">
+					</div>
+					<label for="delay_savings_money" class="col-lg-6">
+						DELAY SAVINGS (DOLLARS):
+					</label>
+					<div class="form-group col-lg-5">
+						<input type="text" id="delay_savings_money" class="form-control" name="Delay Savings in Hours" readonly="readonly">
 					</div>
 				</div>
 				<!-- // -->
@@ -71,6 +77,12 @@
 					</div>
 					<div class="col-lg-1">
 						<input type="checkbox" id="fuel_checkbox" class="savings-checkbox" data-input="fuel" checked="true">
+					</div>
+					<label for="fuel_money" class="col-lg-6">
+						FUEL (DOLLARS):
+					</label>
+					<div class="form-group col-lg-5">
+						<input type="text" id="fuel_money" class="form-control" name="Fuel Savings" readonly="readonly">
 					</div>
 				</div>
 				<!-- // -->
@@ -143,6 +155,22 @@
 				</div>
 				<!-- // -->
 				<div class="spacing hidden-xs"></div>
+				<!-- TOTAL COST  -->
+				<div class="row">
+					<label for="total_benefits_money" class="col-xs-6">
+						TOTAL BENEFIT (DOLLARS):
+					</label>
+					<div class="form-group col-xs-5">
+						<input type="text" id="total_benefits_money" class="form-control" name="TOTAL BENEFIT" readonly="readonly">
+					</div>
+				<!-- TOTAL BENEFITS -->
+					<label for="total_cost_money" class="col-xs-6">
+						TOTAL COST (DOLLARS):
+					</label>
+					<div class="form-group col-xs-5">
+						<input type="text" id="total_cost_money" class="form-control" name="TOTAL COST" readonly="readonly">
+					</div>
+				</div>
 				<!-- BENEFIT-COST RATIO OF CHOSEN FACTORS -->
 				<div class="row benefit-cost-ratio">
 					<label for="benefit_cost_ratio" class="col-xs-12">

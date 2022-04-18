@@ -369,9 +369,9 @@ define([
       if( ! isFinite(benefitCost) ) benefitCost = 0;
       $('#delay_savings').val( Number( (totalSavings) ).round(2) );
       $('#delay_savings_money').val( Number( benefitCostCTRL.calculateBenefits( segments ) ).round(2) );
-      $('#benefit_cost_ratio').val( Number( benefitCost ).round(2) );
       $('#total_benefits_money').val( Number( benefits ).round(2) );
       $('#total_cost_money').val( Number( annualCost ).round(2) );
+      $('#benefit_cost_ratio').val( Number( benefitCost ).round(2) );
       _this.model.set('benefitCostRatio', benefitCost);
       _this.model.set('secondaryIncidents', secondaryIncidentsSavings);
       _this.model.set('secondaryIncidentsSavings', secondaryIncidentsSavings * 4736);
