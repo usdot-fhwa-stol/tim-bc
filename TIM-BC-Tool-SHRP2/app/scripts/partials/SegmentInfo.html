@@ -18,7 +18,7 @@
 					<input type="text" name="Segment Name" id="segment_name" class="form-control text-align-left" value="{{ name }}" placeholder="Enter Segment Name">
 				</div>
 				<div class="form-group margin-bot-0 text-align-left">
-					<select name="Regions" id="regions_by_state" class="form-control">
+					<select name="Regions" id="regions_by_state" class="form-control"  tabindex="1" >
 						<option value="">Select Region</option>
 					</select>
 				</div>
@@ -56,7 +56,7 @@
           </a>
 					<label for="number_of_ramps" class="control-label col-lg-6">NUMBER OF RAMPS:</label>
 					<div class="col-lg-5 col-xs-11">
-						<input type="text" name="Number of Ramps" id="number_of_ramps" class="form-control" value="{{ numberOfRamps }}"></input>
+						<input type="text" name="Number of Ramps" id="number_of_ramps" tabindex="1"  class="form-control" value="{{ numberOfRamps }}"></input>
 					</div>
 				</div>
 				<!--// NUMBER OF RAMPS -->
@@ -68,7 +68,7 @@
           </a>
 					<label for="num_of_traffic_lanes" class="control-label col-lg-6">NUMBER OF TRAFFIC LANES BY DIRECTION:</label>
 					<div class="col-lg-5 col-xs-11">
-						<input type="text" name="Number of Traffic Lanes by Direction" id="num_of_traffic_lanes" class="form-control" value="{{ numberOfTrafficLanesByDirection }}"></input>
+						<input type="text" name="Number of Traffic Lanes by Direction"  tabindex="1" id="num_of_traffic_lanes" class="form-control" value="{{ numberOfTrafficLanesByDirection }}"></input>
 					</div>
 				</div>
 				<!--// NUMBER OF TRAFFIC LANES BY DIRECTION -->
@@ -220,7 +220,7 @@
 	              <span class=" glyphicon glyphicon-info-sign"></span>
 							</a>
 						</label>
-						<input type="text" class="form-control" id="proportion" value="{{ proportion }}" tabindex="1">
+						<input type="text" class="form-control" id="proportion"  tabindex="1" value="{{ proportion }}" tabindex="1">
 					</div>
 					<div class="col-lg-6">
 						<label for="compliance_before">
