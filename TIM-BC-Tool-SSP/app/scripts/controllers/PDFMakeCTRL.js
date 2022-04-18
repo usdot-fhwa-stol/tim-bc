@@ -374,19 +374,6 @@ define(['underscore'], function() {
 						bold: true,
 						margin: [0, 15, 0, 10]
 					},
-					bold_text: {
-						fontSize: 13,
-						bold: true
-					},
-					bold_text_gray_bg: {
-						fillColor: '#808080',
-						color: 'white',
-						fontSize: 13,
-						bold: true
-					},
-					hide: {
-						display: 'none'
-					},
 					tableHeader: {
 						fontSize: 14,
 						color: 'white',
