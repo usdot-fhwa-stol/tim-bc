@@ -260,8 +260,8 @@ define([
         var prevNum = _this.currentSegment.get('numberOfTrafficLanesByDirection');
         var value = Number( evnt.currentTarget.value ).round(0);
 
-        if( isNaN( value ) || value < 2 || value > 6 ) {
-          alert('Error: Number of traffic lanes should be a number from 2 to 6 only.')
+        if( isNaN( value ) || value < 3 || value > 6 ) {
+          alert('Error: The Dispatch Colocation (DC) module assumes that the DC strategy only applies to incidents that block two or more lanes. Number of traffic lanes should be a number from 3 to 6 only.')
           evnt.currentTarget.value = prevNum;
         } else {
           var resp = window.confirm('Changing this value will reset all Blockage Values to 0(Zero). Continue?');
