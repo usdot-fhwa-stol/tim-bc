@@ -291,7 +291,7 @@ define(['underscore'], function() {
 	   			},
 
 	   			{
-	   				text:'Several important benefits that can be derived from an SHRP2 program are accounted for in the B/C ratio developed by the SHRP2-BC Tool. The tool was purposefully developed to provide conservative, defensible estimates. This section outlines numerous additional benefits that have not been included in the B/C ratio, but that would increase its value if considered.'
+	   				text:'Several important benefits that can be derived from an SHRP2 program are accounted for in the B/C ratio developed by the National TIM Responder Training-BC Tool. The tool was purposefully developed to provide conservative, defensible estimates. This section outlines numerous additional benefits that have not been included in the B/C ratio, but that would increase its value if considered.'
 	   			},
 
 	   			{
@@ -300,7 +300,7 @@ define(['underscore'], function() {
 	   			},
 
 	   			{
-	   				text: 'The B/C ratio calculation does not include emissions, however the SHRP2-BC Tool does estimate reductions in HC, CO, NOx, and CO2 in metric tons and SOx in Grams based on the reduction in fuel consumption under “Total Program Savings” above. If monetary equivalents are available, the monetary equivalent of emissions savings can be added to the total benefits in dollars. By dividing this savings by the total costs, a new B/C estimate can be obtained that includes the value of emissions reductions.'
+	   				text: 'The B/C ratio calculation does not include emissions, however the National TIM Responder Training-BC Tool does estimate reductions in HC, CO, NOx, and CO2 in metric tons and SOx in Grams based on the reduction in fuel consumption under “Total Program Savings” above. If monetary equivalents are available, the monetary equivalent of emissions savings can be added to the total benefits in dollars. By dividing this savings by the total costs, a new B/C estimate can be obtained that includes the value of emissions reductions.'
 	   			},
 
 	   			{

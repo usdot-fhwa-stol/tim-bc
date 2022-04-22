@@ -58,24 +58,24 @@
               title="Enter the number of on- and off-ramps on the segment in a single direction.">
 						<span class="glyphicon glyphicon-info-sign"></span>
           </a>-->
-					<label for="number_of_ramps" class="control-label col-lg-6">NUMBER OF RAMPS PER DIRECTION</label>
+					<label for="number_of_ramps" class="control-label col-lg-6">NUMBER OF RAMPS IN THE TRAVEL DIRECTION</label>
 					<div class="col-lg-5 col-xs-11">
 						<input type="text" name="Number of Ramps" id="number_of_ramps" class="form-control" value="{{ numberOfRamps }}"></input>
 					</div>
 				</div>
 				<!--// NUMBER OF RAMPS -->
-				<!-- NUMBER OF TRAFFIC LANES BY DIRECTION -->
+				<!-- NUMBER OF TRAFFIC LANES IN THE TRAVEL DIRECTION -->
 				<div class="form-group clearfix margin-top-20">
 					<!--<a href="#" class="segment-info-helper pull-right" data-toggle="tooltip" data-placement="top"
               title="Enter the number of traffic lanes on the segment in a single direction.">
 						<span class="glyphicon glyphicon-info-sign"></span>
           </a>-->
-					<label for="num_of_traffic_lanes" class="control-label col-lg-6">NUMBER OF TRAFFIC LANES BY DIRECTION:</label>
+					<label for="num_of_traffic_lanes" class="control-label col-lg-6">NUMBER OF TRAFFIC LANES IN THE TRAVEL DIRECTION:</label>
 					<div class="col-lg-5 col-xs-11">
 						<input type="text" name="Number of Traffic Lanes by Direction" id="num_of_traffic_lanes" class="form-control" value="{{ numberOfTrafficLanesByDirection }}"></input>
 					</div>
 				</div>
-				<!--// NUMBER OF TRAFFIC LANES BY DIRECTION -->
+				<!--// NUMBER OF TRAFFIC LANES IN THE TRAVEL DIRECTION -->
 				<!-- GENERAL TERRAIN -->
 				<div class="form-group clearfix margin-top-20">
 				<!--Modified by Fang Zhou for updating speed reduction info for General Terrain 09/22/2015-->
@@ -160,7 +160,7 @@
 		<div id="program_information" class="main-panel panel panel-info margin-top-20">
 			<!-- PANEL HEADING -->
 		  <div class="panel-heading clearfix">
-		    <h3 class="panel-title pull-left">SHRP2 Program Information</h3>
+		    <h3 class="panel-title pull-left">National TIM Responder Training Program Information</h3>
 		    <span class="glyphicon glyphicon-ok-sign pull-right information-correct hidden"></span>
 		  </div>
 			<!--// PANEL HEADING -->
@@ -210,14 +210,14 @@
 					</div>
 				</div>
 				<!--// OPERATION TIME BODY -->
-				<p><strong>PROJECT SAVINGS:</strong></p>
+				<p><strong>ESTIMATED EFFECTIVENESS OF THE TIM PROGRAM: </strong><a href="#" data-toggle="modal" data-target="#SHRP2Effect"><span class="glyphicon glyphicon-question-sign"></span></a></p>
 
 				<div class="form-group clearfix margin-top-20">
 					<div class="col-lg-6">
 						<label for="proportion">
-							PROPORTION:
+							PERCENTAGE OF APPLICABLE CASES:
 							<a href="#" class="segment-info-helper" data-toggle="tooltip" data-placement="top"
-	              title="Enter the proportion of incidents of all lane blockages that could be improved by adopting SHRP2 Training, default: 100%.">
+	              title="Enter the proportion of incidents of all lane blockages that could be improved by adopting National TIM Responder Training, default: 100%.">
 	              <span class=" glyphicon glyphicon-info-sign"></span>
 							</a>
 						</label>
@@ -225,7 +225,7 @@
 					</div>
 					<div class="col-lg-6">
 						<label for="compliance_before">
-							IMPLEMENTATION:
+							PERCENTAGE OF APPLICABLE CASES AFFECTED:
 							<a href="#" class="segment-info-helper" data-toggle="tooltip" data-placement="top"
 	              title="Enter the proportion of applicable cases in which clearance times are improved, default: 100%.">
 	              <span class=" glyphicon glyphicon-info-sign"></span>
@@ -690,4 +690,24 @@
 	</div>
 	<!-- // RIGHT PANEL -->
 </div>
-<!--// SEGMENT INFORMATION PAGE
+<!--// SEGMENT INFORMATION PAGE -->
+<!-- SQCG Effectiveness Modal -->
+<div class="modal fade" data-backdrop="false" id="SHRP2Effect" tabindex="-1" role="dialog" aria-labelledby="Estimated Effectiveness of the TIM Program" aria-hidden="true">
+    <div class="modal-dialog" style="margin-top: 14%;">
+      <div class="modal-content">
+        <div class="modal-header">
+          <!-- <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button> -->
+          <h4 class="modal-title" id="SHRP2EffectTitle"><strong>Estimated Effectiveness of the TIM Program</strong></h4>
+        </div>
+        <div class="modal-body">
+          <p>For more information about variables in this section and their default values, please visit the <a href="https://fhwa-ops.atlassian.net/wiki/spaces/TIMBC/pages/458858/Duration+Proportion-Based+Estimation">Duration Proportion-Based Estimation</a> page on the TIM-BC Confluence space.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">
+            <span class="glyphicon glyphicon-remove"></span>
+            Close Window
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -566,7 +566,7 @@ define([
           _this.appendPeakRows( numberOfLanes );
           _this.appendLaneSaving( numberOfLanes );
         } else {
-          alert('NUMBER OF TRAFFIC LANES BY DIRECTION should be from 2 - 6 only!');
+          alert('NUMBER OF TRAFFIC LANES IN THE TRAVEL DIRECTION should be from 2 - 6 only!');
           $(element).val( 2 );
           _this.resetBlockages( _this.currentSegment );
           _this.updateShoulderBlockage( 2 );
