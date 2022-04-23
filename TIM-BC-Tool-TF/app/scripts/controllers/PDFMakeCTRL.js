@@ -48,6 +48,21 @@ define(['underscore'], function() {
 							text: 'Results for Segment ' + ( index + 1 ),
 							style: 'sspHeader'
 						},
+						{
+							table: {
+								widths: ['auto', 'auto'],
+								headerRows: 1,
+								body: [
+									[{ text: 'Segment Information', colSpan: 2, style: 'tableHeader' }, {}],
+									['Segment length (miles) ', { text: segment.get('segmentLength').toString() + ' miles', alignment: 'right' }],
+									['Number of ramps', { text: segment.get('numberOfRamps'), alignment: 'right' }],
+									['Number of traffic lanes by direction', { text: segment.get('numberOfTrafficLanesByDirection'), alignment: 'right' }],
+									['General terrain', { text: segment.get('generalTerrain'), alignment: 'right' }],									
+									['Horizontal curvature', { text: segment.get('horizontalCurvature'), alignment: 'right' }]
+								]
+							},
+							margin: [30, 20]
+						},
 		   			{
 		   				table: {
 		   					widths: [100, 100],
@@ -284,7 +299,7 @@ define(['underscore'], function() {
 	   			},
 
 	   			{
-	   				text:'Several important benefits that can be derived from an TIM-TF program are accounted for in the B/C ratio developed by the TIM-TF-BC Tool. The tool was purposefully developed to provide conservative, defensible estimates. This section outlines numerous additional benefits that have not been included in the B/C ratio, but that would increase its value if considered.'
+	   				text:'Several important benefits that can be derived from a TIM-TF program are accounted for in the B/C ratio developed by the TIM-TF-BC Tool. The tool was purposefully developed to provide conservative, defensible estimates. This section outlines numerous additional benefits that have not been included in the B/C ratio, but that would increase its value if considered.'
 	   			},
 
 	   			{
@@ -307,7 +322,7 @@ define(['underscore'], function() {
 	   			},
 
 	   			{
-	   				text: 'The B/C ratio calculation only considers the monetary value of property damage that might be prevented in the event of a secondary incident due to the existence of an TIM-TF program. The B/C ratio would be expected to rise very significantly if the value of even one fatal or near-fatal incident were included. Additionally, the savings derived from avoiding congestion resulting from secondary incidents due to the TIM-TF program have not been included in estimating the savings from secondary incidents.  '
+	   				text: 'The B/C ratio calculation only considers the monetary value of property damage that might be prevented in the event of a secondary incident due to the existence of a TIM-TF program. The B/C ratio would be expected to rise very significantly if the value of even one fatal or near-fatal incident were included. Additionally, the savings derived from avoiding congestion resulting from secondary incidents due to the TIM-TF program have not been included in estimating the savings from secondary incidents.  '
 	   			},
 
 	   			{

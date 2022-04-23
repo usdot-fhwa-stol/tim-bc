@@ -88,6 +88,9 @@ require([
   GlobalEvent.on('project:details', function( option ) {
     router.navigate('project/details', { trigger: true });
   });
+  GlobalEvent.on('project:new', function( option ) {
+    router.navigate('project/new', { trigger: true });
+  });
   // When Calculate Ratio is clicked we need to show the output page
   GlobalEvent.on('project:output', function( option ) {
     router.navigate('project/output', { trigger: true });

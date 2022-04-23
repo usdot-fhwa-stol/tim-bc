@@ -13,7 +13,7 @@ define([
         segmentLength: 0,
         numberOfRamps: 0,
         numberOfRampsSpeedReduction: 0,
-        numberOfTrafficLanesByDirection: 2,
+        numberOfTrafficLanesByDirection: 3,
         generalTerrain: 'Flat',
         horizontalCurvature: 'Straight',
         horizontalCurvatureSpeedReduction: 0,
