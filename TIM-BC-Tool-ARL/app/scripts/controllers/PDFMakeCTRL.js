@@ -37,7 +37,7 @@ define(['underscore'], function() {
 			_.each( segments, function( segment, index ) {
 				if( segment.get('checked') != false && segment.get('valid') != false ) {
 					values.totalTravelDelayCar += Number( segment.get('totalSegmentSavingCar') ).round(4);
-					let driverWage = segment.get('driverWage');
+					var driverWage = segment.get('driverWage');
 					values.totalCarMoney += values.totalTravelDelayCar * driverWage;
 					values.totalTravelDelayTruck += Number( segment.get('totalSegmentSavingTruck') ).round(4);
 					values.totalTruckMoney += values.totalTravelDelayTruck * 67;

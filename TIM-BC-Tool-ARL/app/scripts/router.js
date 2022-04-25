@@ -113,7 +113,7 @@ define([
     
     $('.validateProject').on('click', function(evt){
       evt.preventDefault();
-      let projectName = project.get('projectName');
+      var projectName = project.get('projectName');
       if(projectName.length > 0)
       {
         if(confirm("Are you sure to discard current project?"))
