@@ -26,7 +26,8 @@ define(['underscore'], function() {
 				fuelConsumptionGallons: 0,
 				fuelSavingsGallons: 0,
 				fuelSavingsMoney: 0,
-				totalSecondaryIncidents: 0
+				totalSecondaryIncidents: 0,
+				secondaryIncidentsSaving: 0,
 			};
 
 			var SEGMENT_LAYOUT = [];
@@ -44,6 +45,7 @@ define(['underscore'], function() {
 					values.fuelSavingsMoney += Number( segment.get('totalFuelSavings') ).round(4);
 
 					values.totalSecondaryIncidents += Number( segment.get('totalSegmentSecondaryIncidents') ).round(4);
+					values.secondaryIncidentsSaving += values.totalSecondaryIncidents * 4736;
 
 	   			// Removed by Robert Roth to avoid generating an extra blank page after segments pages
 					// var PAGEBREAK = null;
@@ -103,6 +105,7 @@ define(['underscore'], function() {
 								['Fuel Consumption of Passenger Vehicles', { text: segment.get('totalFuelSavingsGallons').round(2).toString() + ' Gallons', alignment: 'right' }],
 								['Fuel Saving of Passenger Vehicles', { text: segment.get('totalFuelSavings').round(2).toString() + ' Dollars', alignment: 'right' }],
 								['Secondary Incidents', { text: segment.get('totalSegmentSecondaryIncidents').round(4).toString(), alignment: 'right' }],
+								['Secondary Incidents', { text: '$'+(segment.get('totalSegmentSecondaryIncidents')* 4736).round(4).toString() + ' Dollars', alignment: 'right' }]
 		   					]
 		   				},
 		   				margin: [30, 20]
@@ -274,6 +277,7 @@ define(['underscore'], function() {
 							['Fuel Saving of Passenger Vehicles', { text: _this.getValues( project ).values.fuelSavingsGallons.round(2).toString() + ' Gallons', alignment: 'right'}],
 							['Fuel Saving of Passenger Vehicles', { text: '$' + _this.getValues( project ).values.fuelSavingsMoney.round(2).toString() + ' Dollars', alignment: 'right'}],
 							['Secondary Incidents', { text: project.get('secondaryIncidents').round(2).toString(), alignment: 'right'}],
+							['Secondary Incidents', { text: '$' + _this.getValues( project ).values.secondaryIncidentsSaving.round(2).toString() + ' Dollars', alignment: 'right'}],
 							[{ text: 'Benefit Cost Ratio', fillColor: '#DDD' }, { text: project.get('benefitCostRatio').round(2).toString(), alignment: 'right', fillColor: '#DDD'}]
 	   					]
 	   				},
