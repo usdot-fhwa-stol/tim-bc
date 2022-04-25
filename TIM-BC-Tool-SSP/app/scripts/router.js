@@ -131,6 +131,8 @@ define([
         {
           window.location.replace("../../index.html");
         }
+      }else{
+        window.location.replace("../../index.html");
       }
     });
     

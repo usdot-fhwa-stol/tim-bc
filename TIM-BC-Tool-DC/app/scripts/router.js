@@ -132,6 +132,8 @@ define([
         {
           window.location.replace("../../index.html");
         }
+      }else{
+        window.location.replace("../../index.html");
       }
     });
     // Watch for Project Name change, and allow or disallow
