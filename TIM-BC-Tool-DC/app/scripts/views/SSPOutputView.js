@@ -246,15 +246,11 @@ define([
 
         });
 
-        console.log("computedPeakSavings");
-        console.log(computedPeakSavings);
         // compute for secondary incident savings based on the totals
         // gathered from the DRL computed savings.
         var totalSegmentSecondaryIncidentsWithoutDRL = _this.getSecondaryIncidents( computedPeakSavings, userPeakSavings );
         var secondaryIncidentsSavings = totalSegmentSecondaryIncidentsWithoutDRL - totalSegmentSecondaryIncidentsWithoutTIM;
         totalSegmentSecondaryIncidentsSavings = secondaryIncidentsSavings * 4736;
-        console.log("userPeakSavings");
-        console.log(userPeakSavings);
         _.each( userPeakSavings, function( peakSaving ) {
           totalSegmentSaving -= peakSaving.totalPeakSavings.totalPeakTravelDelaySavings;
           totalSegmentSavingCar -= peakSaving.totalPeakSavings.totalPeakTravelDelayCarSavings;

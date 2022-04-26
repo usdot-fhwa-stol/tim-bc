@@ -12,7 +12,7 @@
           <div class="form-group col-xs-12">
             <label for="project_state" class="pull-left">
               State:&nbsp;
-              <a href="#" class="info" data-toggle="tooltip" data-placement="top" title="Select the state where the PTSA program operates."><span class="glyphicon glyphicon-info-sign"></span></a>
+              <!--<a href="#" class="info" data-toggle="tooltip" data-placement="top" title="Select the state where the PTSA program operates."><span class="glyphicon glyphicon-info-sign"></span></a>-->
             </label>
             <select name="State" id="project_state" class="form-control" title="Select the State where the PTSA Program is located." value="{{ projectState }}"></select>
           </div>
@@ -22,8 +22,13 @@
         <div class="row">
           <div class="form-group col-xs-12">
             <label for="number_of_segments" class="pull-left">
+<<<<<<< HEAD
               Number of Segments:&nbsp;
               <a href="#" class="info" data-toggle="tooltip" data-placement="top" title="Enter the number of segments (up to 20 miles each of homogeneous roadway) on which the PTSA vehicles operate."><span class="glyphicon glyphicon-info-sign"></span></a>
+=======
+              Number of Segments:&nbsp; <a href="#" data-toggle="modal" data-target="#PTSANumSeg"><span class="glyphicon glyphicon-question-sign"></span></a>
+              <!--<a href="#" class="info" data-toggle="tooltip" data-placement="top" title="Enter the number of segments (up to 20 miles each of homogeneous roadway) on which the PTSA vehicles operate."><span class="glyphicon glyphicon-info-sign"></span></a>-->
+>>>>>>> 30712315bdf10ca85369237197820d6788e3057e
             </label>
             <input type="text" class="form-control text-align-left details-input" id="number_of_segments" title="Insert the number of segments with distinct characteristics within the PTSA Program."
               value="{{ numOfSegments }}">
@@ -89,3 +94,26 @@
     </div>
 
   </div>
+<<<<<<< HEAD
+=======
+  <!-- Number of Segments Modal -->
+  <div class="modal fade" data-backdrop="false" id="PTSANumSeg" tabindex="-1" role="dialog" aria-labelledby="Number of Segments" aria-hidden="true">
+    <div class="modal-dialog" style="margin-top: 14%;">
+      <div class="modal-content">
+        <div class="modal-header">
+          <!-- <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button> -->
+          <h4 class="modal-title" id="PTSANumSegTitle"><strong>Number of Segments</strong></h4>
+        </div>
+        <div class="modal-body">
+          <p>Enter the number of roadway segments on which PTSAs are active. The segments should be homogeneous and should be less than 20 miles each. <br><br>For more information on homogeneous segment considerations, please visit the <a href="https://fhwa-ops.atlassian.net/wiki/spaces/TIMBC/pages/2686977/Homogenous+Road+Segments" target="_blank">Homogenous Road Segments page</a> on the TIM-BC Confluence space.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">
+            <span class="glyphicon glyphicon-remove"></span>
+            Close Window
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+>>>>>>> 30712315bdf10ca85369237197820d6788e3057e

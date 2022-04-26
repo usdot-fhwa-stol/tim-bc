@@ -424,7 +424,10 @@ define([
         secondaryIncidentsSavings = 0;
       }
       $('#secondary_accidents').val( Number( secondaryIncidentsSavings ).round(2) );
+<<<<<<< HEAD
       $('#secondary_accidents_savings').val( Number( secondaryIncidentsSavings ).round(2) * 4736 );
+=======
+>>>>>>> 30712315bdf10ca85369237197820d6788e3057e
 
       // Check if delay savings checkbox is checked first
       if( $('#delay_savings_checkbox').prop('checked') ) {
@@ -444,10 +447,14 @@ define([
       var benefitCost = ( benefits / annualStudyPD) / annualCost;
       // this checks if benefit cost ration is not a number and converts it to zero
       if( ! isFinite(benefitCost) ) benefitCost = 0;
+<<<<<<< HEAD
       $('#delay_savings').val( Number( (totalSavings) ).round(2) );
       $('#delay_savings_money').val( Number( benefitCostCTRL.calculateBenefits( segments ) ).round(2) );
       $('#total_benefits_money').val( Number( benefits ).round(2) );
       $('#total_cost_money').val( Number( annualCost ).round(2) );
+=======
+        $('#delay_savings').val( Number( (totalSavings) ).round(2) );
+>>>>>>> 30712315bdf10ca85369237197820d6788e3057e
       $('#benefit_cost_ratio').val( Number( benefitCost ).round(2) );
 
       _this.model.set('benefitCostRatio', benefitCost);

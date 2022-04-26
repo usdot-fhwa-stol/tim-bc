@@ -10,7 +10,11 @@
 		<!-- SEGMENT & REGION -->
 		<div class="row">
 			<div class="col-lg-12">
-				<h3>Segment:</h3>
+				<h3 id="segmentTitle">Segment: </h3><a href="#" class="segment-info-helper" data-toggle="tooltip" data-placement="top" display="inline"
+				title="Use the sidebar to duplicate selected segments, if needed.">
+					  <span class=" glyphicon glyphicon-info-sign">
+			</span>
+				  </a>
 				<div class="form-group">
 					<select name="Segments" id="select_segments" class="form-control" name="segment"></select>
 				</div>
@@ -89,14 +93,14 @@
 						</select>
 					</div>-->
 						<a href="#" class="segment-info-helper pull-right" data-toggle="tooltip" data-placement="top"
-              title="The following speed reductions of free flow speed are applied for different terrain scenarios: 
+              title="Reduction of free-flow speed is applied by terrian type as follows: 
               Flat - 0 mph;
               Level - 2 mph;
               Rolling Hills - 5 mph;
               Mountainous - 10 mph.">
 						<span class="glyphicon glyphicon-info-sign"></span>
           </a>
-					<label for="general_terrain" class="control-label col-lg-5">GENERAL TERRAIN:</label>
+					<label for="general_terrain" class="control-label col-lg-5">GENERAL TERRAIN:<br>(use tooltip to choose the appropriate type)</label>
 					<div class="col-lg-6 col-xs-11">
 						<select name="General Terrain" id="general_terrain" class="form-control">
 							<option value="Flat">Flat</option>
@@ -114,14 +118,14 @@
 				<!--	<a href="#" class="segment-info-helper pull-right" data-toggle="tooltip" data-placement="top"
               title="Choose the option that best describes the horizontal curvature of the segment.">-->
               			<a href="#" class="segment-info-helper pull-right" data-toggle="tooltip" data-placement="top"
-              title="The following speed reductions of free flow speed are applied for different curvature scenarios: 
+              title="Reduction of free-flow speed is applied by horizontal curvature as follows:: 
               Straight - 0 mph;
               Mild Curves - 5 mph;
               Sharp Curves - 10 mph.">
               <!--Modified end for updating speed reduction for Horizontal Curvature 09/22/2015-->
 						<span class="glyphicon glyphicon-info-sign"></span>
           </a>
-					<label for="horizontal_curvature" class="control-label col-lg-5">HORIZONTAL CURVATURE:</label>
+					<label for="horizontal_curvature" class="control-label col-lg-5">HORIZONTAL CURVATURE:<br>(use tooltip to choose the appropriate type)</label>
 					<div class="col-lg-6 col-xs-11">
 						<select name="horizontal_curvature" id="horizontal_curvature" class="form-control">
 							<option value="Straight" value="0">Straight</option>
@@ -159,7 +163,7 @@
 		<div id="program_information" class="main-panel panel panel-info margin-top-20">
 			<!-- PANEL HEADING -->
 		  <div class="panel-heading clearfix">
-		    <h3 class="panel-title pull-left">SHRP2 Program Information</h3>
+		    <h3 class="panel-title pull-left">National TIM Responder Training Program Information</h3>
 		    <span class="glyphicon glyphicon-ok-sign pull-right information-correct hidden"></span>
 		  </div>
 			<!--// PANEL HEADING -->
@@ -209,7 +213,7 @@
 					</div>
 				</div>
 				<!--// OPERATION TIME BODY -->
-				<p><strong>PROJECT SAVINGS:</strong></p>
+				<p><strong>ESTIMATED EFFECTIVENESS OF THE TIM PROGRAM: </strong><a href="#" data-toggle="modal" data-target="#SHRP2Effect"><span class="glyphicon glyphicon-question-sign"></span></a></p>
 
 				<div class="form-group clearfix margin-top-20">
 					<div class="col-lg-6">
@@ -533,14 +537,14 @@
 							  		<thead>
 							  			<tr>
 							  				<th>Incident Blockage Severity</th>
-							  				<th>
-							  					Average Incident Duration (Minutes)
-													<a href="#" class="segment-info-helper" data-toggle="tooltip" data-placement="top" tabindex="1"
-								              title="Note: The sum of Average Incident Duration and it's respective Duration Savings should not exceed 240 minutes.">
-														<span class="glyphicon glyphicon-info-sign"></span>
-								          </a>
-							          </th>
-							  				<th>Number of Incidents</th>
+							  				<th>Estimated Number of Incidents Managed</th>
+											<th>
+											Avg. Incident Duration (post-TIM, in minutes)
+												<a href="#" class="segment-info-helper" data-toggle="tooltip" data-placement="top"
+										title="Average incident duration post-TIM implementation should not exceed 239 minutes.">
+													<span class="glyphicon glyphicon-info-sign"></span>
+									</a>
+								</th>
 							  			</tr>
 							  		</thead>
 							  		<tbody>
@@ -687,4 +691,24 @@
 	</div>
 	<!-- // RIGHT PANEL -->
 </div>
-<!--// SEGMENT INFORMATION PAGE
+<!--// SEGMENT INFORMATION PAGE -->
+<!-- SQCG Effectiveness Modal -->
+<div class="modal fade" data-backdrop="false" id="SHRP2Effect" tabindex="-1" role="dialog" aria-labelledby="Estimated Effectiveness of the TIM Program" aria-hidden="true">
+    <div class="modal-dialog" style="margin-top: 14%;">
+      <div class="modal-content">
+        <div class="modal-header">
+          <!-- <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button> -->
+          <h4 class="modal-title" id="SHRP2EffectTitle"><strong>Estimated Effectiveness of the TIM Program</strong></h4>
+        </div>
+        <div class="modal-body">
+          <p>For more information about variables in this section and their default values, please visit the <a href="https://fhwa-ops.atlassian.net/wiki/spaces/TIMBC/pages/458858/Duration+Proportion-Based+Estimation" target="_blank">Duration Proportion-Based Estimation</a> page on the TIM-BC Confluence space.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">
+            <span class="glyphicon glyphicon-remove"></span>
+            Close Window
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -6,13 +6,14 @@
 
 	<h1>
 		Calculate Program Cost
-    <a class="secondary-icon-links" id="calculationsOpenTrigger1" href="#" data-toggle="modal" data-target="#calculationsModal">
+    <!--<a class="secondary-icon-links" id="calculationsOpenTrigger1" href="#" data-toggle="modal" data-target="#calculationsModal">
       <span class="glyphicon glyphicon-question-sign"></span>
       <span class="sr-only">Calculation Notes</span>
-    </a>
+    </a>-->
 	</h1>
-
-	<p class="total-of-all-rows"><strong>Annual Total:</strong> <span>$ 0</span></p>
+	
+	  <br>
+	<p class="total-of-all-rows"><strong>Annual Total:</strong> <span>$ 0</span><br>Annual Total = Annual Fixed Cost + 12 * Sum of all Monthly Total</p>
 	
 	<div class="form-horizontal margin-top-40 annual-cost-container">
 		<div class="form-group" style="">
@@ -22,8 +23,10 @@
 			</div>
 		</div>
 	</div>
-
+<br>
 	<table class="table table-bordered">
+		<p><strong>Monthly Operating Cost</strong></p>
+		<p>For each type of patrol vehicle (each row in the table below):<br> Monthly Total = Number of Vehicles  * (Driver's Hourly Rate * Working Hours per Day * Working Days per Month + Gas Price in the final analysis report produced by the TIM-BC tool * Fuel + Gas Provided to Road Users + Vehicle Maintenance + Other) </p>
 		<thead>
 			<tr>
 				<th>Patrol Vehicle Type</th>
@@ -31,8 +34,8 @@
 				<th>Driver's Hourly Rate ($/hr)</th>
 				<th>Working Hours per Day</th>
 				<th>Working Days per Month</th>
-				<th>Fuel (gal/month)</th>
-				<th>Provided Gas ($/month)</th>
+				<th>Fuel Needed by Each Patrol Vehicle (gal/month)<a href="#" class="info" data-toggle="tooltip" data-placement="top" title="Gas price is built in the TIMBC tool, and can be found in the final analysis report."><span class="glyphicon glyphicon-info-sign"></span></a></th>
+				<th>Gas Provided to Road Users ($/month)</th>
 				<th>Vehicle Maintenance ($/month)</th>
 				<th>Other ($/month)</th>
 				<th>Monthly Total</th>

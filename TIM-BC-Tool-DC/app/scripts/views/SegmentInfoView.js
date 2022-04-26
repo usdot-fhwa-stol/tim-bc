@@ -543,7 +543,7 @@ define([
           _this.appendPeakRows( numberOfLanes );
           _this.appendLaneSaving( numberOfLanes );
         } else {
-          alert('NUMBER OF TRAFFIC LANES BY DIRECTION should be from 2 - 6 only!');
+          alert('NUMBER OF TRAFFIC LANES IN THE TRAVEL DIRECTION should be from 2 - 6 only!');
           $(element).val( 2 );
           _this.resetBlockages( _this.currentSegment );
           _this.updateShoulderBlockage( 2 );
@@ -640,7 +640,7 @@ define([
       toggleAvgDuration : function( evnt ) {
         var _this = this;
         _this.clearEvent( evnt );
-        var resp = window.confirm('This will reset ALL savings previously entered. Continue?');
+        var resp = window.confirm('This will reset ALL incident duration savings previously entered.  Continue?');
         if( resp ) {
           //this.toggleActive( $(e.target) );
           $('#avg_duration_btn').addClass('active');
@@ -669,7 +669,7 @@ define([
           $('#avg_duration_container').addClass('hidden');
         } else {
           _this.clearEvent( evnt );
-          var resp = window.confirm('This will reset ALL savings previously entered. Continue?');
+          var resp = window.confirm('This will reset ALL incident duration savings previously entered.  Continue?');
           if( resp ) {
 
             $('#avg_duration_container').removeClass('has-error');

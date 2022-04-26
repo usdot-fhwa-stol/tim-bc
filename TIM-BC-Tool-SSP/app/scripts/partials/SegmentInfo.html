@@ -26,7 +26,7 @@
 		</div>
 		<!--// SEGMENT & REGION -->
 		<!-- // ROADWAY GEOMETRY PANEL -->
-		<div id="roadway_geometry" class="main-panel roadway_geo_panel panel panel-info margin-top-20">
+		<div id="roadway_geometry" class="main-panel panel panel-info margin-top-20">
 			<!-- PANEL HEADING -->
 		  <div class="panel-heading">
 		    <span class="glyphicon glyphicon-ok-sign pull-right information-correct hidden"></span>
@@ -156,7 +156,7 @@
 	<!-- MIDDLE PANEL -->
 	<div class="col-lg-4" role="form">
 		<!-- SSP PROGRAM INFORMATION PANEL -->
-		<div id="ssp_program_information" class="main-panel ssp-panel panel panel-info margin-top-20">
+		<div id="ssp_program_information" class="main-panel panel panel-info margin-top-20">
 			<!-- PANEL HEADING -->
 		  <div class="panel-heading clearfix">
 		    <h3 class="panel-title pull-left">SSP Program Information</h3>
@@ -210,7 +210,7 @@
 				</div>
 				<!--// OPERATION TIME BODY -->
 				<!-- <p><strong>Incident Duration:</strong></p> -->
-				<p><strong>INCIDENT DURATION SAVINGS:</strong></p>
+				<p><strong>ESTIMATED INCIDENT DURATION SAVINGS:</strong></p>
 
 				<div class="form-group">
 					<!-- <p>CHOOSE HOW TO ENTER SAVINGS:</p> -->
@@ -264,7 +264,7 @@
 		</div>
 		<!--// SSP PROGRAM INFORMATION -->
 		<!-- TRAFFICE INFORMATION PANEL -->
-		<div id="traffic_information" class="main-panel traffic_info_panel  panel panel-info margin-top-20">
+		<div id="traffic_information" class="main-panel panel panel-info margin-top-20">
 
 		  <div class="panel-heading">
 		    <span class="glyphicon glyphicon-ok-sign pull-right information-correct hidden"></span>
@@ -324,14 +324,14 @@
 				<div class="panel panel-default">
 				  <div class="panel-heading"><strong>Weather Information</strong> (ensure selections add up to 100%)</div>
 				  <div class="panel-body">
-				  	<p class="error-weather text-danger hidden">Note: The total of all Weather Percentage must be equal to 100.</p>
+				  	<p class="error-weather text-danger hidden">The total of all Weather Percentage must be equal to 100.</p>
 				    <table class="table table-centered weather-information">     
 				    	<thead>
 				    		<tr>
 				    			<th>WEATHER
 				    			<!--Added by Fang Zhou for adding speed reduction for weather 09/21/2015-->
 				    				<a href="#" class="segment-info-helper" data-toggle="tooltip" data-placement="top"
-								              title="The following percentage reductions are applied to the free low speed in the calculation:
+								              title="Reduction of free-flow speed is applied by weather type as follows:
 								              Clear - 0%;
 								              Light Rain - 5%;
 								              Wind - 5%; 
@@ -525,7 +525,7 @@
 	<!-- LEFT PANEL -->
 	<div class="col-lg-4">
 		<!-- // INCIDENT INFORMATION PANEL -->
-		<div id="incident_information" class="main-panel incident_info_panel panel panel-info margin-top-20">
+		<div id="incident_information" class="main-panel panel panel-info margin-top-20">
 
 		  <div class="panel-heading">
 		    <span class="glyphicon glyphicon-ok-sign pull-right information-correct hidden"></span>
@@ -696,9 +696,28 @@
 			</div>
 
 		</div>
-	 	 <!-- // INCIDENT INFORMATION PANEL END -->
-		</div>
+	  <!-- // INCIDENT INFORMATION PANEL END -->
 	</div>
 	<!-- // RIGHT PANEL -->
 </div>
-<!--// SEGMENT INFORMATION PAGE
+<!--// SEGMENT INFORMATION PAGE -->
+	<!-- Enter Savings Modal -->
+<div class="modal fade" data-backdrop="false" id="entSavings" tabindex="-1" role="dialog" aria-labelledby="Choose how to enter savings" aria-hidden="true">
+	<div class="modal-dialog" style="margin-top: 14%;">
+	  <div class="modal-content">
+		<div class="modal-header">
+		  <!-- <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button> -->
+		  <h4 class="modal-title" id="entSavingsTitle"><strong>How to Enter Savings</strong></h4>
+		</div>
+		<div class="modal-body">
+		  <p>Enter the estimated incident duration savings as a result of the TIM program, either as an average across all incidents or by lane blockage severities.   For more information about typical values to use, please visit the <a href="https://fhwa-ops.atlassian.net/wiki/spaces/TIMBC/pages/2719758/Incident+Duration+Savings+Values" target="_blank">Incident Duration Savings Values</a> page on the TIM-BC Confluence.</p>
+		</div>
+		<div class="modal-footer">
+		  <button type="button" class="btn btn-primary" data-dismiss="modal">
+			<span class="glyphicon glyphicon-remove"></span>
+			Close Window
+		  </button>
+		</div>
+	  </div>
+	</div>
+  </div>

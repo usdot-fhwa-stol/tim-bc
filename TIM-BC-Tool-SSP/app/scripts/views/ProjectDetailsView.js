@@ -277,7 +277,7 @@ define([
         this.$el.html(
           '<div class="container center-text">' +
           '<h1>Ooops! No Project found..</h1>' +
-          '<p>Avoid refreshing the page while working on a project or you\'ll lose all data.<br>Start a new Project or Upload Project Data.</p>' +
+          '<p>Avoid refreshing the page while working on a project or you\'ll lose all data.<br>Start a new Project or Open Existing Analysis Project.</p>' +
           '<a href="#/project/new" class="btn btn-primary" style="display: block; margin: 40px auto; width: 180px;">' +
           '<span class="glyphicon glyphicon-chevron-left"></span> Create Project</a>' +
           '</div>'
