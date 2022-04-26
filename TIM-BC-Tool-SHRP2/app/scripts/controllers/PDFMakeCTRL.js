@@ -22,11 +22,14 @@ define(['underscore'], function() {
 			var segments = project.get('segments');
 			var values = {
 				totalTravelDelayCar: 0,
+				totalCarMoney: 0,
 				totalTravelDelayTruck: 0,
+				totalTruckMoney: 0,
 				fuelConsumptionGallons: 0,
 				fuelSavingsGallons: 0,
 				fuelSavingsMoney: 0,
-				totalSecondaryIncidents: 0
+				totalSecondaryIncidents: 0,
+				secondaryIncidentsSaving: 0,
 			};
 
 			var SEGMENT_LAYOUT = [];
@@ -34,13 +37,17 @@ define(['underscore'], function() {
 			_.each( segments, function( segment, index ) {
 				if( segment.get('checked') != false && segment.get('valid') != false ) {
 					values.totalTravelDelayCar += Number( segment.get('totalSegmentSavingCar') ).round(4);
+					var driverWage = segment.get('driverWage');
+					values.totalCarMoney += values.totalTravelDelayCar * driverWage;
 					values.totalTravelDelayTruck += Number( segment.get('totalSegmentSavingTruck') ).round(4);
+					values.totalTruckMoney += values.totalTravelDelayTruck * 67;
 
 					values.fuelConsumptionGallons += Number( segment.get('totalFuelConsumptionGallons') ).round(4);
 					values.fuelSavingsGallons += Number( segment.get('totalFuelSavingsGallons') ).round(4);
 					values.fuelSavingsMoney += Number( segment.get('totalFuelSavings') ).round(4);
 
 					values.totalSecondaryIncidents += Number( segment.get('totalSegmentSecondaryIncidents') ).round(4);
+					values.secondaryIncidentsSaving += values.totalSecondaryIncidents * 4736;
 
 	   			// Removed by Robert Roth to avoid generating an extra blank page after segments pages
 					// var PAGEBREAK = null;
@@ -91,11 +98,16 @@ define(['underscore'], function() {
 		   					widths: ['auto', 'auto'],
 		   					headerRows: 1,
 		   					body: [
-		   						[{ text: 'Total Segment Savings', colSpan: 2, style: 'tableHeader' }, {}],
-		   						['Travel Delay of Passenger Vehicles', { text: segment.get('totalSegmentSavingCar').round(2).toString() + ' Vehicle Hours', alignment: 'right' }],
-		   						['Travel Delay of Trucks', { text: segment.get('totalSegmentSavingTruck').round(2).toString() + ' Vehicle Hours', alignment: 'right' }],
-		   						['Fuel Consumption of Passenger Vehicles', { text: segment.get('totalFuelSavingsGallons').round(2).toString() + ' Gallons', alignment: 'right' }],
-		   						['Secondary Incidents', { text: segment.get('totalSegmentSecondaryIncidents').round(4).toString(), alignment: 'right' }],
+								[{ text: 'Total Segment Savings', colSpan: 2, style: 'tableHeader' }, {}],
+								['Travel Delay of Passenger Vehicles', { text: segment.get('totalSegmentSavingCar').round(2).toString() + ' Vehicle Hours', alignment: 'right' }],
+								['Travel Delay of Passenger Vehicles', { text: '$'+ (segment.get('totalSegmentSavingCar')*segment.get('driverWage')).round(2).toString() + ' Vehicle Dollars', alignment: 'right' }],
+								['Travel Delay of Trucks', { text: segment.get('totalSegmentSavingTruck').round(2).toString() + ' Vehicle Hours', alignment: 'right' }],
+								// summarizes total truck savings and monetize it by multiplying the hours by 67						   
+								['Travel Delay of Trucks', { text: '$'+ (segment.get('totalSegmentSavingTruck')* 67).round(2).toString() + ' Vehicle Dollars', alignment: 'right' }],
+								['Fuel Consumption of Passenger Vehicles', { text: segment.get('totalFuelSavingsGallons').round(2).toString() + ' Gallons', alignment: 'right' }],
+								['Fuel Saving of Passenger Vehicles', { text: segment.get('totalFuelSavings').round(2).toString() + ' Dollars', alignment: 'right' }],
+								['Secondary Incidents', { text: segment.get('totalSegmentSecondaryIncidents').round(4).toString(), alignment: 'right' }],		
+								['Secondary Incidents', { text: '$'+(segment.get('totalSegmentSecondaryIncidents')* 4736).round(4).toString() + ' Dollars', alignment: 'right' }]
 		   					]
 		   				},
 		   				margin: [30, 20]
@@ -261,12 +273,16 @@ define(['underscore'], function() {
 	   					widths: ['auto', 'auto'],
 	   					headerRows: 1,
 	   					body: [
-	   						[{ text: 'Total Program Savings', colSpan: 2, style: 'tableHeader' }, {}],
-	   						['Travel Delay of Passenger Vehicles', { text: _this.getValues( project ).values.totalTravelDelayCar.round(2).toString() + ' Vehicle Hours', alignment: 'right'}],
-	   						['Travel Delay of Trucks', { text: _this.getValues( project ).values.totalTravelDelayTruck.round(2).toString() + ' Vehicle Hours', alignment: 'right'}],
-	   						['Fuel Consumption of Passenger Vehicles', { text: _this.getValues( project ).values.fuelSavingsGallons.round(2).toString() + ' Gallons', alignment: 'right'}],
-	   						['Secondary Incidents', { text: project.get('secondaryIncidents').round(2).toString(), alignment: 'right'}],
-	   						[{ text: 'Benefit Cost Ratio', fillColor: '#DDD' }, { text: project.get('benefitCostRatio').round(2).toString(), alignment: 'right', fillColor: '#DDD'}]
+							[{ text: 'Total Program Savings', colSpan: 2, style: 'tableHeader' }, {}],
+							['Travel Delay of Passenger Vehicles', { text: _this.getValues( project ).values.totalTravelDelayCar.round(2).toString() + ' Vehicle Hours', alignment: 'right'}],
+							['Travel Delay of Passenger Vehicles',  { text:'$' + _this.getValues( project ).values.totalCarMoney.round(2).toString() + ' Vehicle Dollars', alignment: 'right'}],
+							['Travel Delay of Trucks', { text: _this.getValues( project ).values.totalTravelDelayTruck.round(2).toString() + ' Vehicle Hours', alignment: 'right'}],
+							['Travel Delay of Trucks', { text: '$' + _this.getValues( project ).values.totalTruckMoney.round(2).toString() + ' Vehicle Dollars', alignment: 'right'}],
+							['Fuel Saving of Passenger Vehicles', { text: _this.getValues( project ).values.fuelSavingsGallons.round(2).toString() + ' Gallons', alignment: 'right'}],
+							['Fuel Saving of Passenger Vehicles', { text: '$' + _this.getValues( project ).values.fuelSavingsMoney.round(2).toString() + ' Dollars', alignment: 'right'}],
+							['Secondary Incidents', { text: project.get('secondaryIncidents').round(2).toString(), alignment: 'right'}],
+							['Secondary Incidents', { text: '$' + _this.getValues( project ).values.secondaryIncidentsSaving.round(2).toString() + ' Dollars', alignment: 'right'}],
+							[{ text: 'Benefit Cost Ratio', fillColor: '#DDD' }, { text: project.get('benefitCostRatio').round(2).toString(), alignment: 'right', fillColor: '#DDD'}]
 	   					]
 	   				},
 	   				margin: [30, 20]

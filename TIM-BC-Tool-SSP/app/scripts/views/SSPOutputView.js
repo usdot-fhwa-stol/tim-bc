@@ -348,6 +348,7 @@ define([
         secondaryIncidentsSavings = 0;
       }
       $('#secondary_accidents').val( Number( secondaryIncidentsSavings ).round(2) );
+      $('#secondary_accidents_savings').val( Number( secondaryIncidentsSavings ).round(2) * 4736 );
 
       // Check if delay savings checkbox is checked first
       if( $('#delay_savings_checkbox').prop('checked') ) {
