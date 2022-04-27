@@ -10,7 +10,11 @@
 		<!-- SEGMENT & REGION -->
 		<div class="row">
 			<div class="col-lg-12">
-				<h3>Segment:</h3>
+				<h3 id="segmentTitle">Segment: </h3><a href="#" class="segment-info-helper" data-toggle="tooltip" data-placement="top" display="inline"
+				title="Use the sidebar to duplicate selected segments, if needed.">
+					  <span class=" glyphicon glyphicon-info-sign">
+			</span>
+				  </a>
 				<div class="form-group">
 					<select name="Segments" id="select_segments" class="form-control" name="segment" tabindex="1"></select>
 				</div>
@@ -54,7 +58,7 @@
               title="Enter the number of on- and off-ramps on the segment in a single direction.">
 						<span class="glyphicon glyphicon-info-sign"></span>
           </a>
-					<label for="number_of_ramps" class="control-label col-lg-6">NUMBER OF RAMPS:</label>
+					<label for="number_of_ramps" class="control-label col-lg-6">NUMBER OF RAMPS IN THE TRAVEL DIRECTION:</label>
 					<div class="col-lg-5 col-xs-11">
 						<input type="text" name="Number of Ramps" tabindex="1" id="number_of_ramps" class="form-control" value="{{ numberOfRamps }}"></input>
 					</div>
@@ -66,7 +70,7 @@
               title="Enter the number of traffic lanes on the segment in a single direction.">
 						<span class="glyphicon glyphicon-info-sign"></span>
           </a>
-					<label for="num_of_traffic_lanes" class="control-label col-lg-6">NUMBER OF TRAFFIC LANES BY DIRECTION:</label>
+					<label for="num_of_traffic_lanes" class="control-label col-lg-6">NUMBER OF TRAFFIC LANES IN THE TRAVEL DIRECTION</label>
 					<div class="col-lg-5 col-xs-11">
 						<input type="text" name="Number of Traffic Lanes by Direction" tabindex="1" id="num_of_traffic_lanes" class="form-control" value="{{ numberOfTrafficLanesByDirection }}"></input>
 					</div>
@@ -79,7 +83,8 @@
               title="Choose the option that best describes the terrain of the segment.">
 						<span class="glyphicon glyphicon-info-sign"></span>
           </a>
-					<label for="general_terrain" class="control-label col-lg-5">GENERAL TERRAIN:</label>
+					<label for="general_terrain" class="control-label col-lg-5">GENERAL TERRAIN:<br>(use tooltip to 
+ choose the appropriate type)</label>
 					<div class="col-lg-6 col-xs-11">
 						<select name="General Terrain" id="general_terrain" class="form-control">
 							<option value="Flat">Flat - 0%</option>
@@ -96,7 +101,8 @@
               Mountainous - 10 mph.">
 						<span class="glyphicon glyphicon-info-sign"></span>
           </a>
-					<label for="general_terrain" class="control-label col-lg-5">GENERAL TERRAIN:</label>
+					<label for="general_terrain" class="control-label col-lg-5">GENERAL TERRAIN:<br>(use tooltip to 
+ choose the appropriate type)</label>
 					<div class="col-lg-6 col-xs-11">
 						<select name="General Terrain" id="general_terrain" class="form-control" tabindex="1">
 							<option value="Flat">Flat</option>
@@ -114,14 +120,14 @@
 				<!--	<a href="#" class="segment-info-helper pull-right" data-toggle="tooltip" data-placement="top"
               title="Choose the option that best describes the horizontal curvature of the segment.">-->
               			<a href="#" class="segment-info-helper pull-right" data-toggle="tooltip" tabindex="1" data-placement="top"
-              title="The following speed reductions of free flow speed are applied for different curvature scenarios: 
+              title="Reduction of free-flow speed is applied by horizontal curvature as follows: 
               Straight - 0 mph;
               Mild Curves - 5 mph;
               Sharp Curves - 10 mph.">
               	<!--Modified by Fang Zhou for updating speed reduction info for Horizontal Curvature 09/22/2015-->
 						<span class="glyphicon glyphicon-info-sign"></span>
           </a>
-					<label for="horizontal_curvature" class="control-label col-lg-5">HORIZONTAL CURVATURE:</label>
+					<label for="horizontal_curvature" class="control-label col-lg-5">HORIZONTAL CURVATURE:<BR>(use tooltip to choose the appropriate type)</label>
 					<div class="col-lg-6 col-xs-11">
 						<select name="horizontal_curvature" id="horizontal_curvature" class="form-control" tabindex="1">
 							<option value="Straight" value="0">Straight</option>
@@ -360,7 +366,7 @@
 								<th>
 									Traffic Volume (VEH/H/Lane)
 									<a href="#" class="segment-info-helper" tabindex="1" data-toggle="tooltip" data-placement="top"
-				              title="Note: Traffic Volume should range between 500 - 2200.">
+				              title="Traffic Volume should range between 500 - 2200 veh/h/lane.">
 										<span class="glyphicon glyphicon-info-sign"></span>
 				          </a>
 								</th>
@@ -402,7 +408,7 @@
 				    			<th>WEATHER
 				    			<!--Added by Fang Zhou for adding speed reduction info for weather 09/22/2015-->
 				    				<a href="#" class="segment-info-helper" tabindex="1" data-toggle="tooltip" data-placement="top"
-								              title="The following percentage reductions are applied to the free low speed in the calculation:
+								              title="Reduction of free-flow speed is applied by weather type as follows:
 								              Clear - 0%;
 								              Light Rain - 5%;
 								              Wind - 5%; 
@@ -618,9 +624,9 @@
 							  			<tr>
 							  				<th>Incident Blockage Severity</th>
 							  				<th>
-							  					Average Incident Duration (Minutes)
+							  					Avg. Incident Duration (post-TIM, in minutes)
 													<a href="#" class="segment-info-helper" data-toggle="tooltip" data-placement="top" tabindex="1"
-								              title="Note: The sum of Average Incident Duration and it's respective Duration Savings should not exceed 240 minutes.">
+								              title="Average incident duration post TIM implementation should not exceed 239 minutes.">
 														<span class="glyphicon glyphicon-info-sign"></span>
 								          </a>
 							          </th>
@@ -655,9 +661,9 @@
 						  			<tr>
 						  				<th>Incident Blockage Severity</th>
 							  				<th>
-							  					Average Incident Duration (Minutes)
+							  					Avg. Incident Duration (post-TIM, in minutes)
 													<a href="#" class="segment-info-helper" tabindex="1" data-toggle="tooltip" data-placement="top"
-								              title="Note: The sum of Average Incident Duration and it's respective Duration Savings should not exceed 240 minutes.">
+								              title="Average incident duration post TIM implementation should not exceed 239 minutes.">
 														<span class="glyphicon glyphicon-info-sign"></span>
 								          </a>
 							          </th>
@@ -692,9 +698,9 @@
 						  			<tr>
 						  				<th>Incident Blockage Severity</th>
 							  				<th>
-							  					Average Incident Duration (Minutes)
+							  					Avg. Incident Duration (post-TIM, in minutes)
 													<a href="#" class="segment-info-helper" tabindex="1" data-toggle="tooltip" data-placement="top"
-								              title="Note: The sum of Average Incident Duration and it's respective Duration Savings should not exceed 240 minutes.">
+								              title="Average incident duration post TIM implementation should not exceed 239 minutes.">
 														<span class="glyphicon glyphicon-info-sign"></span>
 								          </a>
 							          </th>
@@ -730,9 +736,9 @@
 					  			<tr>
 					  				<th>Incident Blockage Severity</th>
 							  				<th>
-							  					Average Incident Duration (Minutes)
+							  					Avg. Incident Duration (post-TIM, in minutes)
 													<a href="#" class="segment-info-helper" tabindex="1" data-toggle="tooltip" data-placement="top"
-								              title="Note: The sum of Average Incident Duration and it's respective Duration Savings should not exceed 240 minutes.">
+								              title="Average incident duration post TIM implementation should not exceed 239 minutes.">
 														<span class="glyphicon glyphicon-info-sign"></span>
 								          </a>
 							          </th>
@@ -759,7 +765,7 @@
 			<!-- // -->
 			<div class="form-group clearfix">
 				<div class="col-xs-7">
-					PERCENTAGE OF ESTIMATED SECONDARY INCIDENTS (enter as 0-100):
+					ESTIMATED PERCENTAGE OF SECONDARY INCIDENTS (enter as 0-100):
 				</div>
 				<div class="col-xs-5">
 					<input type="text" class="form-control" id="secondary_incidents_percentage" tabindex="1" value="{{ secondaryIncidentsPercentage }}">

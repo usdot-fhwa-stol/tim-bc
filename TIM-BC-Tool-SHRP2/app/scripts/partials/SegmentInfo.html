@@ -42,10 +42,10 @@
 	  	<div class="panel-body">
 				<!-- SEGMENT LENGTH IN MILES -->
 				<div class="form-group clearfix">
-					<a href="#" class="segment-info-helper pull-right" data-toggle="tooltip" data-placement="top" 
-              title="Enter the total segment length in miles."   tabindex="1" >
+					<!--<a href="#" class="segment-info-helper pull-right" data-toggle="tooltip" data-placement="top"
+              title="Enter the total segment length in miles.">
 						<span class="glyphicon glyphicon-info-sign"></span>
-          </a>
+          </a>-->
 					<label for="segment_length" class="control-label col-lg-6">SEGMENT LENGTH IN MILES:</label>
 					<div class="col-lg-5 col-xs-11">
 						<input type="text" name="Segment Length in Miles" tabindex="1" id="segment_length" class="form-control" value="{{ segmentLength }}"></input>
@@ -53,12 +53,12 @@
 				</div>
 				<!--// SEGMENT LENGTH IN MILES -->
 				<!-- NUMBER OF RAMPS -->
-				<div class="form-group clearfix margin-top-20"> 
-					<a href="#" class="segment-info-helper pull-right" data-toggle="tooltip" data-placement="top" tabindex="1"
+				<div class="form-group clearfix margin-top-20">
+					<!--<a href="#" class="segment-info-helper pull-right" data-toggle="tooltip" data-placement="top"
               title="Enter the number of on- and off-ramps on the segment in a single direction.">
 						<span class="glyphicon glyphicon-info-sign"></span>
-          </a>
-					<label for="number_of_ramps" class="control-label col-lg-6">NUMBER OF RAMPS:</label>
+          </a>-->
+					<label for="number_of_ramps" class="control-label col-lg-6">NUMBER OF RAMPS IN THE TRAVEL DIRECTION:</label>
 					<div class="col-lg-5 col-xs-11">
 						<input type="text" name="Number of Ramps" id="number_of_ramps" tabindex="1"  class="form-control" value="{{ numberOfRamps }}"></input>
 					</div>
@@ -66,11 +66,11 @@
 				<!--// NUMBER OF RAMPS -->
 				<!-- NUMBER OF TRAFFIC LANES BY DIRECTION -->
 				<div class="form-group clearfix margin-top-20">
-					<a href="#" class="segment-info-helper pull-right" data-toggle="tooltip" data-placement="top"  tabindex="1"
+					<!--<a href="#" class="segment-info-helper pull-right" data-toggle="tooltip" data-placement="top"
               title="Enter the number of traffic lanes on the segment in a single direction.">
 						<span class="glyphicon glyphicon-info-sign"></span>
-          </a>
-					<label for="num_of_traffic_lanes" class="control-label col-lg-6">NUMBER OF TRAFFIC LANES BY DIRECTION:</label>
+          </a>-->
+					<label for="num_of_traffic_lanes" class="control-label col-lg-6">NUMBER OF TRAFFIC LANES IN THE TRAVEL DIRECTION</label>
 					<div class="col-lg-5 col-xs-11">
 						<input type="text" name="Number of Traffic Lanes by Direction"  tabindex="1" id="num_of_traffic_lanes" class="form-control" value="{{ numberOfTrafficLanesByDirection }}"></input>
 					</div>
@@ -83,7 +83,8 @@
               title="Choose the option that best describes the terrain of the segment.">
 						<span class="glyphicon glyphicon-info-sign"></span>
           </a>
-					<label for="general_terrain" class="control-label col-lg-5">GENERAL TERRAIN:</label>
+					<label for="general_terrain" class="control-label col-lg-5">GENERAL TERRAIN:<br>(use tooltip to 
+ choose the appropriate type)</label>
 					<div class="col-lg-6 col-xs-11">
 						<select name="General Terrain" id="general_terrain" class="form-control">
 							<option value="Flat">Flat - 0%</option>
@@ -172,11 +173,11 @@
 		  	<!-- OPERATION TIME HEADING -->
 				<p>
 					<strong>OPERATION TIME:</strong>
-					<a href="#" class="segment-info-helper" data-toggle="tooltip" tabindex="1" data-placement="top"
+					<!--<a href="#" class="segment-info-helper" data-toggle="tooltip" tabindex="1" data-placement="top"
 	              title="Select the time periods during which the SHRP2 program operates.">
 						<span class=" glyphicon glyphicon-info-sign">
 	          </span>
-					</a>
+					</a>-->
 				</p>
 		  	<!--// OPERATION TIME HEADING -->
 				<!-- OPERATION TIME BODY -->
@@ -220,7 +221,7 @@
 						<label for="proportion">
 							PROPORTION:
 							<a href="#" class="segment-info-helper" data-toggle="tooltip" data-placement="top" tabindex="1"
-	              title="Enter the proportion of incidents of all lane blockages that could be improved by adopting SHRP2 Training, default: 100%.">
+	              title="Enter the proportion of incidents of all lane blockages that could be improved by adopting National TIM  Responder Training, default: 100%.">
 	              <span class=" glyphicon glyphicon-info-sign"></span>
 							</a>
 						</label>
@@ -280,7 +281,7 @@
 								<th>
 									Traffic Volume (VEH/H/Lane)
 									<a href="#" class="segment-info-helper" tabindex="1" data-toggle="tooltip" data-placement="top"
-				              title="Note: Traffic Volume should range between 500 - 2200.">
+				              title="Traffic Volume should range between 500 - 2200 veh/h/lane.">
 										<span class="glyphicon glyphicon-info-sign"></span>
 				          </a>
 								</th>
@@ -322,7 +323,7 @@
 				    			<th>WEATHER
 				    			<!--Added by Fang Zhou for adding speed reduction for weather 09/22/2015-->
 				    				<a href="#" class="segment-info-helper" data-toggle="tooltip" tabindex="1" data-placement="top"
-								              title="The following percentage reductions are applied to the free low speed in the calculation:
+								              title="Reduction of free-flow speed is applied by weather type as follows:
 								              Clear - 0%;
 								              Light Rain - 5%;
 								              Wind - 5%; 
@@ -537,7 +538,6 @@
 							  		<thead>
 							  			<tr>
 							  				<th>Incident Blockage Severity</th>
-							  				<th>Estimated Number of Incidents Managed</th>
 											<th>
 											Avg. Incident Duration (post-TIM, in minutes)
 												<a href="#" class="segment-info-helper"  tabindex="1"  data-toggle="tooltip" data-placement="top"
@@ -545,6 +545,7 @@
 													<span class="glyphicon glyphicon-info-sign"></span>
 									</a>
 								</th>
+								<th>Estimated Number of Incidents Managed</th>
 							  			</tr>
 							  		</thead>
 							  		<tbody>
@@ -575,9 +576,9 @@
 						  			<tr>
 						  				<th>Incident Blockage Severity</th>
 							  				<th>
-							  					Average Incident Duration (Minutes)
+							  					Avg. Incident Duration (post-TIM, in minutes)
 													<a href="#" class="segment-info-helper" data-toggle="tooltip" data-placement="top" tabindex="1"
-								              title="Note: The sum of Average Incident Duration and it's respective Duration Savings should not exceed 240 minutes.">
+								              title="Average incident duration post TIM implementation should not exceed 239 minutes.">
 														<span class="glyphicon glyphicon-info-sign"></span>
 								          </a>
 							          </th>
@@ -612,9 +613,9 @@
 						  			<tr>
 						  				<th>Incident Blockage Severity</th>
 							  				<th>
-							  					Average Incident Duration (Minutes)
+							  					Avg. Incident Duration (post-TIM, in minutes)
 													<a href="#" class="segment-info-helper" data-toggle="tooltip" data-placement="top" tabindex="1"
-								              title="Note: The sum of Average Incident Duration and it's respective Duration Savings should not exceed 240 minutes.">
+								              title="Average incident duration post TIM implementation should not exceed 239 minutes.">
 														<span class="glyphicon glyphicon-info-sign"></span>
 								          </a>
 							          </th>
@@ -650,9 +651,9 @@
 					  			<tr>
 					  				<th>Incident Blockage Severity</th>
 							  				<th>
-							  					Average Incident Duration (Minutes)
+							  					Avg. Incident Duration (post-TIM, in minutes)
 													<a href="#" class="segment-info-helper" tabindex="1" data-toggle="tooltip" data-placement="top"
-								              title="Note: The sum of Average Incident Duration and it's respective Duration Savings should not exceed 240 minutes.">
+								              title="Average incident duration post TIM implementation should not exceed 239 minutes.">
 														<span class="glyphicon glyphicon-info-sign"></span>
 								          </a>
 							          </th>
@@ -679,7 +680,7 @@
 			<!-- // -->
 			<div class="form-group clearfix">
 				<div class="col-xs-7">
-					PERCENTAGE OF ESTIMATED SECONDARY INCIDENTS (enter as 0-100):
+					ESTIMATED PERCENTAGE OF SECONDARY INCIDENTS (enter as 0-100):
 				</div>
 				<div class="col-xs-5">
 					<input type="text" class="form-control" tabindex="1" id="secondary_incidents_percentage" value="{{ secondaryIncidentsPercentage }}">

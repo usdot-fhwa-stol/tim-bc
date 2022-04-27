@@ -10,7 +10,11 @@
 		<!-- SEGMENT & REGION -->
 		<div class="row">
 			<div class="col-lg-12">
-				<h3>Segment:</h3>
+				<h3 id="segmentTitle">Segment: </h3><a href="#" class="segment-info-helper" data-toggle="tooltip" data-placement="top" display="inline"
+				title="Use the sidebar to duplicate selected segments, if needed.">
+					  <span class=" glyphicon glyphicon-info-sign">
+			</span>
+				  </a>
 				<div class="form-group">
 					<select name="Segments" id="select_segments" class="form-control" name="segment" tabindex="1"></select>
 				</div>
@@ -38,40 +42,40 @@
 	  	<div class="panel-body">
 				<!-- SEGMENT LENGTH IN MILES -->
 				<div class="form-group clearfix">
-					<a href="#" class="segment-info-helper pull-right" tabindex="1" data-toggle="tooltip" data-placement="top"
+					<!--<a href="#" class="segment-info-helper pull-right" data-toggle="tooltip" data-placement="top"
               title="Enter the total segment length in miles.">
 						<span class="glyphicon glyphicon-info-sign"></span>
-          </a>
+          </a>-->
 					<label for="segment_length" class="control-label col-lg-6">SEGMENT LENGTH IN MILES:</label>
 					<div class="col-lg-5 col-xs-11">
-						<input type="text" name="Segment Length in Miles" tabindex="1" id="segment_length" class="form-control" value="{{ segmentLength }}"></input>
+						<input type="text" name="Segment Length in Miles" id="segment_length" class="form-control" value="{{ segmentLength }}"></input>
 					</div>
 				</div>
 				<!--// SEGMENT LENGTH IN MILES -->
 				<!-- NUMBER OF RAMPS -->
 				<div class="form-group clearfix margin-top-20">
-					<a href="#" class="segment-info-helper pull-right" tabindex="1" data-toggle="tooltip" data-placement="top"
+					<!--<a href="#" class="segment-info-helper pull-right" data-toggle="tooltip" data-placement="top"
               title="Enter the number of on- and off-ramps on the segment in a single direction.">
 						<span class="glyphicon glyphicon-info-sign"></span>
-          </a>
-					<label for="number_of_ramps" class="control-label col-lg-6" >NUMBER OF RAMPS:</label>
+          </a>-->
+					<label for="number_of_ramps" class="control-label col-lg-6">NUMBER OF RAMPS IN THE TRAVEL DIRECTION</label>
 					<div class="col-lg-5 col-xs-11">
-						<input type="text" name="Number of Ramps" tabindex="1" id="number_of_ramps" class="form-control" value="{{ numberOfRamps }}"></input>
+						<input type="text" name="Number of Ramps" id="number_of_ramps" class="form-control" value="{{ numberOfRamps }}"></input>
 					</div>
 				</div>
 				<!--// NUMBER OF RAMPS -->
-				<!-- NUMBER OF TRAFFIC LANES BY DIRECTION -->
+				<!-- NUMBER OF TRAFFIC LANES IN THE TRAVEL DIRECTION -->
 				<div class="form-group clearfix margin-top-20">
-					<a href="#" class="segment-info-helper pull-right" tabindex="1" data-toggle="tooltip" data-placement="top"
+					<!--<a href="#" class="segment-info-helper pull-right" data-toggle="tooltip" data-placement="top"
               title="Enter the number of traffic lanes on the segment in a single direction.">
 						<span class="glyphicon glyphicon-info-sign"></span>
-          </a>
-					<label for="num_of_traffic_lanes" class="control-label col-lg-6">NUMBER OF TRAFFIC LANES BY DIRECTION:</label>
+          </a>-->
+					<label for="num_of_traffic_lanes" class="control-label col-lg-6">NUMBER OF TRAFFIC LANES IN THE TRAVEL DIRECTION:</label>
 					<div class="col-lg-5 col-xs-11">
-						<input type="text" name="Number of Traffic Lanes by Direction" tabindex="1" id="num_of_traffic_lanes" class="form-control" value="{{ numberOfTrafficLanesByDirection }}"></input>
+						<input type="text" name="Number of Traffic Lanes by Direction" id="num_of_traffic_lanes" class="form-control" value="{{ numberOfTrafficLanesByDirection }}"></input>
 					</div>
 				</div>
-				<!--// NUMBER OF TRAFFIC LANES BY DIRECTION -->
+				<!--// NUMBER OF TRAFFIC LANES IN THE TRAVEL DIRECTION -->
 				<!-- GENERAL TERRAIN -->
 				<div class="form-group clearfix margin-top-20">
 				<!--Modified by Fang Zhou for updating speed reduction info for General Terrain 09/22/2015-->
@@ -79,7 +83,8 @@
               title="Choose the option that best describes the terrain of the segment.">
 						<span class="glyphicon glyphicon-info-sign"></span>
           </a>
-					<label for="general_terrain" class="control-label col-lg-5">GENERAL TERRAIN:</label>
+					<label for="general_terrain" class="control-label col-lg-5">GENERAL TERRAIN:<br>(use tooltip to 
+ choose the appropriate type)</label>
 					<div class="col-lg-6 col-xs-11">
 						<select name="General Terrain" id="general_terrain" class="form-control">
 							<option value="Flat">Flat - 0%</option>
@@ -113,15 +118,15 @@
 				<!--Modified by Fang Zhou for updating speed reduction info for Horizontal Curvature 09/22/2015-->
 				<!--	<a href="#" class="segment-info-helper pull-right" data-toggle="tooltip" data-placement="top"
               title="Choose the option that best describes the horizontal curvature of the segment.">-->
-              			<a href="#" class="segment-info-helper pull-right" tabindex="1" data-toggle="tooltip" data-placement="top"
-              title="The following speed reductions of free flow speed are applied for different curvature scenarios: 
+             <a href="#" class="segment-info-helper pull-right" tabindex="1" data-toggle="tooltip" data-placement="top"
+              title="Reduction of free-flow speed is applied by horizontal curvature as follows:
               Straight - 0 mph;
               Mild Curves - 5 mph;
               Sharp Curves - 10 mph.">
               	<!--Modified end for updating speed reduction info for Horizontal Curvature 09/22/2015-->
 						<span class="glyphicon glyphicon-info-sign"></span>
           </a>
-					<label for="horizontal_curvature" class="control-label col-lg-5">HORIZONTAL CURVATURE:</label>
+					<label for="horizontal_curvature" class="control-label col-lg-5">HORIZONTAL CURVATURE:<br>(use tooltip to choose the appropriate type)</label>
 					<div class="col-lg-6 col-xs-11">
 						<select name="horizontal_curvature" id="horizontal_curvature" tabindex="1" class="form-control">
 							<option value="Straight" value="0">Straight</option>
@@ -168,11 +173,11 @@
 		  	<!-- OPERATION TIME HEADING -->
 				<p>
 					<strong>OPERATION TIME:</strong>
-					<a href="#" class="segment-info-helper" data-toggle="tooltip" tabindex="1" data-placement="top"
+					<!--<a href="#" class="segment-info-helper" data-toggle="tooltip" data-placement="top"
 	              title="Select the time periods during which the DC program operates.">
 						<span class=" glyphicon glyphicon-info-sign">
 	          </span>
-					</a>
+					</a>-->
 				</p>
 		  	<!--// OPERATION TIME HEADING -->
 				<!-- OPERATION TIME BODY -->
@@ -180,7 +185,7 @@
 					<div class="checkbox">
 					  <label>
 					    <input type="checkbox" class="operation-time"  tabindex="1" data-model="amPeak" data-wrapper="am_peak" data-panel="am-peak" {{ amPeakChecked }}>
-					    AM Peak
+              AM Peak
 					  </label>
 					</div>
 					<div class="checkbox">
@@ -192,19 +197,18 @@
 					<div class="checkbox">
 					  <label>
 					    <input type="checkbox" class="operation-time" tabindex="1" data-model="weekdayOffPeak" data-wrapper="off_peak" data-panel="off-peak" {{ weekdayOffPeakChecked }}>
-					    Weekday Off Peak
+                Weekday Off Peak
 					  </label>
 					</div>
 					<div class="checkbox">
 					  <label>
 					    <input type="checkbox" class="operation-time" tabindex="1" data-model="weekend" data-wrapper="weekend_peak" data-panel="weekend" {{ weekendChecked }}>
-					    Weekend
+  					    Weekend
 					  </label>
 					</div>
 				</div>
 				<!--// OPERATION TIME BODY -->
 				<p><strong>ESTIMATED EFFECTIVENESS OF THE TIM PROGRAM: </strong><a href="#"  tabindex="1" data-toggle="modal" data-target="#DCEffect"><span class="glyphicon glyphicon-question-sign"></span></a></p>
-
 				<div class="form-group clearfix margin-top-20">
 					<div class="col-lg-6 col-xs-12">
 						<label for="proportion">
@@ -512,7 +516,7 @@
 		  <div class="panel-heading">
 		    <span class="glyphicon glyphicon-ok-sign pull-right information-correct hidden"></span>
 		    <span class="glyphicon glyphicon-remove-sign pull-right information-wrong hidden"></span>
-		    <h3 class="panel-title">Estimated Statistics of Incidents Managed by DC</h3>
+		    <h3 class="panel-title">Incident Information</h3>
 		  </div>
 
 		  <div class="panel-body">
@@ -541,6 +545,7 @@
 							  		<tbody>
 							  			<tr class="peak-row shoulder">
 							  				<td>Shoulder Blockage</td>
+
 							  				<td><input type="text" class="form-control avg-incident-duration" tabindex="1"  data-peak="amPeak"	data-lane="Shoulder"	value="{{ amPeakShoulderBlockageAVGID }}"></td>
 							  				<td><input type="text" class="form-control num-of-managed-incidents" tabindex="1" data-peak="amPeak"	data-lane="Shoulder"	value="{{ amPeakShoulderBlockageManIndt }}"></td>
 							  			</tr>
@@ -565,14 +570,14 @@
 						  		<thead>
 						  			<tr>
 						  				<th>Incident Blockage Severity</th>
+										  <th>Estimated Number of Incidents Managed</th>
 							  				<th>
-							  					Average Incident Duration (Minutes)
-													<a href="#" class="segment-info-helper" tabindex="1" data-toggle="tooltip" data-placement="top"
-								              title="Note: The sum of Average Incident Duration and it's respective Duration Savings should not exceed 240 minutes.">
+							  					Avg. Incident Duration (post-TIM, in minutes)
+													<a href="#" class="segment-info-helper" data-toggle="tooltip" data-placement="top"
+								              title="Average incident duration post-TIM implementation should not exceed 239 minutes.">
 														<span class="glyphicon glyphicon-info-sign"></span>
 								          </a>
 							          </th>
-						  				<th>Number of Managed Incidents</th>
 						  			</tr>
 						  		</thead>
 						  		<tbody>
@@ -602,14 +607,14 @@
 						  		<thead>
 						  			<tr>
 						  				<th>Incident Blockage Severity</th>
+										  <th>Estimated Number of Incidents Managed</th>
 							  				<th>
-							  					Average Incident Duration (Minutes)
-													<a href="#" class="segment-info-helper" tabindex="1" data-toggle="tooltip" data-placement="top"
-								              title="Note: The sum of Average Incident Duration and it's respective Duration Savings should not exceed 240 minutes.">
+							  					Avg. Incident Duration (post-TIM, in minutes)
+													<a href="#" class="segment-info-helper" data-toggle="tooltip" data-placement="top"
+								              title="Average incident duration post-TIM implementation should not exceed 239 minutes.">
 														<span class="glyphicon glyphicon-info-sign"></span>
 								          </a>
 							          </th>
-						  				<th>Number of Managed Incidents</th>
 						  			</tr>
 						  		</thead>
 						  		<tbody>
@@ -640,14 +645,14 @@
 					  		<thead>
 					  			<tr>
 					  				<th>Incident Blockage Severity</th>
+									  <th>Estimated Number of Incidents Managed</th>
 							  				<th>
-							  					Average Incident Duration (Minutes)
-													<a href="#" class="segment-info-helper" data-toggle="tooltip" tabindex="1" data-placement="top"
-								              title="Note: The sum of Average Incident Duration and it's respective Duration Savings should not exceed 240 minutes.">
+							  					Avg. Incident Duration (post-TIM, in minutes)
+													<a href="#" class="segment-info-helper" data-toggle="tooltip" data-placement="top"
+								              title="Average incident duration post-TIM implementation should not exceed 239 minutes.">
 														<span class="glyphicon glyphicon-info-sign"></span>
 								          </a>
 							          </th>
-					  				<th>Number of Managed Incidents</th>
 					  			</tr>
 					  		</thead>
 					  		<tbody>
