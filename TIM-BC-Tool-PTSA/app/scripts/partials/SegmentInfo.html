@@ -48,7 +48,7 @@
           </a>-->
 					<label for="segment_length" class="control-label col-lg-6">SEGMENT LENGTH IN MILES:</label>
 					<div class="col-lg-5 col-xs-11">
-						<input type="text" name="Segment Length in Miles" id="segment_length" class="form-control" value="{{ segmentLength }}"></input>
+						<input type="text" name="Segment Length in Miles" id="segment_length" class="form-control" tabindex="1" value="{{ segmentLength }}"></input>
 					</div>
 				</div>
 				<!--// SEGMENT LENGTH IN MILES -->
@@ -60,7 +60,7 @@
           </a>-->
 					<label for="number_of_ramps" class="control-label col-lg-6">NUMBER OF RAMPS IN THE TRAVEL DIRECTION:</label>
 					<div class="col-lg-5 col-xs-11">
-						<input type="text" name="Number of Ramps" id="number_of_ramps" class="form-control" value="{{ numberOfRamps }}"></input>
+						<input type="text" name="Number of Ramps" id="number_of_ramps" tabindex="1" class="form-control" value="{{ numberOfRamps }}"></input>
 					</div>
 				</div>
 				<!--// NUMBER OF RAMPS -->
@@ -103,7 +103,7 @@
           </a>
 					<label for="general_terrain" class="control-label col-lg-5">GENERAL TERRAIN:<br>(use tooltip to choose the appropriate type)</label>
 					<div class="col-lg-6 col-xs-11">
-						<select name="General Terrain" id="general_terrain" class="form-control">
+						<select name="General Terrain" id="general_terrain" class="form-control" tabindex="1">
 							<option value="Flat">Flat</option>
 							<option value="Level">Level</option>
 							<option value="Rolling Hills">Rolling Hills</option>
@@ -118,8 +118,8 @@
 				<!--Modified by Fang Zhou for updating speed reduction info for Horizontal Curvature 09/22/2015-->
 				<!--	<a href="#" class="segment-info-helper pull-right" data-toggle="tooltip" data-placement="top"
               title="Choose the option that best describes the horizontal curvature of the segment.">-->
-              		<a href="#" class="segment-info-helper pull-right" data-toggle="tooltip" data-placement="top"
-              title="Reduction of free-flow speed is applied by horizontal curvature as follows: 
+              		<a href="#" class="segment-info-helper pull-right" tabindex="1" data-toggle="tooltip" data-placement="top"
+              title="The following speed reductions of free flow speed are applied for different curvature scenarios: 
               Straight - 0 mph;
               Mild Curves - 5 mph;
               Sharp Curves - 10 mph.">
@@ -128,7 +128,7 @@
           </a>
 					<label for="horizontal_curvature" class="control-label col-lg-5">HORIZONTAL CURVATURE:<br>(use tooltip to choose the appropriate type)</label>
 					<div class="col-lg-6 col-xs-11">
-						<select name="horizontal_curvature" id="horizontal_curvature" class="form-control">
+						<select name="horizontal_curvature" id="horizontal_curvature" tabindex="1" class="form-control">
 							<option value="Straight" value="0">Straight</option>
 							<option value="Mild Curves" value="5">Mild Curves</option>
 							<option value="Sharp Curves" value="10">Sharp Curves</option>
@@ -173,7 +173,7 @@
 		  	<!-- OPERATION TIME HEADING -->
 				<p>
 					<strong>OPERATION TIME:</strong>
-					<a href="#" class="segment-info-helper" data-toggle="tooltip" data-placement="top"
+					<a href="#" class="segment-info-helper" data-toggle="tooltip" tabindex="1" data-placement="top"
 	              title="Select the time periods during which the PTSA program operates.">
 						<span class=" glyphicon glyphicon-info-sign">
 	          </span>
@@ -184,53 +184,53 @@
 				<div class="form-group clearfix operation-panel">
 					<div class="checkbox">
 					  <label>
-					    <input type="checkbox" class="operation-time" data-model="amPeak" data-wrapper="am_peak" data-panel="am-peak" {{ amPeakChecked }}>
+					    <input type="checkbox" class="operation-time" tabindex="1" data-model="amPeak" data-wrapper="am_peak" data-panel="am-peak" {{ amPeakChecked }}>
 					    AM Peak
 					  </label>
 					</div>
 					<div class="checkbox">
 					  <label>
-					    <input type="checkbox" class="operation-time" data-model="pmPeak" data-wrapper="pm_peak" data-panel="pm-peak" {{ pmPeakChecked }}>
+					    <input type="checkbox" class="operation-time" tabindex="1" data-model="pmPeak" data-wrapper="pm_peak" data-panel="pm-peak" {{ pmPeakChecked }}>
 					    PM Peak
 					  </label>
 					</div>
 					<div class="checkbox">
 					  <label>
-					    <input type="checkbox" class="operation-time" data-model="weekdayOffPeak" data-wrapper="off_peak" data-panel="off-peak" {{ weekdayOffPeakChecked }}>
+					    <input type="checkbox" class="operation-time" tabindex="1" data-model="weekdayOffPeak" data-wrapper="off_peak" data-panel="off-peak" {{ weekdayOffPeakChecked }}>
 					    Weekday Off Peak
 					  </label>
 					</div>
 					<div class="checkbox">
 					  <label>
-					    <input type="checkbox" class="operation-time" data-model="weekend" data-wrapper="weekend_peak" data-panel="weekend" {{ weekendChecked }}>
+					    <input type="checkbox" class="operation-time" tabindex="1" data-model="weekend" data-wrapper="weekend_peak" data-panel="weekend" {{ weekendChecked }}>
 					    Weekend
 					  </label>
 					</div>
 				</div>
 				<!--// OPERATION TIME BODY -->
-				<p><strong>ESTIMATED EFFECTIVENESS OF THE TIM PROGRAM: </strong><a href="#" data-toggle="modal" data-target="#PTSAEffect"><span class="glyphicon glyphicon-question-sign"></span></a></p>
+				<p><strong>ESTIMATED EFFECTIVENESS OF THE TIM PROGRAM: </strong><a href="#" data-toggle="modal" tabindex="1" data-target="#PTSAEffect"><span class="glyphicon glyphicon-question-sign"></span></a></p>
 			</p>
 
 				<div class="form-group clearfix margin-top-20">
 					<div class="col-lg-6 col-xs-12">
 						<label for="proportion">
 							PERCENTAGE OF APPLICABLE CASES:
-							<a href="#" class="segment-info-helper" data-toggle="tooltip" data-placement="top"
+							<a href="#" class="segment-info-helper" tabindex="1" data-toggle="tooltip" data-placement="top"
 	              title="Enter the proportion of incidents of all lane blockages (other than shoulder) that could be improved by adopting pre-established towing service, Default: 100%.">
 	              <span class=" glyphicon glyphicon-info-sign"></span>
 							</a>
 						</label>
-						<input type="text" class="form-control" id="proportion" value="{{ proportion }}">
+						<input type="text" class="form-control" tabindex="1" id="proportion" value="{{ proportion }}">
 					</div>
 					<div class="col-lg-6 col-xs-12">
 						<label for="compliance_before">
 							COMPLIANCE RATE:
-							<a href="#" class="segment-info-helper" data-toggle="tooltip" data-placement="top"
+							<a href="#" class="segment-info-helper" tabindex="1" data-toggle="tooltip" data-placement="top"
 	              title="Enter the proportion of applicable cases in which clearance times are improved, Default: 100%.">
 	              <span class=" glyphicon glyphicon-info-sign"></span>
 							</a>
 						</label>
-						<input type="text" class="form-control" id="complianceRate" value="{{ complianceRate }}">
+						<input type="text" class="form-control" tabindex="1" id="complianceRate" value="{{ complianceRate }}">
 					</div>
 				</div>
 
@@ -238,12 +238,12 @@
 					<div class="col-lg-6 col-xs-12">
 						<label for="shortened_duration">
 							AVERAGE SHORTENED INCIDENT DURATION:
-							<a href="#" class="segment-info-helper" data-toggle="tooltip" data-placement="top"
+							<a href="#" class="segment-info-helper" tabindex="1" data-toggle="tooltip" data-placement="top"
 	              title="Average improvement in clearance times in minutes, Default: 10%.">
 	              <span class=" glyphicon glyphicon-info-sign"></span>
 							</a>
 						</label>
-						<input type="text" class="form-control" id="shortenedDuration" value="{{ shortenedDuration || 5 }}">
+						<input type="text" class="form-control" tabindex="1" id="shortenedDuration" value="{{ shortenedDuration || 5 }}">
 					</div>
 				</div>
 		  </div>
@@ -265,7 +265,7 @@
 				<div class="form-group clearfix">
 					<label for="mainlane_speed_limit" class="control-label col-lg-6">POSTED MAINLANE SPEED LIMIT (MPH):</label>
 					<div class="col-lg-6">
-						<input type="text" name="mainlane_speed_limit" id="mainlane_speed_limit" class="form-control" value="{{ mainLaneSpeedLimit }}"></input>
+						<input type="text" name="mainlane_speed_limit" tabindex="1" id="mainlane_speed_limit" class="form-control" value="{{ mainLaneSpeedLimit }}"></input>
 					</div>
 				</div>
 
@@ -276,8 +276,8 @@
 								<th>Time</th>
 								<th>
 									Traffic Volume (VEH/H/Lane)
-									<a href="#" class="segment-info-helper" data-toggle="tooltip" data-placement="top"
-				              title="Traffic Volume should range between 500 - 2200 veh/h/lane.">
+									<a href="#" class="segment-info-helper" tabindex="1" data-toggle="tooltip" data-placement="top"
+				              title="Traffic Volume should range between 500 - 2200.">
 										<span class="glyphicon glyphicon-info-sign"></span>
 				          </a>
 								</th>
@@ -287,23 +287,23 @@
 						<tbody>
 							<tr class="am-peak {{ amPeakVisibility }}">
 								<td>AM PEAK</td>
-								<td><input type="text" class="form-control traffic-volume" data-peak="amPeak" value="{{ amPeakTrafficVolume }}"></td>
-								<td><input type="text" class="form-control truck-percentage" data-peak="amPeak" value="{{ amPeakTruckPercentage }}"></td>
+								<td><input type="text" class="form-control traffic-volume" tabindex="1" data-peak="amPeak" value="{{ amPeakTrafficVolume }}"></td>
+								<td><input type="text" class="form-control truck-percentage" tabindex="1" data-peak="amPeak" value="{{ amPeakTruckPercentage }}"></td>
 							</tr>
 							<tr class="pm-peak {{ pmPeakVisibility }}">
 								<td>PM PEAK</td>
-								<td><input type="text" class="form-control traffic-volume" data-peak="pmPeak" value="{{ pmPeakTrafficVolume }}"></td>
-								<td><input type="text" class="form-control truck-percentage" data-peak="pmPeak" value="{{ pmPeakTruckPercentage }}"></td>
+								<td><input type="text" class="form-control traffic-volume" tabindex="1" data-peak="pmPeak" value="{{ pmPeakTrafficVolume }}"></td>
+								<td><input type="text" class="form-control truck-percentage" tabindex="1" data-peak="pmPeak" value="{{ pmPeakTruckPercentage }}"></td>
 							</tr>
 							<tr class="off-peak {{ weekdayOffPeakVisibility }}">
 								<td>WEEKDAY OFF PEAK</td>
-								<td><input type="text" class="form-control traffic-volume" data-peak="weekdayOffPeak" value="{{ weekdayOffPeakTrafficVolume }}"></td>
-								<td><input type="text" class="form-control truck-percentage" data-peak="weekdayOffPeak" value="{{ weekdayOffPeakTruckPercentage }}"></td>
+								<td><input type="text" class="form-control traffic-volume" tabindex="1" data-peak="weekdayOffPeak" value="{{ weekdayOffPeakTrafficVolume }}"></td>
+								<td><input type="text" class="form-control truck-percentage" tabindex="1" data-peak="weekdayOffPeak" value="{{ weekdayOffPeakTruckPercentage }}"></td>
 							</tr>
 							<tr class="weekend {{ weekendVisibility }}">
 								<td>WEEKEND</td>
-								<td><input type="text" class="form-control traffic-volume" data-peak="weekend" value="{{ weekendTrafficVolume }}"></td>
-								<td><input type="text" class="form-control truck-percentage" data-peak="weekend" value="{{ weekendTruckPercentage }}"></td>
+								<td><input type="text" class="form-control traffic-volume" tabindex="1" data-peak="weekend" value="{{ weekendTrafficVolume }}"></td>
+								<td><input type="text" class="form-control truck-percentage" tabindex="1" data-peak="weekend" value="{{ weekendTruckPercentage }}"></td>
 							</tr>
 						</tbody>
 					</table>
@@ -318,8 +318,8 @@
 				    		<tr>
 				    			<th>WEATHER
 				    			<!--Added by Fang Zhou for adding speed reduction info for weather 09/22/2015-->
-				    				<a href="#" class="segment-info-helper" data-toggle="tooltip" data-placement="top"
-								              title="Reduction of free-flow speed is applied by weather type as follows:
+				    				<a href="#" class="segment-info-helper" tabindex="1" data-toggle="tooltip" data-placement="top"
+								              title="The following percentage reductions are applied to the free low speed in the calculation:
 								              Clear - 0%;
 								              Light Rain - 5%;
 								              Wind - 5%; 
@@ -340,7 +340,7 @@
 				    	<!-- FIRST WEATHER -->
 						    <tr id="firstWeather" class="{{ firstWeatherState }}">
 						      <td class="weather-wrapper">
-						        <select name="Weather Information" class="form-control weather" value="{{ firstWeather }}">
+						        <select name="Weather Information"  tabindex="1" class="form-control weather" value="{{ firstWeather }}">
 						          <option value="Select Type">Select Type</option>
 						          <option value="Clear">Clear</option>
 						          <option value="Light Rain">Light Rain</option>
@@ -354,14 +354,14 @@
 						        </select>
 						      </td>
 						      <td class="weather-wrapper">
-						        <input type="text" class="form-control percentage" value="{{ firstWeatherPrcnt }}" readonly>
+						        <input type="text" class="form-control percentage" tabindex="1" value="{{ firstWeatherPrcnt }}" readonly>
 						      </td>
 						    </tr>
 						  <!-- // -->
 				    	<!-- SECOND WEATHER -->
 						    <tr id="secondWeather" class="{{ secondWeatherState }}">
 						      <td class="weather-wrapper">
-						        <select name="Weather Information" class="form-control weather" value="{{ secondWeather }}">
+						        <select name="Weather Information" tabindex="1" class="form-control weather" value="{{ secondWeather }}">
 						          <option value="Select Type">Select Type</option>
 						          <option value="Clear">Clear</option>
 						          <option value="Light Rain">Light Rain</option>
@@ -375,14 +375,14 @@
 						        </select>
 						      </td>
 						      <td class="weather-wrapper">
-						        <input type="text" class="form-control percentage" value="{{ secondWeatherPrcnt }}" readonly>
+						        <input type="text" class="form-control percentage" tabindex="1" value="{{ secondWeatherPrcnt }}" readonly>
 						      </td>
 						    </tr>
 						  <!-- // -->
 				    	<!-- THIRD WEATHER -->
 						    <tr id="thirdWeather" class="{{ thirdWeatherState }}">
 						      <td class="weather-wrapper">
-						        <select name="Weather Information" class="form-control weather" value="{{ thirdWeather }}">
+						        <select name="Weather Information" class="form-control weather" tabindex="1" value="{{ thirdWeather }}">
 						          <option value="Select Type">Select Type</option>
 						          <option value="Clear">Clear</option>
 						          <option value="Light Rain">Light Rain</option>
@@ -396,14 +396,14 @@
 						        </select>
 						      </td>
 						      <td class="weather-wrapper">
-						        <input type="text" class="form-control percentage" value="{{ thirdWeatherPrcnt }}" readonly>
+						        <input type="text" class="form-control percentage" tabindex="1" value="{{ thirdWeatherPrcnt }}" readonly>
 						      </td>
 						    </tr>
 						  <!-- //-->
 				    	<!-- FOURTH WEATHER -->
 						    <tr id="fourthWeather" class="{{ fourthWeatherState }}">
 						      <td class="weather-wrapper">
-						        <select name="Weather Information" class="form-control weather" value="{{ fourthWeather }}">
+						        <select name="Weather Information" class="form-control weather" tabindex="1" value="{{ fourthWeather }}">
 						          <option value="Select Type">Select Type</option>
 						          <option value="Clear">Clear</option>
 						          <option value="Light Rain">Light Rain</option>
@@ -417,14 +417,14 @@
 						        </select>
 						      </td>
 						      <td class="weather-wrapper">
-						        <input type="text" class="form-control percentage" value="{{ fourthWeatherPrcnt }}" readonly>
+						        <input type="text" class="form-control percentage" tabindex="1" value="{{ fourthWeatherPrcnt }}" readonly>
 						      </td>
 						    </tr>
 						  <!-- //-->
 				    	<!-- FIFTH WEATHER -->
 						    <tr id="fifthWeather" class="{{ fifthWeatherState }}">
 						      <td class="weather-wrapper">
-						        <select name="Weather Information" class="form-control weather" value="{{ fifthWeather }}">
+						        <select name="Weather Information" class="form-control weather" tabindex="1" value="{{ fifthWeather }}">
 						          <option value="Select Type">Select Type</option>
 						          <option value="Clear">Clear</option>
 						          <option value="Light Rain">Light Rain</option>
@@ -438,14 +438,14 @@
 						        </select>
 						      </td>
 						      <td class="weather-wrapper">
-						        <input type="text" class="form-control percentage" value="{{ fifthWeatherPrcnt }}" readonly>
+						        <input type="text" class="form-control percentage" tabindex="1" value="{{ fifthWeatherPrcnt }}" readonly>
 						      </td>
 						    </tr>
 						  <!-- //-->
 				    	<!-- SIXTH WEATHER -->
 						    <tr id="sixthWeather" class="{{ sixthWeatherState }}">
 						      <td class="weather-wrapper">
-						        <select name="Weather Information" class="form-control weather" value="{{ sixthWeather }}">
+						        <select name="Weather Information" class="form-control weather" tabindex="1" value="{{ sixthWeather }}">
 						          <option value="Select Type">Select Type</option>
 						          <option value="Clear">Clear</option>
 						          <option value="Light Rain">Light Rain</option>
@@ -459,14 +459,14 @@
 						        </select>
 						      </td>
 						      <td class="weather-wrapper">
-						        <input type="text" class="form-control percentage" value="{{ sixthWeatherPrcnt }}" readonly>
+						        <input type="text" class="form-control percentage" tabindex="1" value="{{ sixthWeatherPrcnt }}" readonly>
 						      </td>
 						    </tr>
 						  <!-- //-->
 				    	<!-- SEVENTH WEATHER -->
 						    <tr id="seventhWeather" class="{{ seventhWeatherState }}">
 						      <td class="weather-wrapper">
-						        <select name="Weather Information" class="form-control weather" value="{{ seventhWeather }}">
+						        <select name="Weather Information" class="form-control weather" tabindex="1" value="{{ seventhWeather }}">
 						          <option value="Select Type">Select Type</option>
 						          <option value="Clear">Clear</option>
 						          <option value="Light Rain">Light Rain</option>
@@ -480,19 +480,19 @@
 						        </select>
 						      </td>
 						      <td class="weather-wrapper">
-						        <input type="text" class="form-control percentage" value="{{ seventhWeatherPrcnt }}" readonly>
+						        <input type="text" class="form-control percentage" tabindex="1" value="{{ seventhWeatherPrcnt }}" readonly>
 						      </td>
 						    </tr>
 						  <!-- //-->
 				    	</tbody>
 				    </table>
 
-						<button class="btn btn-primary add-weather-info">
+						<button class="btn btn-primary add-weather-info" tabindex="1">
 							<span class="glyphicon glyphicon-plus-sign"></span>
 							Add Weather
 						</button>
 
-						<button class="btn btn-info undo-row hidden">
+						<button class="btn btn-info undo-row hidden" tabindex="1">
 							<span class="glyphicon glyphicon-remove-sign"></span>
 							Remove Weather
 						</button>
@@ -518,7 +518,7 @@
 		  <div class="panel-heading">
 		    <span class="glyphicon glyphicon-ok-sign pull-right information-correct hidden"></span>
 		    <span class="glyphicon glyphicon-remove-sign pull-right information-wrong hidden"></span>
-		    <h3 class="panel-title">Incident Information</h3>
+		    <h3 class="panel-title">Estimated Statistics of Incidents Managed by PTSA</h3>
 		  </div>
 
 		  <div class="panel-body">
@@ -679,7 +679,7 @@
 					ESTIMATED PERCENTAGE OF SECONDARY INCIDENTS (enter as 0-100):
 				</div>
 				<div class="col-xs-5">
-					<input type="text" class="form-control" id="secondary_incidents_percentage" value="{{ secondaryIncidentsPercentage }}">
+					<input type="text" class="form-control" id="secondary_incidents_percentage" value="{{ secondaryIncidentsPercentage }}" tabindex="1">
 				</div>
 			</div>
 
