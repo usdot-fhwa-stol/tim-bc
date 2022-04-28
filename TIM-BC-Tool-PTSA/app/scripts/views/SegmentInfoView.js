@@ -401,7 +401,7 @@ define([
 
         if( valid ) {
           if( value > 240 ) {
-            alert('Average Incident Duration Error: Should not exceed 240.\nPrevious valid value will be reloaded.');
+            alert('Average Incident Duration Error: Should not exceed 239.\nPrevious valid value will be reloaded.');
             $el.val( this.currentSegment.get(peak + lane + 'BlockageAVGID') );
           } else {
             this.currentSegment.set( peak + lane + 'BlockageAVGID', value );
