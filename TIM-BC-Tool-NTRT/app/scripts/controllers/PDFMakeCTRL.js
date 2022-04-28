@@ -200,12 +200,12 @@ define(['underscore'], function() {
 
 		    	// First Page
 	   			{
-	   				text: 'SHRP2 B/C Tool Output\n' + PROJECT_NAME + '\n' + _this.getDate(),
+	   				text: 'NTRT B/C Tool Output\n' + PROJECT_NAME + '\n' + _this.getDate(),
 	   				alignment: 'right'
 	   			},
 
 	        {
-	            text: 'SHRP2 National Traffic Incident Management Responder Training Benefit/Cost Estimations Tool Output',
+	            text: 'NTRT National Traffic Incident Management Responder Training Benefit/Cost Estimations Tool Output',
 	            fontSize: 24,
 	            alignment: 'justified',
 	            margin: [50, 200, 50, 0],
@@ -230,7 +230,7 @@ define(['underscore'], function() {
 					
 					// Next Page
 	   			{
-	   				text: 'SHRP2 B/C Tool Output\n' + PROJECT_NAME + '\n' + _this.getDate(),
+	   				text: 'NTRT B/C Tool Output\n' + PROJECT_NAME + '\n' + _this.getDate(),
 	   				alignment: 'right',
 	   				margin: [0, 0, 0, 40]
 	   			},
@@ -322,7 +322,8 @@ define(['underscore'], function() {
 	   			},
 
 	   			{
-	   				text:'Several important benefits that can be derived from an SHRP2 program are accounted for in the B/C ratio developed by the National TIM Responder Training-BC Tool. The tool was purposefully developed to provide conservative, defensible estimates. This section outlines numerous additional benefits that have not been included in the B/C ratio, but that would increase its value if considered.'
+	   				text:'Several important benefits that can be derived from an NTRT program are accounted for in the B/C ratio developed by the National TIM Responder Training-BC Tool. The tool was purposefully developed to provide conservative, defensible estimates. This section outlines numerous additional benefits that have not been included in the B/C ratio, but that would increase its value if considered.',
+					margin: [0, 10, 50, 0]
 	   			},
 
 	   			{
@@ -331,12 +332,13 @@ define(['underscore'], function() {
 	   			},
 
 	   			{
-	   				text: 'The B/C ratio calculation does not include emissions, however the National TIM Responder Training-BC Tool does estimate reductions in HC, CO, NOx, and CO2 in metric tons and SOx in Grams based on the reduction in fuel consumption under “Total Program Savings” above. If monetary equivalents are available, the monetary equivalent of emissions savings can be added to the total benefits in dollars. By dividing this savings by the total costs, a new B/C estimate can be obtained that includes the value of emissions reductions.'
+	   				text: 'The B/C ratio calculation does not include emissions, however the National TIM Responder Training-BC Tool does estimate reductions in HC, CO, NOx, and CO2 in metric tons and SOx in Grams based on the reduction in fuel consumption under “Total Program Savings” above. If monetary equivalents are available, the monetary equivalent of emissions savings can be added to the total benefits in dollars. By dividing this savings by the total costs, a new B/C estimate can be obtained that includes the value of emissions reductions.',
+					margin: [0, 10, 50, 0]
 	   			},
 
 	   			{
 	   				text: 'Several of the emissions considered by the tool are greenhouse gases (GHGs). GHGs are measured qualitatively through the intensity of their effect on the earth\'s atmosphere. This intensity is determined by the GHG\'s global warming potential (GWP). CO2 is the globally accepted reference gas with a GWP of 1, and GWP is typically measured for 1, 20, 50, and 100-year time periods. In addition to being a measure of a GHG\'s effect on the atmosphere, GWPs are used to convert GHGs into carbon dioxide equivalents (CO2e). This allows for the use of an easy and standard unit for reporting quantities of GHGs being measured. With this in mind, one option might be to use carbon dioxide equivalents. The price of carbon on the carbon market can provide a potential source of monetary value.',
-	   				margin: [0, 10, 0, 0]
+	   				margin: [0, 10, 50, 0]
 	   			},
 
 	   			{
@@ -345,7 +347,8 @@ define(['underscore'], function() {
 	   			},
 
 	   			{
-	   				text: 'The B/C ratio calculation only considers the monetary value of property damage that might be prevented in the event of a secondary incident due to the existence of an SHRP2 program. The B/C ratio would be expected to rise very significantly if the value of even one fatal or near-fatal incident were included. Additionally, the savings derived from avoiding congestion resulting from secondary incidents due to the SHRP2 program have not been included in estimating the savings from secondary incidents.  '
+	   				text: 'The B/C ratio calculation only considers the monetary value of property damage that might be prevented in the event of a secondary incident due to the existence of an NTRT program. The B/C ratio would be expected to rise very significantly if the value of even one fatal or near-fatal incident were included. Additionally, the savings derived from avoiding congestion resulting from secondary incidents due to the NTRT program have not been included in estimating the savings from secondary incidents.  ',
+					margin: [0, 10, 50, 0]
 	   			},
 
 	   			{
@@ -354,7 +357,8 @@ define(['underscore'], function() {
 	   			},
 
 	   			{
-	   				text: 'The B/C ratio calculation does not include the monetary costs and time incurred by the SHRP2 for investigating and documenting incidents. Savings related to insurance claims, disability, rehabilitation, attorney fees, and court costs associated with litigation resulting from secondary incidents that did not arise are additional sources of savings that have not been included in the B/C calculation.'
+	   				text: 'The B/C ratio calculation does not include the monetary costs and time incurred by the NTRT for investigating and documenting incidents. Savings related to insurance claims, disability, rehabilitation, attorney fees, and court costs associated with litigation resulting from secondary incidents that did not arise are additional sources of savings that have not been included in the B/C calculation.',
+					margin: [0, 10, 50, 0]
 	   			},
 
 	   			{
@@ -363,7 +367,8 @@ define(['underscore'], function() {
 	   			},
 
 	   			{
-	   				text: 'With the assistance of the SHRP2 program, law enforcement personnel have additional time to spend on more urgent tasks. Through improvements in safety, as well as the knowledge that help is nearby, the public will have a greater sense of security and a feeling of political good will. Reduced congestion can also aid in the flow of goods across the nation\'s freeways, affecting the price of the goods and the economy more generally.'
+	   				text: 'With the assistance of the NTRT program, law enforcement personnel have additional time to spend on more urgent tasks. Through improvements in safety, as well as the knowledge that help is nearby, the public will have a greater sense of security and a feeling of political good will. Reduced congestion can also aid in the flow of goods across the nation\'s freeways, affecting the price of the goods and the economy more generally.',
+					margin: [0, 10, 50, 0]
 	   			}
 
 				],
@@ -402,7 +407,7 @@ define(['underscore'], function() {
 				}
 			}
 
-			return pdfMake.createPdf(dd).download('SHRP2-Report.pdf');
+			return pdfMake.createPdf(dd).download('NTRT-Report.pdf');
 		}//--
 	}
 
