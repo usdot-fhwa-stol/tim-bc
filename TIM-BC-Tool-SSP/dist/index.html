@@ -38,14 +38,14 @@
                 <span class="icon-bar"></span>
               </button>
               <span class="navbar-brand">
-                <a href="../../index.html" class="pull-left" title="Go to Main Page" style="margin-right: 25px;
+                <a href="#" class="pull-left validateProjectReturnMain" title="Go to Main Page" style="margin-right: 25px;
                     margin-left: 22px;
                     position: relative;
                     display: block;
                     font-size: 1.1em">
                   <span class="glyphicon glyphicon-home"></span>
                 </a>
-                <a href="#" class="pull-left hover-line-parent" title="Home">
+                <a href="#" class="pull-left hover-line-parent validateProject" title="Home">
                   <span class="hover-line">SSP-BC Tool</span>
                 </a>
               </span>
@@ -54,9 +54,9 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav pull-right">
-                <li><a href="#" id="saveProject" class="hidden">Save Project Data</a></li>
-                <li><a href="#/project/new">Start New Analysis Project</a></li>
-                <li><a href="#" class="upload-file-trigger">Open Existing Analysis Project</a></li>
+                <li><a href="#" id="saveProject" class="hidden validateProject">Save Project Data</a></li>
+                <li><a href="#/project/new" class="validateProject">Start New Analysis Project</a></li>
+                <li><a href="#" class="upload-file-trigger validateProject">Open Existing Analysis Project</a></li>
               </ul>
             </div><!-- /.navbar-collapse -->
           </div><!-- /.container-fluid -->
@@ -83,12 +83,12 @@
                 </li>
               </ul>
               <ul class="nav pull-right">
-                <li>
+                <!-- <li>
                   <a class="secondary-icon-links" id="aboutOpenTrigger1" href="#" data-toggle="modal" data-target="#myModal">
                     <span class="glyphicon glyphicon-question-sign"></span>
                     <span class="sr-only">About</span>
                   </a>
-                </li>
+                </li>-->
               </ul>
             </div><!-- /.container-fluid -->
           </nav>
@@ -97,7 +97,7 @@
           <div id="container"></div>
 
           <!-- Hidden File Reader for loading project files -->
-          <input type="file" class="hidden" id="fileReader">
+          <input type="file" class="hidden" id="fileReader" accept="application/JSON">
 
         </div>
 
@@ -135,14 +135,15 @@
               <h4 class="modal-title" id="calculationModalLabel"><strong>Calculation Notes</strong></h4>
             </div>
             <div class="modal-body">
+              <p style="width: 720px; margin: auto; margin-top: 20px">
+                Annual Total Cost = Annual Fixed Cost + 12 * Monthly Total <br>
+              </p>
+
               <p style="width: 720px; margin: auto">
                 Monthly Total = Number of Vehicles  * ( Driver's Hourly Rate * Working Hours per Day * Working Days per Month + Gas Price * Fuel + Provided Gas + Vehicle Maintenance + Other )
               </p>
 
-              <p style="width: 720px; margin: auto; margin-top: 20px">
-                Annual Fixed Cost = Annual Total Cost + 12 * Monthly Total
-              </p>
-
+              
               <p style="width: 720px; margin: auto; margin-top: 20px">
                 Note: Please use either "Gas Price * Fuel" or "Provided Gas" for fuel cost calculation.
               </p>
@@ -186,4 +187,5 @@
     <script data-main="scripts/main" src="bower_components/requirejs/require.js"></script>
     <!-- endbuild -->
   </body>
+  
 </html>
