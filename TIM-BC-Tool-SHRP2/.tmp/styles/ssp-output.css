@@ -1,0 +1,27 @@
+.produce-report {
+  display: block;
+  margin: 20px auto;
+  padding: 15px 30px;
+  border-radius: 50px;
+  background: transparent;
+  color: #5379a8;
+  text-shadow: none !important;
+  border: solid 1px #5379a8;
+  font-weight: 100;
+  transition: .3s;
+}
+.produce-report:hover,
+.produce-report:focus,
+.produce-report.active {
+  background: #5379a8;
+  color: #ecf0f1;
+}
+.spacing {
+  padding: 20px;
+}
+.edit-icon {
+  margin-right: 10px;
+}
+.delete-icon {
+  margin-right: 5px;
+}
