@@ -50,6 +50,7 @@ h1.jumbo-header:before, h1.jumbo-header:after {
         height: 61px;
         width: 100%;
         max-width: 345px;
+        position: relative;
 
         @media screen and (min-width: 720px) {
           background: url('../images/imgdotfhwalg.png') no-repeat;
@@ -70,21 +71,6 @@ h1.jumbo-header:before, h1.jumbo-header:after {
       background-position: 0;
       background-repeat: no-repeat;
 
-      h1 {
-        font-size: 26pt;
-        text-align: center;
-        @media screen and (min-width: 720px) {
-          font-size: 36pt;          
-        }
-      }
-      h2 {
-        font-size: 16pt;
-        text-align: center;
-        @media screen and (min-width: 720px) {
-          font-size: 21pt;          
-        }
-      }
-
       .about-trigger {
         padding-top: 25px;
         text-align: center;
@@ -100,7 +86,51 @@ h1.jumbo-header:before, h1.jumbo-header:after {
         font-size: 1.5em;
         color: white;
       }
+      
+      h1 {
+        font-size: 26pt;
+        text-align: center;
+        @media screen and (min-width: 720px) {
+          font-size: 36pt;          
+        }
+      }
+      h2 {
+        font-size: 16pt;
+        text-align: center;
+        @media screen and (min-width: 720px) {
+          font-size: 21pt;          
+        }
+      }
+      
+      h1.header-title, h2.header-title{
+        background-color: #36454f;
+        position: relative;
+      }
+      .margin-top-zero{
+        margin-top: 0px;
+      }
+      .padding-top-10px{
+        padding-top: 10px;
+      }      
+      .margin-bottom-zero{
+        margin-bottom: 0px;
+      }      
+      .padding-bottom-10px{
+        padding-bottom: 10px;
+      } 
+    
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+        left: 0px;
+        background-size: cover;
+        background-color: rgba(0, 0, 0, 0.52);
+      }
     }
+   
 
     .apps {
       overflow: auto;
