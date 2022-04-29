@@ -43,7 +43,7 @@ define([
 
         var value = Number( $numLanes.val() );
 
-        if( value == '' || value < 2 || value > 6 ) {
+        if( value == '' || value < 3 || value > 6 ) {
           $numLanes.parent().addClass('has-error');
           invalid++;
         } else {
