@@ -47,3 +47,4 @@ test/temp
 project
 app/scripts/controllers/SavingsCTRL.js.backup
 app/pdf
+dist
