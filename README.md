@@ -24,7 +24,7 @@ The eight modules are:
 - Pre-established towing service agreements (PTSA).
 - Dispatch colocation (DC).
 - TIM task forces (TF).
-- Strategic Highway Research Program (SHRP2) training. 
+- National TIM Responder (NTRT) Training. 
 
 The TIM-BC tool can be used to assess proposed expansion of existing TIM programs, assess the value of creating a new TIM program, or compare alternatives.
 

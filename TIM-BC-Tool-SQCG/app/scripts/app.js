@@ -35,7 +35,15 @@ define([
 
       $('.upload-file-trigger').on('click', function(evt) {
         evt.preventDefault();
-        $('#fileReader').trigger('click');
+        if(project.get('projectName').length > 0)
+        {
+          if(confirm("Are you sure to discard current project?"))
+          {
+            $('#fileReader').trigger('click');
+          } 
+        }else{
+          $('#fileReader').trigger('click');
+        }
       });
 
       GlobalEvent.on('sidebar-navigation', function(e) {

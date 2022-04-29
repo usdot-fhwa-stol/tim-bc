@@ -111,6 +111,31 @@ define([
       saveAs(projectFile, 'DRL-' + project.get('projectName') + '.json');
     });
 
+    $('.validateProject').on('click', function(evt){
+      evt.preventDefault();
+      var projectName = project.get('projectName');
+      if(projectName.length > 0)
+      {
+        if(confirm("Are you sure to discard current project?"))
+        {          
+          GlobalEvent.trigger('project:new');
+        }
+      }
+    });
+    
+    $('.validateProjectReturnMain').on('click', function(evt){
+      evt.preventDefault();
+      var projectName = project.get('projectName');
+      if(projectName.length > 0)
+      {
+        if(confirm("Are you sure to discard current project?"))
+        {
+          window.location.replace("../../index.html");
+        }
+      }else{
+        window.location.replace("../../index.html");
+      }
+    });
     // Watch for Project Name change, and allow or disallow
     // saving of the project if the name entered by the user
     // is not valid

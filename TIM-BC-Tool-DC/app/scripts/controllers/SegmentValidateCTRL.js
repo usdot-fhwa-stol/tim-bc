@@ -43,7 +43,7 @@ define([
 
         var value = Number( $numLanes.val() );
 
-        if( value == '' || value < 2 || value > 6 ) {
+        if( value == '' || value < 3 || value > 6 ) {
           $numLanes.parent().addClass('has-error');
           invalid++;
         } else {
@@ -181,7 +181,7 @@ define([
         }
 
         if( exceedDuration > 0 ) {
-          $('#savings_exceed_error').html('<p style="margin-top: 10px;">Total Incident Duration for a blockage should not exceed 240 minutes.</p>');
+          $('#savings_exceed_error').html('<p style="margin-top: 10px;">Total incident duration (sum of post-TIM incident duration and duration savings) should not exceed 240 minutes.</p>');
         } else {
           $('#savings_exceed_error').html('');
         }

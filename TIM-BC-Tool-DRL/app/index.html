@@ -38,7 +38,7 @@
                 <span class="icon-bar"></span>
               </button>
               <span class="navbar-brand">
-                <a href="../../index.html" class="pull-left" 
+                <a href="#" class="pull-left validateProjectReturnMain" 
                   title="Go to Main Page" 
                   style="margin-right: 25px;
                     margin-left: 22px;
@@ -47,15 +47,15 @@
                     font-size: 1.1em;">
                   <span class="glyphicon glyphicon-home"></span>
                 </a>
-                <a href="#" class="hover-line-parent" title="Home"><span class="hover-line">DRL-BC Tool</span></a></span>
+                <a href="#" class="hover-line-parent validateProject" title="Home"><span class="hover-line">DRL-BC Tool</span></a></span>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav pull-right">
                 <li><a href="#" id="saveProject" class="hidden">Save Project Data</a></li>
-                <li><a href="#/project/new">Start New Project</a></li>
-                <li><a href="#" class="upload-file-trigger">Upload Project Data</a></li>
+                <li><a href="#/project/new" class=" validateProject">Start New Analysis Project</a></li>
+                <li><a href="#" class="upload-file-trigger">Open Existing Analysis Project</a></li>
               </ul>
             </div><!-- /.navbar-collapse -->
           </div><!-- /.container-fluid -->
@@ -93,7 +93,7 @@
           <div id="container"></div>
 
           <!-- Hidden File Reader for loading project files -->
-          <input type="file" class="hidden" id="fileReader" />
+          <input type="file" class="hidden" id="fileReader" accept="application/JSON" />
 
         </div>
 

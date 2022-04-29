@@ -1,15 +1,19 @@
 		<!-- SEGMENT DETAILS -->
 		<div class="row">
 			<div class="col-lg-12">
-				<h3>Segment:</h3>
+				<h3 id="segmentTitle">Segment: </h3><a href="#" class="segment-info-helper" data-toggle="tooltip" data-placement="top" display="inline"
+				title="Use the sidebar to duplicate selected segments, if needed.">
+					  <span class=" glyphicon glyphicon-info-sign">
+			</span>
+				  </a>
 				<div class="form-group">
-					<select id="select_segments" class="form-control" name="segment"></select>
+					<select id="select_segments" class="form-control" name="segment" tabindex="1" ></select>
 				</div>
 				<div class="form-group">
-					<input type="text" id="segment_name" class="form-control text-align-left" value="" placeholder="Enter Segment Name">
+					<input type="text" id="segment_name" class="form-control text-align-left" tabindex="1"  value="" placeholder="Enter Segment Name">
 				</div>
 				<div class="form-group margin-bot-0 text-align-left">
-					<select class="form-control">
+					<select class="form-control" tabindex="1" >
 						<option value="">Select Region</option>
 					</select>
 				</div>
@@ -32,27 +36,28 @@
               title="Tooltip"></span>
 					<label for="segment_length" class="control-label col-lg-6">SEGMENT LENGTH IN MILES:</label>
 					<div class="col-lg-5 col-xs-11">
-						<input type="text" name="segment_length" id="segment_length" class="form-control"></input>
+						<input type="text" name="segment_length" id="segment_length" tabindex="1"  class="form-control"></input>
 					</div>
 				</div>
 				<!--// SEGMENT LENGTH IN MILES -->
-				<!-- NUMBER OF TRAFFIC LANES BY DIRECTION -->
+				<!-- NUMBER OF TRAFFIC LANES IN THE TRAVEL DIRECTION -->
 				<div class="form-group clearfix margin-top-20">
 					<span class="segment-info-helper pull-right glyphicon glyphicon-info-sign" data-toggle="tooltip" data-placement="top"
               title="Tooltip"></span>
-					<label for="num_of_traffic_lanes" class="control-label col-lg-6">NUMBER OF TRAFFIC LANES BY DIRECTION:</label>
+					<label for="num_of_traffic_lanes" class="control-label col-lg-6">NUMBER OF TRAFFIC LANES IN THE TRAVEL DIRECTION:</label>
 					<div class="col-lg-5 col-xs-11">
-						<input type="text" name="num_of_traffic_lanes" id="num_of_traffic_lanes" class="form-control"></input>
+						<input type="text" name="num_of_traffic_lanes"  tabindex="1" id="num_of_traffic_lanes" class="form-control"></input>
 					</div>
 				</div>
-				<!--// NUMBER OF TRAFFIC LANES BY DIRECTION -->
+				<!--// NUMBER OF TRAFFIC LANES IN THE TRAVEL DIRECTION -->
 				<!-- GENERAL TERRAIN -->
 				<div class="form-group clearfix margin-top-20">
 					<span class="segment-info-helper pull-right glyphicon glyphicon-info-sign" data-toggle="tooltip" data-placement="top"
               title="Tooltip"></span>
-					<label for="general_terrain" class="control-label col-lg-5">GENERAL TERRAIN:</label>
+					<label for="general_terrain" class="control-label col-lg-5">GENERAL TERRAIN:<br>(use tooltip to 
+ choose the appropriate type)</label>
 					<div class="col-lg-6 col-xs-11">
-						<select name="general_terrain" id="general_terrain" class="form-control">
+						<select name="general_terrain"  tabindex="1" id="general_terrain" class="form-control">
 							<option value="Flat">Flat</option>
 							<option value="Rolling Hills">Rolling Hills</option>
 							<option value="Mountainous">Mountainous</option>
@@ -64,9 +69,9 @@
 				<div class="form-group clearfix margin-top-20">
 					<span class="segment-info-helper pull-right glyphicon glyphicon-info-sign" data-toggle="tooltip" data-placement="top"
               title="Tooltip"></span>
-					<label for="horizontal_curvature" class="control-label col-lg-5">HORIZONTAL CURVATURE:</label>
+					<label for="horizontal_curvature" class="control-label col-lg-5">HORIZONTAL CURVATURE:<BR>(use tooltip to choose the appropriate type)</label>
 					<div class="col-lg-6 col-xs-11">
-						<select name="horizontal_curvature" id="horizontal_curvature" class="form-control">
+						<select name="horizontal_curvature" tabindex="1"  id="horizontal_curvature" class="form-control">
 							<option value="Straight">Straight</option>
 							<option value="Mild Curves">Mild Curves</option>
 							<option value="Sharp Curves">Sharp Curves</option>
@@ -80,7 +85,7 @@
 	  <!-- // ROADWAY GEOMETRY -->
 
 		<div class="col-lg-12 margin-top-20" style="text-align:center">
-			<a href="#/project/output" class="btn btn-primary calculate-ratio">
+			<a href="#/project/output" id="calculate-ratio-seg" class="btn btn-primary calculate-ratio">
 				<span class="glyphicon glyphicon-ok-sign"></span>
 				Calculate Ratio
 			</a>

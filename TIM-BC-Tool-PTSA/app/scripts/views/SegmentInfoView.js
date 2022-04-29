@@ -154,8 +154,14 @@ define([
           // check for errors
           if( hasErrors.length > 0 ) {
             this.currentSegment.set('valid', false);
+            if (!$("#calculate-ratio-seg").hasClass("disabled")){
+              $("#calculate-ratio-seg").addClass("disabled");
+            }
           } else {
             this.currentSegment.set('valid', true);
+            if ($("#calculate-ratio-seg").hasClass("disabled")){
+              $("#calculate-ratio-seg").removeClass("disabled");
+            }
           }
         }
 
@@ -258,7 +264,7 @@ define([
           alert('Error: Number of traffic lanes should be a number from 2 to 6 only.')
           evnt.currentTarget.value = prevNum;
         } else {
-          var resp = window.confirm('Changing this value will reset all Blockage Values to 0(Zero). Continue?');
+          var resp = window.confirm('Changing the number of lanes will reset all values in the Incident Information panel to zero. It will also reset any incident duration savings entered by lane blocakge. Continue?"');
           if( resp ) {
             evnt.currentTarget.value = value;
             _this.updateShoulderBlockage( value );
@@ -537,7 +543,7 @@ define([
           _this.appendPeakRows( numberOfLanes );
           _this.appendLaneSaving( numberOfLanes );
         } else {
-          alert('NUMBER OF TRAFFIC LANES BY DIRECTION should be from 2 - 6 only!');
+          alert('NUMBER OF TRAFFIC LANES IN THE TRAVEL DIRECTION should be from 2 - 6 only!');
           $(element).val( 2 );
           _this.resetBlockages( _this.currentSegment );
           _this.updateShoulderBlockage( 2 );
@@ -634,7 +640,7 @@ define([
       toggleAvgDuration : function( evnt ) {
         var _this = this;
         _this.clearEvent( evnt );
-        var resp = window.confirm('This will reset ALL savings previously entered. Continue?');
+        var resp = window.confirm('This will reset ALL incident duration savings previously entered.  Continue?');
         if( resp ) {
           //this.toggleActive( $(e.target) );
           $('#avg_duration_btn').addClass('active');
@@ -663,7 +669,7 @@ define([
           $('#avg_duration_container').addClass('hidden');
         } else {
           _this.clearEvent( evnt );
-          var resp = window.confirm('This will reset ALL savings previously entered. Continue?');
+          var resp = window.confirm('This will reset ALL incident duration savings previously entered.  Continue?');
           if( resp ) {
 
             $('#avg_duration_container').removeClass('has-error');
@@ -1082,29 +1088,32 @@ define([
             // Render err message for no segments
             _this.$el.html( ProjectTemplates.NoSegment );
           } else {
-            // render template/partial:
-            _this.$el.html( _this.template( _this.currentSegment.toJSON() ) ).trigger('change');
-            // --
-            // Load regions by state
-            var regionsByState = JSON.parse( Regions );
-            var regions = regionsByState[ _this.model.get('projectState') ];
+            if(_this.currentSegment !== undefined)
+            {
+              // render template/partial:
+              _this.$el.html( _this.template( _this.currentSegment.toJSON() ) ).trigger('change');
+              // --
+              // Load regions by state
+              var regionsByState = JSON.parse( Regions );
+              var regions = regionsByState[ _this.model.get('projectState') ];
 
-            // This will load the regions by state
-            var options = '<option value="Select Region">Select Region</option>';
-            _.each(regions, function( region ) {
-              options += '<option value="' + region + '">' + region + '</option>';
-            });
+              // This will load the regions by state
+              var options = '<option value="Select Region">Select Region</option>';
+              _.each(regions, function( region ) {
+                options += '<option value="' + region + '">' + region + '</option>';
+              });
 
-            $('#regions_by_state').html( options );
-            //--
-            // Populate Model values:
-            _this.weatherInfoRows = _this.currentSegment.get('weatherRows');
-            _this.loadModelValues( id );
-            _this.validateCTRL.validateCurrentSegment( _this.currentSegment );
-            //_this.validateCTRL.validateIncidentInformation( _this.model );
-            //--
-            // Add project name:
-            $('#project_name').text(_this.model.get('projectName'));
+              $('#regions_by_state').html( options );
+              //--
+              // Populate Model values:
+              _this.weatherInfoRows = _this.currentSegment.get('weatherRows');
+              _this.loadModelValues( id );
+              _this.validateCTRL.validateCurrentSegment( _this.currentSegment );
+              //_this.validateCTRL.validateIncidentInformation( _this.model );
+              //--
+              // Add project name:
+              $('#project_name').text(_this.model.get('projectName'));
+            }
           }
           // --
         } else {

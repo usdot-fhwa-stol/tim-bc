@@ -251,7 +251,6 @@ define([
         var totalSegmentSecondaryIncidentsWithoutDRL = _this.getSecondaryIncidents( computedPeakSavings, userPeakSavings );
         var secondaryIncidentsSavings = totalSegmentSecondaryIncidentsWithoutDRL - totalSegmentSecondaryIncidentsWithoutTIM;
         totalSegmentSecondaryIncidentsSavings = secondaryIncidentsSavings * 4736;
-
         _.each( userPeakSavings, function( peakSaving ) {
           totalSegmentSaving -= peakSaving.totalPeakSavings.totalPeakTravelDelaySavings;
           totalSegmentSavingCar -= peakSaving.totalPeakSavings.totalPeakTravelDelayCarSavings;
@@ -413,6 +412,7 @@ define([
       var totalFuelSavingsGallons = benefitCostCTRL.calculateFuelSavingsGallons( segments );
 
       $('#fuel').val( Number(totalFuelSavingsGallons).round(2) );
+      $('#fuel_money').val( Number(totalFuelSavingsMoney).round(2) );
 
       var benefits = 0;
       var totalSavings = benefitCostCTRL.calculateProjectSavings( segments );
@@ -423,6 +423,7 @@ define([
         secondaryIncidentsSavings = 0;
       }
       $('#secondary_accidents').val( Number( secondaryIncidentsSavings ).round(2) );
+      $('#secondary_accidents_savings').val( Number( secondaryIncidentsSavings  * 4736).round(2) );
 
       // Check if delay savings checkbox is checked first
       if( $('#delay_savings_checkbox').prop('checked') ) {
@@ -442,7 +443,10 @@ define([
       var benefitCost = ( benefits / annualStudyPD) / annualCost;
       // this checks if benefit cost ration is not a number and converts it to zero
       if( ! isFinite(benefitCost) ) benefitCost = 0;
-        $('#delay_savings').val( Number( (totalSavings) ).round(2) );
+      $('#delay_savings').val( Number( (totalSavings) ).round(2) );
+      $('#delay_savings_money').val( Number( benefitCostCTRL.calculateBenefits( segments ) ).round(2) );
+      $('#total_benefits_money').val( Number( benefits ).round(2) );
+      $('#total_cost_money').val( Number( annualCost ).round(2) );
       $('#benefit_cost_ratio').val( Number( benefitCost ).round(2) );
 
       _this.model.set('benefitCostRatio', benefitCost);

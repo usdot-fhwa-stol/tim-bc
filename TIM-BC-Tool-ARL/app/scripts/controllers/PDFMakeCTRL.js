@@ -22,11 +22,14 @@ define(['underscore'], function() {
 			var segments = project.get('segments');
 			var values = {
 				totalTravelDelayCar: 0,
+				totalCarMoney: 0,
 				totalTravelDelayTruck: 0,
+				totalTruckMoney: 0,
 				fuelConsumptionGallons: 0,
 				fuelSavingsGallons: 0,
 				fuelSavingsMoney: 0,
-				totalSecondaryIncidents: 0
+				totalSecondaryIncidents: 0,
+				secondaryIncidentsSaving: 0,
 			};
 
 			var SEGMENT_LAYOUT = [];
@@ -34,19 +37,38 @@ define(['underscore'], function() {
 			_.each( segments, function( segment, index ) {
 				if( segment.get('checked') != false && segment.get('valid') != false ) {
 					values.totalTravelDelayCar += Number( segment.get('totalSegmentSavingCar') ).round(4);
+					var driverWage = segment.get('driverWage');
+					values.totalCarMoney += values.totalTravelDelayCar * driverWage;
 					values.totalTravelDelayTruck += Number( segment.get('totalSegmentSavingTruck') ).round(4);
+					values.totalTruckMoney += values.totalTravelDelayTruck * 67;
 
 					values.fuelConsumptionGallons += Number( segment.get('totalFuelConsumptionGallons') ).round(4);
 					values.fuelSavingsGallons += Number( segment.get('totalFuelSavingsGallons') ).round(4);
 					values.fuelSavingsMoney += Number( segment.get('totalFuelSavings') ).round(4);
 
 					values.totalSecondaryIncidents += Number( segment.get('totalSegmentSecondaryIncidents') ).round(4);
+					values.secondaryIncidentsSaving += values.totalSecondaryIncidents * 4736;
 
 					// Build the segment layout
 					var SEGMENT_PARTIAL = [
 						{
 							text: 'Results for Segment ' + ( index + 1 ),
 							style: 'sspHeader'
+						},
+						{
+							table: {
+								widths: ['auto', 'auto'],
+								headerRows: 1,
+								body: [
+									[{ text: 'Segment Information', colSpan: 2, style: 'tableHeader' }, {}],
+									['Segment length (miles) ', { text: segment.get('segmentLength').toString() + ' miles', alignment: 'right' }],
+									['Number of ramps', { text: segment.get('numberOfRamps'), alignment: 'right' }],
+									['Number of traffic lanes by direction', { text: segment.get('numberOfTrafficLanesByDirection'), alignment: 'right' }],
+									['General terrain', { text: segment.get('generalTerrain'), alignment: 'right' }],									
+									['Horizontal curvature', { text: segment.get('horizontalCurvature'), alignment: 'right' }]
+								]
+							},
+							margin: [30, 20]
 						},
 		   			{
 		   				table: {
@@ -71,9 +93,14 @@ define(['underscore'], function() {
 		   					body: [
 		   						[{ text: 'Total Segment Savings', colSpan: 2, style: 'tableHeader' }, {}],
 		   						['Travel Delay of Passenger Vehicles', { text: segment.get('totalSegmentSavingCar').round(2).toString() + ' Vehicle Hours', alignment: 'right' }],
+								['Travel Delay of Passenger Vehicles', { text: '$'+ (segment.get('totalSegmentSavingCar')*segment.get('driverWage')).round(2).toString() + ' Vehicle Dollars', alignment: 'right' }],
 		   						['Travel Delay of Trucks', { text: segment.get('totalSegmentSavingTruck').round(2).toString() + ' Vehicle Hours', alignment: 'right' }],
-		   						['Fuel Consumption of Passenger Vehicles', { text: segment.get('totalFuelSavingsGallons').round(2).toString() + ' Gallons', alignment: 'right' }],
+								// summarizes total truck savings and monetize it by multiplying the hours by 67						   
+		   						['Travel Delay of Trucks', { text: '$'+ (segment.get('totalSegmentSavingTruck')* 67).round(2).toString() + ' Vehicle Dollars', alignment: 'right' }],
+		   						['Fuel Saving of Passenger Vehicles', { text: segment.get('totalFuelSavingsGallons').round(2).toString() + ' Gallons', alignment: 'right' }],
+								['Fuel Saving of Passenger Vehicles', { text: segment.get('totalFuelSavings').round(2).toString() + ' Dollars', alignment: 'right' }],
 		   						['Secondary Incidents', { text: segment.get('totalSegmentSecondaryIncidents').round(4).toString(), alignment: 'right' }],
+								['Secondary Incidents', { text: '$'+(segment.get('totalSegmentSecondaryIncidents')* 4736).round(4).toString() +' Dollars', alignment: 'right' }],
 		   					]
 		   				},
 		   				margin: [30, 20]
@@ -240,10 +267,14 @@ define(['underscore'], function() {
 	   					headerRows: 1,
 	   					body: [
 	   						[{ text: 'Total Program Savings', colSpan: 2, style: 'tableHeader' }, {}],
-	   						['Travel Delay of Passenger Vehicles', { text: _this.getValues( project ).values.totalTravelDelayCar.round(2).toString() + ' Vehicle Hours', alignment: 'right'}],
-	   						['Travel Delay of Trucks', { text: _this.getValues( project ).values.totalTravelDelayTruck.round(2).toString() + ' Vehicle Hours', alignment: 'right'}],
-	   						['Fuel Consumption of Passenger Vehicles', { text: _this.getValues( project ).values.fuelSavingsGallons.round(2).toString() + ' Gallons', alignment: 'right'}],
+	   						['Travel Delay of Passenger Vehicles', { text: _this.getValues( project ).values.totalTravelDelayCar.round(2).toString() + ' Vehicle Hours', alignment: 'right'}],							
+							['Travel Delay of Passenger Vehicles', { text: '$' + _this.getValues( project ).values.totalCarMoney.round(2).toString() + ' Vehicle Dollars', alignment: 'right'}],
+	   						['Travel Delay of Trucks', { text: _this.getValues( project ).values.totalTravelDelayTruck.round(2).toString() + ' Vehicle Hours', alignment: 'right'}],							
+							['Travel Delay of Trucks', { text: '$' + _this.getValues( project ).values.totalTruckMoney.round(2).toString() + ' Vehicle Dollars', alignment: 'right'}],
+	   						['Fuel Saving of Passenger Vehicles', { text: _this.getValues( project ).values.fuelSavingsGallons.round(2).toString() + ' Gallons', alignment: 'right'}],							
+							['Fuel Saving of Passenger Vehicles', { text: '$' + _this.getValues( project ).values.fuelSavingsMoney.round(2).toString() + ' Dollars', alignment: 'right'}],
 	   						['Secondary Incidents', { text: project.get('secondaryIncidents').round(2).toString(), alignment: 'right'}],
+	   						['Secondary Incidents', { text: '$' + _this.getValues( project ).values.secondaryIncidentsSaving.round(2).toString() + ' Dollars', alignment: 'right'}],
 	   						[{ text: 'Benefit Cost Ratio', fillColor: '#DDD' }, { text: project.get('benefitCostRatio').round(2).toString(), alignment: 'right', fillColor: '#DDD'}]
 	   					]
 	   				},
@@ -284,7 +315,8 @@ define(['underscore'], function() {
 	   			},
 
 	   			{
-	   				text:'Several important benefits that can be derived from an ARL program are accounted for in the B/C ratio developed by the ARL-BC Tool. The tool was purposefully developed to provide conservative, defensible estimates. This section outlines numerous additional benefits that have not been included in the B/C ratio, but that would increase its value if considered.'
+	   				text:'Several important benefits that can be derived from an ARL program are accounted for in the B/C ratio developed by the ARL-BC Tool. The tool was purposefully developed to provide conservative, defensible estimates. This section outlines numerous additional benefits that have not been included in the B/C ratio, but that would increase its value if considered.',
+					   margin: [0, 10, 50, 0]
 	   			},
 
 	   			{
@@ -293,12 +325,13 @@ define(['underscore'], function() {
 	   			},
 
 	   			{
-	   				text: 'The B/C ratio calculation does not include emissions, however the ARL-BC Tool does estimate reductions in HC, CO, NOx, and CO2 in metric tons and SOx in Grams based on the reduction in fuel consumption under “Total Program Savings” above. If monetary equivalents are available, the monetary equivalent of emissions savings can be added to the total benefits in dollars. By dividing this savings by the total costs, a new B/C estimate can be obtained that includes the value of emissions reductions.'
+	   				text: 'The B/C ratio calculation does not include emissions, however the ARL-BC Tool does estimate reductions in HC, CO, NOx, and CO2 in metric tons and SOx in Grams based on the reduction in fuel consumption under “Total Program Savings” above. If monetary equivalents are available, the monetary equivalent of emissions savings can be added to the total benefits in dollars. By dividing this savings by the total costs, a new B/C estimate can be obtained that includes the value of emissions reductions.',
+					   margin: [0, 10, 50, 0]
 	   			},
 
 	   			{
 	   				text: 'Several of the emissions considered by the tool are greenhouse gases (GHGs). GHGs are measured qualitatively through the intensity of their effect on the earth\'s atmosphere. This intensity is determined by the GHG\'s global warming potential (GWP). CO2 is the globally accepted reference gas with a GWP of 1, and GWP is typically measured for 1, 20, 50, and 100-year time periods. In addition to being a measure of a GHG\'s effect on the atmosphere, GWPs are used to convert GHGs into carbon dioxide equivalents (CO2e). This allows for the use of an easy and standard unit for reporting quantities of GHGs being measured. With this in mind, one option might be to use carbon dioxide equivalents. The price of carbon on the carbon market can provide a potential source of monetary value.',
-	   				margin: [0, 10, 0, 0]
+					   margin: [0, 10, 50, 0]
 	   			},
 
 	   			{
@@ -307,7 +340,8 @@ define(['underscore'], function() {
 	   			},
 
 	   			{
-	   				text: 'The B/C ratio calculation only considers the monetary value of property damage that might be prevented in the event of a secondary incident due to the existence of an ARL program. The B/C ratio would be expected to rise very significantly if the value of even one fatal or near-fatal incident were included. Additionally, the savings derived from avoiding congestion resulting from secondary incidents due to the ARL program have not been included in estimating the savings from secondary incidents.  '
+	   				text: 'The B/C ratio calculation only considers the monetary value of property damage that might be prevented in the event of a secondary incident due to the existence of an ARL program. The B/C ratio would be expected to rise very significantly if the value of even one fatal or near-fatal incident were included. Additionally, the savings derived from avoiding congestion resulting from secondary incidents due to the ARL program have not been included in estimating the savings from secondary incidents.  ',
+					   margin: [0, 10, 50, 0]
 	   			},
 
 	   			{
@@ -316,7 +350,8 @@ define(['underscore'], function() {
 	   			},
 
 	   			{
-	   				text: 'The B/C ratio calculation does not include the monetary costs and time incurred by the ARL for investigating and documenting incidents. Savings related to insurance claims, disability, rehabilitation, attorney fees, and court costs associated with litigation resulting from secondary incidents that did not arise are additional sources of savings that have not been included in the B/C calculation.'
+	   				text: 'The B/C ratio calculation does not include the monetary costs and time incurred by the ARL for investigating and documenting incidents. Savings related to insurance claims, disability, rehabilitation, attorney fees, and court costs associated with litigation resulting from secondary incidents that did not arise are additional sources of savings that have not been included in the B/C calculation.',
+					   margin: [0, 10, 50, 0]
 	   			},
 
 	   			{
@@ -325,7 +360,8 @@ define(['underscore'], function() {
 	   			},
 
 	   			{
-	   				text: 'With the assistance of the ARL program, law enforcement personnel have additional time to spend on more urgent tasks. Through improvements in safety, as well as the knowledge that help is nearby, the public will have a greater sense of security and a feeling of political good will. Reduced congestion can also aid in the flow of goods across the nation\'s freeways, affecting the price of the goods and the economy more generally.'
+	   				text: 'With the assistance of the ARL program, law enforcement personnel have additional time to spend on more urgent tasks. Through improvements in safety, as well as the knowledge that help is nearby, the public will have a greater sense of security and a feeling of political good will. Reduced congestion can also aid in the flow of goods across the nation\'s freeways, affecting the price of the goods and the economy more generally.',
+					   margin: [0, 10, 50, 0]
 	   			}
 
 				],
