@@ -108,7 +108,7 @@ define([
       var projectFile = new Blob( [data], //array
           { type: 'text/json', endings: 'native' } //dictionary object
         );
-      saveAs(projectFile, 'SHRP2-' + project.get('projectName') + '.json');
+      saveAs(projectFile, 'NTRT-' + project.get('projectName') + '.json');
     });
 
     $('.validateProject').on('click', function(evt){
