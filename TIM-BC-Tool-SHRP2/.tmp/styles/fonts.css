@@ -1,8 +1,0 @@
-/* Lane Narrow */
-@font-face {
-  font-family: 'LaneNarrow';
-  src: url('../fonts/lane/lane-nar.eot');
-  src: url('../fonts/lane/lane-nar.eot?#iefix') format('embedded-opentype'), url('../fonts/lane/lane-nar.woff') format('woff'), url('../fonts/lane/lane-nar.ttf') format('truetype'), url('../fonts/lane/lane-nar.svg#lane_-_narrowregular') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
